@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import './loginpage_form.dart';
 import 'loginpage_image.dart';
 
+import '../constants/constants.dart' as Constansts;
+
 class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -32,7 +34,7 @@ class LoginPage extends StatelessWidget {
                             child: Container(
                                 height: double.infinity,
                                 width: double.infinity,
-                                color: Color(0xff2a9d8f))),
+                                color: Color(Constansts.coolGreen))),
                         LoginPageImage()
                       ],
                     )))));

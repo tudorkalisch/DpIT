@@ -2,14 +2,34 @@ import 'package:flutter/material.dart';
 
 import './loginpage_logo.dart';
 
-class LoginPageForm extends StatelessWidget {
+import '../constants/constants.dart' as Constants;
+
+class LoginPageForm extends StatefulWidget {
   final screenWidth;
   final screenHeight;
-
-  LoginPageForm({this.screenWidth, this.screenHeight});
+  const LoginPageForm({Key? key, this.screenHeight, this.screenWidth}) : super(key: key);
 
   @override
+  State<LoginPageForm> createState() => _MyWidgetState();
+}
+
+class _MyWidgetState extends State<LoginPageForm> {
+  @override
   Widget build(BuildContext context) {
+
+    final mailController = TextEditingController();
+    final passwordController = TextEditingController();
+
+    var outlineColor = Color(0xffb9b9b9);
+
+    logIn() {
+      if (mailController.text == "" || passwordController.text == "") {
+        setState(() {
+          outlineColor = Colors.red;
+        });
+      }
+    }
+
     return Expanded(
       flex: 90,
       child: FractionallySizedBox(
@@ -19,11 +39,11 @@ class LoginPageForm extends StatelessWidget {
         child: Stack(
           alignment: Alignment.center,
           children: [
-            LoginPageLogo(screenHeight: screenHeight, screenWidth: screenWidth),
+            LoginPageLogo(screenHeight: widget.screenHeight, screenWidth: widget.screenWidth),
             Positioned(
-              top: screenHeight * 0.12,
+              top: widget.screenHeight * 0.12,
               child: DefaultTextStyle(
-                style: TextStyle(color: Color(0xff264653), fontSize: screenWidth * 0.0275, fontWeight: FontWeight.bold),
+                style: TextStyle(color: Color(Constants.logoBlue), fontSize: Constants.titleFontSize, fontWeight: FontWeight.bold),
                 child: Text(
                   "Log In",
                   textAlign: TextAlign.center,
@@ -31,9 +51,9 @@ class LoginPageForm extends StatelessWidget {
               ) 
             ),
             Positioned(
-              top: screenHeight * 0.22,
+              top: widget.screenHeight * 0.21,
               child: DefaultTextStyle(
-                style: TextStyle(color: Color(0xff264653), fontSize: screenWidth * 0.0135, fontWeight: FontWeight.w500),
+                style: TextStyle(color: Color(Constants.logoBlue), fontSize: Constants.subtitleFontSize, fontWeight: FontWeight.w500),
                 child: Text(
                   "Welcome!",
                   textAlign: TextAlign.center,
@@ -41,9 +61,9 @@ class LoginPageForm extends StatelessWidget {
               )
             ),
             Positioned(
-              top: screenHeight * 0.26,
+              top: widget.screenHeight * 0.25,
               child: DefaultTextStyle(
-                style: TextStyle(color: Color(0xff264653), fontSize: screenWidth * 0.0115),
+                style: TextStyle(color: Color(Constants.logoBlue), fontSize: Constants.secondSubtitleFontSize),
                 child: Text(
                   "Please log in to your account",
                   textAlign: TextAlign.center,
@@ -51,47 +71,96 @@ class LoginPageForm extends StatelessWidget {
               )
             ),
             Positioned(
-              top: screenHeight * 0.34,
+              top: widget.screenHeight * 0.34,
               child: SizedBox(
-                height: screenHeight * 0.08,
-                width: screenWidth * 0.2,
+                height: widget.screenHeight * 0.08,
+                width: widget.screenWidth * 0.2,
                 child: TextField(
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: "E-mail"
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: outlineColor) //here you can change outline color, remeber to finish implementation!
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: outlineColor)
+                    ),
+                    hintText: "E-mail",
                   ),
+                  enableSuggestions: false,
+                  autocorrect: false,
+                  controller: mailController,
                 )
               )
             ),
             Positioned(
-              top: screenHeight * 0.45,
+              top: widget.screenHeight * 0.45,
               child: SizedBox(
-                height: screenHeight * 0.08,
-                width: screenWidth * 0.2,
+                height: widget.screenHeight * 0.08,
+                width: widget.screenWidth * 0.2,
                 child: TextField(
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: outlineColor)
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: outlineColor)
+                    ),
                     hintText: "Password"
                   ),
+                  obscureText: true,
+                  enableSuggestions: false,
+                  autocorrect: false,
+                  controller: passwordController,
                 )
               )
             ),
             Positioned(
-              bottom: screenHeight * 0.1,
+              bottom: widget.screenHeight * 0.1,
               child: Container(
-                width: screenWidth * 0.1,
-                height: screenHeight * 0.04,
+                width: widget.screenWidth * 0.1,
+                height: widget.screenHeight * 0.04,
                 child: TextButton(
                   style: TextButton.styleFrom(
-                    textStyle: TextStyle(
-                      color: Colors.blue
-                    )
+                    primary: Colors.blue
                   ),
                   onPressed: () {},
                   child: const Text("Forgot password?")
                 ),
               )
             ),
+            Positioned(
+              bottom: widget.screenHeight * 0.19,
+              left: widget.screenWidth * 0.04,
+              child: Container(
+                width: widget.screenWidth * 0.095,
+                height: widget.screenHeight * 0.07,
+                color: Color(Constants.coolGreen),
+                child: TextButton(
+                    style: TextButton.styleFrom(
+                      primary: Colors.black
+                  ),
+                  onPressed: logIn,
+                  child: const Text("Log in")
+                )
+              )
+            ),
+            Positioned(
+              bottom: widget.screenHeight * 0.19,
+              right: widget.screenWidth * 0.04,
+              child: Container(
+                width: widget.screenWidth * 0.095,
+                height: widget.screenHeight * 0.07,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Color(Constants.coolGreen), width: 3)
+                ),
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    primary: Colors.black
+                  ),
+                  onPressed: () {},
+                  child: const Text("Create account")
+                )
+              )
+            )
           ]
         )
       ),
