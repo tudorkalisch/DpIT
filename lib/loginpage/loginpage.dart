@@ -16,7 +16,7 @@ class LoginPage extends StatelessWidget {
             width: double.infinity,
             decoration: const BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage("assets/gradient.png"),
+                    image: AssetImage(Constansts.blueGradientPath),
                     fit: BoxFit.cover)),
             child: Center(
                 child: Container(
@@ -34,7 +34,7 @@ class LoginPage extends StatelessWidget {
                             child: Container(
                                 height: double.infinity,
                                 width: double.infinity,
-                                color: Color(Constansts.coolGreen))),
+                                color: const Color(Constansts.gradientBaseGreen))),
                         LoginPageImage()
                       ],
                     )))));

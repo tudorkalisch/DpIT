@@ -133,7 +133,7 @@ class _MyWidgetState extends State<LoginPageForm> {
               child: Container(
                 width: widget.screenWidth * 0.095,
                 height: widget.screenHeight * 0.07,
-                color: Color(Constants.coolGreen),
+                color: Color(Constants.gradientBaseGreen),
                 child: TextButton(
                     style: TextButton.styleFrom(
                       primary: Colors.black
@@ -150,7 +150,7 @@ class _MyWidgetState extends State<LoginPageForm> {
                 width: widget.screenWidth * 0.095,
                 height: widget.screenHeight * 0.07,
                 decoration: BoxDecoration(
-                  border: Border.all(color: Color(Constants.coolGreen), width: 3)
+                  border: Border.all(color: Color(Constants.gradientBaseGreen), width: 3)
                 ),
                 child: TextButton(
                   style: TextButton.styleFrom(

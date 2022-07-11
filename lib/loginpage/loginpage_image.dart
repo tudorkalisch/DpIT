@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constants/constants.dart' as Constants;
+
 class LoginPageImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,7 @@ class LoginPageImage extends StatelessWidget {
         child: DecoratedBox(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("assets/loginpageimage.png"),
+              image: AssetImage(Constants.loginPageImagePath),
               fit: BoxFit.cover
             )
           ),
