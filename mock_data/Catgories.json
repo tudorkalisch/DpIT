@@ -1,0 +1,303 @@
+[
+  {
+    "ID": 1,
+    "Denumire": "Panouri sandwich termoizolante",
+    "Descriere": "Produse capabile de a conserva căldura și de a scădea consumul de energie",
+    "Subcategorii": [
+      {
+        "ID": 1,
+        "Denumire": "Panouri sandwich"
+      },
+      {
+        "ID": 2,
+        "Denumire": "Șuruburi pentru panouri sandwich"
+      }
+    ]
+  },
+  {
+    "ID": 2,
+    "Denumire": "Elemnete de armatură",
+    "Descriere": "Aceste produse oferă ajutor în întărirea construcțiilor de beton armat",
+    "Subcategorii": [
+      {
+        "ID": 3,
+        "Denumire": "Cuie construcție"
+      },
+      {
+        "ID": 4,
+        "Denumire": "Protecții pentru oțel/beton"
+      },
+      {
+        "ID": 5,
+        "Denumire": "Sârmă neagră și zincată"
+      }
+    ]
+  },
+  {
+    "ID": 3,
+    "Denumire": "Ciment",
+    "Descriere": "Material de construcție în formă de pulbere fină care se întărește la contactul cu apa",
+    "Subcategorii": [
+      {
+        "ID": 6,
+        "Denumire": "Cimenturi uzuale"
+      },
+      {
+        "ID": 7,
+        "Denumire": "Cimenturi specializate"
+      }
+    ]
+  },
+  {
+    "ID": 4,
+    "Denumire": "Lianți",
+    "Descriere": "Material capabil de a se solidifica prin uscare, folosit în fixarea unui suport",
+    "Subcategorii": [
+      {
+        "ID": 8,
+        "Denumire": "Lianți de aer"
+      },
+      {
+        "ID": 9,
+        "Denumire": "Lianți hidraulici"
+      }
+    ]
+  },
+  {
+    "ID": 5,
+    "Denumire": "Var",
+    "Descriere": "Material versatil, poate fi folosit pentru finisaje sau pentru tencuieli/amorse",
+    "Subcategorii": [
+      {
+        "ID": 10,
+        "Denumire": "Var nestins"
+      },
+      {
+        "ID": 11,
+        "Denumire": "Var ars"
+      }
+    ]
+  },
+  {
+    "ID": 6,
+    "Denumire": "Gleturi",
+    "Descriere": "Gletul reprezinta tencuiala subtire ce are scopul de a nivela suprafata peretilor sau tavanului",
+    "Subcategorii": [
+      {
+        "ID": 12,
+        "Denumire": "Gelturi pe bază de ipsos"
+      },
+      {
+        "ID": 13,
+        "Denumire": "Gleturi pe bază de ciment"
+      }
+    ]
+  },
+  {
+    "ID": 7,
+    "Denumire": "Tencuieli",
+    "Descriere": "Tencuiala consta in aplicarea unui strat de mortar peste zidarie si pe tavan, cu scopul de a netezi, proteja si decora suprafetele",
+    "Subcategorii": [
+      {
+        "ID": 14,
+        "Denumire": "Tencuieli cu aplicare manuală"
+      },
+      {
+        "ID": 15,
+        "Denumire": "Tencuieli cu aplicare mecanizată"
+      }
+    ]
+  },
+  {
+    "ID": 8,
+    "Denumire": "Mortare",
+    "Descriere": "Material folosit ca element de legătură între materiale de construcție solide",
+    "Subcategorii": [
+      {
+        "ID": 16,
+        "Denumire": "Mortar de var"
+      },
+      {
+        "ID": 17,
+        "Denumire": "Mortar pentru zidărie"
+      }
+    ]
+  },
+  {
+    "ID": 9,
+    "Denumire": "Beton",
+    "Descriere": "Amestec care, prin uscare, se transformă într-o masă foarte rezistentă",
+    "Subcategorii": [
+      {
+        "ID": 18,
+        "Denumire": "Beton compact"
+      },
+      {
+        "ID": 19,
+        "Denumire": "beton semicompact"
+      }
+    ]
+  },
+  {
+    "ID": 10,
+    "Denumire": "Aditivi pentru betoane și mortare",
+    "Descriere": "Materiale care îmbunătățesc calitatea betonului, respectiv a mortarului",
+    "Subcategorii": []
+  },
+  {
+    "ID": 11,
+    "Denumire": "Sape",
+    "Descriere": "Strat compus din mortar care are ca rol egalizarea unei suprafețe",
+    "Subcategorii": [
+      {
+        "ID": 20,
+        "Denumire": "Sape autonivelante"
+      },
+      {
+        "ID": 21,
+        "Denumire": "Sape de egalizare"
+      }
+    ]
+  },
+  {
+    "ID": 12,
+    "Denumire": "Siliconi și accesorii",
+    "Descriere": "Produse folosite în diverse etanșări",
+    "Subcategorii": [
+      {
+        "ID": 22,
+        "Denumire": "Siliconi și etanșanți"
+      },
+      {
+        "ID": 23,
+        "Denumire": "Pistoale cu silicon"
+      }
+    ]
+  },
+  {
+    "ID": 13,
+    "Denumire": "Adezivi de montaj speciali",
+    "Descriere": "Produs destinat proiectelor ce implică lipiri",
+    "Subcategorii": []
+  },
+  {
+    "ID": 14,
+    "Denumire": "Spumă poliuretanică și accesorii",
+    "Descriere": "Material ce asigură o izolare termică foarte bună",
+    "Subcategorii": [
+      {
+        "ID": 24,
+        "Denumire": "Spumă poliuretanică cu celule deschise"
+      },
+      {
+        "ID": 25,
+        "Denumire": "Spumă poliuretanică cu celule închise"
+      }
+    ]
+  },
+  {
+    "ID": 15,
+    "Denumire": "Reparații pereți",
+    "Descriere": "Produse destinate reparării și protejării pereților",
+    "Subcategorii": [
+      {
+        "ID": 26,
+        "Denumire": "Aracet"
+      },
+      {
+        "ID": 27,
+        "Denumire": "Kituri de cutit"
+      }
+    ]
+  },
+  {
+    "ID": 16,
+    "Denumire": "Oxid",
+    "Descriere": "Produse folosite în colorarea materialelor de construcții",
+    "Subcategorii": [
+      {
+        "ID": 28,
+        "Denumire": "Oxid de fier"
+      },
+      {
+        "ID": 29,
+        "Denumire": "Oxid de titan"
+      }
+    ]
+  },
+  {
+    "ID": 17,
+    "Denumire": "Cărămidă",
+    "Descriere": "Material folosit în structuri de rezistență",
+    "Subcategorii": [
+      {
+        "ID": 30,
+        "Denumire": "Cărămidă clasică"
+      },
+      {
+        "ID": 31,
+        "Denumire": "Cărămidă de sticlă"
+      },
+      {
+        "ID": 32,
+        "Denumire": "Cărămidă aparentă"
+      }
+    ]
+  },
+  {
+    "ID": 18,
+    "Denumire": "Țiglă",
+    "Descriere": "Material rezistent la uzură, folosit pentru lucrări de perete, pardoseală și acoperiș",
+    "Subcategorii": [
+      {
+        "ID": 33,
+        "Denumire": "Țiglă ceramică"
+      },
+      {
+        "ID": 34,
+        "Denumire": "Țiglă metalică"
+      },
+      {
+        "ID": 35,
+        "Denumire": "Țiglă din beton"
+      }
+    ]
+  },
+  {
+    "ID": 19,
+    "Denumire": "Termopan",
+    "Descriere": "Asigură o izolare termică eficientă",
+    "Subcategorii": [
+      {
+        "ID": 36,
+        "Denumire": "PVC"
+      },
+      {
+        "ID": 37,
+        "Denumire": "PVC și aluminiu"
+      }
+    ]
+  },
+  {
+    "ID": 20,
+    "Denumire": "Plexiglas",
+    "Descriere": "Folosit în amenajarea interioară",
+    "Subcategorii": [
+      {
+        "ID": 38,
+        "Denumire": "Plexiglas incolor"
+      }
+    ]
+  },
+  {
+    "ID": 21,
+    "Denumire": "Lemn",
+    "Descriere": "Material versatil, important în majoritatea proiectelor",
+    "Subcategorii": [
+      {
+        "ID": 39,
+        "Denumire": "Lemn masiv"
+      }
+    ]
+  }
+]

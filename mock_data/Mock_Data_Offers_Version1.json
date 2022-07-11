@@ -1,0 +1,155 @@
+﻿[
+    {
+        "ID": "1",
+        "Title": "Panou sandwich Isobox",
+        "Rating": "2.50",
+        "Description": "grosime: 40 mm; culoare: alb gri/gri deschis; dimensiune: 6000 x 1000 mm (lungime x latime) ",
+        "Price": "114.59",
+        "Category": "Panouri sandwich termoizolante",
+        "Supplier_Info": "Isopan"
+    },
+    {
+        "ID": "2",
+        "Title": "Șurubul GT6",
+        "Rating": "4.02",
+        "Description": "lungimea 65 mm; diametrul 5.5 mm",
+        "Price": "52.13",
+        "Category": "Panouri sandwich termoizolante",
+        "Supplier_Info": "Etanco"
+    },
+    {
+        "ID": "3",
+        "Title": "Pachet cuie construcții 7 x 200mm",
+        "Rating": "3.56",
+        "Description": "Cuie pentru utilizare in domeniul constructiilor.",
+        "Price": "10",
+        "Category": "Elemente de armatură",
+        "Supplier_Info": "Dedeman"
+    },
+    {
+        "ID": "4",
+        "Title": "Distanțier circular pentru cofraje",
+        "Rating": "1.78",
+        "Description": "Forma sa circulara permite montarea plaselor de armare in domeniul constructiilor.",
+        "Price": "0.89",
+        "Category": "Elemente de armatură",
+        "Supplier_Info": "Dakota"
+    },
+    {
+        "ID": "5",
+        "Title": "Sârmă neagră, diametru 2 mm",
+        "Rating": "3.05",
+        "Description": "Domeniu larg de utilizare in armaturi , agricultura, imprejmuiri, uz gospodaresc si la diverse impletituri.",
+        "Price": "10",
+        "Category": "Elemente de armatură",
+        "Supplier_Info": "Dedeman"
+    },
+    {
+        "ID": "6",
+        "Title": "Ciment Carpatcement",
+        "Rating": "2.86",
+        "Description": "Produsul se foloseste pentru aplicatii uzuale, in elemente sau structuri monolite si prefabricate, armate dispers si armate.",
+        "Price": "28.46",
+        "Category": "Ciment",
+        "Supplier_Info": "HeidelbergCement"
+    },
+    {
+        "ID": "7",
+        "Title": "Ciment aluminos",
+        "Rating": "3.89",
+        "Description": "Cimentul aluminis  , permite punerea rapida in opera a betoanelor si regleaza priza pentru mortarele obisnuite de ciment. ",
+        "Price": "48.47",
+        "Category": "Ciment",
+        "Supplier_Info": "Kerneos"
+    },
+    {
+        "ID": "8",
+        "Title": "Liant hidraulic Enduria",
+        "Rating": "4.00",
+        "Description": "Carmeuse Enduria 500 este un var hidraulic potrivit pentru aplicatii generale in zidarii cu caramizi silico-aluminoase si tencuieli.",
+        "Price": "29.32",
+        "Category": "Lianti",
+        "Supplier_Info": "Carmeuse"
+    },
+    {
+        "ID": "9",
+        "Title": "Var stins celco",
+        "Rating": "4.57",
+        "Description": "Utilizat pentru producerea mortarelor, dar și pe scară largă în construcții.",
+        "Price": "56.99",
+        "Category": "Var",
+        "Supplier_Info": "Celco"
+    },
+    {
+        "ID": "10",
+        "Title": "Glet CT 126 pe bază de ipsos",
+        "Rating": "1.64",
+        "Description": "Ceresit CT 126 este un glet pentru interior pe baza de ipsos aditivat pentru denivelari de la 2 la 10 mm. Se foloseste pentru egalizarea suprafetelor.",
+        "Price": "39.69",
+        "Category": "Glet",
+        "Supplier_Info": "Ceresit"
+    },
+    {
+        "ID": "11",
+        "Title": "Glet pentru finisaje fine CT 127",
+        "Rating": "2.36",
+        "Description": "Gletul Ceresit CT 127 este destinat acoperirii suprafetelor tencuite in mod traditional si a suprafetelor betoanelor, in strat de maximum 2 mm.",
+        "Price": "56.03",
+        "Category": "Glet",
+        "Supplier_Info": "Ceresit"
+    },
+    {
+        "ID": "12",
+        "Title": "Tencuială aplicare manuală Mti-25",
+        "Rating": "3.48",
+        "Description": "MTI 25 este un mortar pentru tencuire si reparatii, aplicabil manual sau cu masina de tencuit. Acesta se adreseaza aplicarii in interior.",
+        "Price": "26.36",
+        "Category": "Tencuială",
+        "Supplier_Info": "Adeplast"
+    },
+    {
+        "ID": "13",
+        "Title": "Mortar tinci",
+        "Rating": "3.00",
+        "Description": "Mortar uscat, extra-alb, cu permeabilitate ridicata la vapori, pentru executarea manuala a tencuielilor fine, utilizat ca tinci pentru suprafete exterioare sau interioare.",
+        "Price": "32.11",
+        "Category": "Mortar",
+        "Supplier_Info": "Baumit"
+    },
+    {
+        "ID": "14",
+        "Title": "Mortar MM50",
+        "Rating": "1.00",
+        "Description": "Mortar uscat de zidarie, predozat. Acesta este recomandat pentru toate tipurile uzuale de zidarii, pentru zidarii portante, de umplutura sau pereti despartitori.",
+        "Price": "19",
+        "Category": "Mortar",
+        "Supplier_Info": "Baumit"
+    },
+    {
+        "ID": "15",
+        "Title": "Liant pentru mortare",
+        "Rating": "5.00",
+        "Description": "Produsul se utilizeaza pentru prepararea tencuielilor de samota si a tencuielilor rezistente la infiltratiile de apa sau la tratamentul antipraf pentru sape pe baza de ciment.",
+        "Price": "29.24",
+        "Category": "Aditivi pentru betoane și mortare",
+        "Supplier_Info": "Protect"
+    },
+    {
+        "ID": "16",
+        "Title": "Sapă autoniveltă CN68",
+        "Rating": "4.25",
+        "Description": "Reprezinta un amestec utilizat pentru nivelarea si egalizarea sapelor de sulfat de calciu, asfalt turnat, suprafetelor pe baza de ciment, cat si pentru nivelarea straturilor de sapa la cladiri vechi.",
+        "Price": "59.5",
+        "Category": "Sape",
+        "Supplier_Info": "Ceresit"
+    },
+    {
+        "ID": "17",
+        "Title": "Silicon Sanitar CS25",
+        "Rating": "2.10",
+        "Description": "CS 25 este un silicon de etansare și sigilare acetoxy pentru etansarea instalatiilor sanitare sau a altor aplicatii de etansare necesare in constructii acolo unde se impune o rezistenta sporita la actiunea mucegaiului.",
+        "Price": "28.49",
+        "Category": "Siliconi",
+        "Supplier_Info": "Ceresit"
+    }
+]
