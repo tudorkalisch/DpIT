@@ -179,18 +179,21 @@ class _MyWidgetState extends State<LoginPageForm> {
                 )),
             Positioned(
                 bottom: widget.screenHeight * 0.19,
-                left: widget.screenWidth * 0.04,
+                left: widget.screenWidth * 0.05,
                 child: Container(
                     width: widget.screenWidth * 0.095,
                     height: widget.screenHeight * 0.07,
                     color: Color(Constants.gradientBaseGreen),
                     child: TextButton(
-                        style: TextButton.styleFrom(primary: Colors.black),
+                        style: TextButton.styleFrom(
+                            primary: Colors.black,
+                            textStyle: TextStyle(fontSize: 18)
+                        ),
                         onPressed: logIn,
                         child: const Text("Log in")))),
             Positioned(
                 bottom: widget.screenHeight * 0.19,
-                right: widget.screenWidth * 0.04,
+                right: widget.screenWidth * 0.05,
                 child: Container(
                     width: widget.screenWidth * 0.095,
                     height: widget.screenHeight * 0.07,
@@ -199,7 +202,10 @@ class _MyWidgetState extends State<LoginPageForm> {
                             color: Color(Constants.gradientBaseGreen),
                             width: 3)),
                     child: TextButton(
-                        style: TextButton.styleFrom(primary: Colors.black),
+                        style: TextButton.styleFrom(
+                            primary: Colors.black,
+                            textStyle: TextStyle(fontSize: 18)
+                          ),
                         onPressed: () {},
                         child: const Text("Create account"))))
           ])),
