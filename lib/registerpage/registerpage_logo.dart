@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 
-import '../constants/constants.dart' as Constants;
-
-class LoginPageLogo extends StatelessWidget {
+class RegisterPageLogo extends StatelessWidget {
   final screenWidth;
   final screenHeight;
 
-  LoginPageLogo({this.screenWidth, this.screenHeight});
+  RegisterPageLogo({this.screenWidth, this.screenHeight});
 
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      left: 0,
+      right: 0,
       top: screenHeight * 0.016,
       child: Image.asset(
-        Constants.blueLogoPath,
+        "assets/bluelogo.png",
         scale: 1 / screenWidth * 22500
       )
     );

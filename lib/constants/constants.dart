@@ -6,6 +6,6 @@ const gradientBaseGreen = 0xff2a9d8f;
 
 //PATHS
 
-const blueLogoPath = "assets/bluelogo.png";
-const blueGradientPath = "assets/bluegradient.png";
-const loginPageImagePath = "assets/loginpageimage.png";
+const orangeLogoPath = "assets/bluelogo.png";
+const RegisterPageGradientPath = "assets/registerpagegradient.png";
+const registerPageImagePath = "assets/registerpageimage.png";

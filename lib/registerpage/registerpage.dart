@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
-import './loginpage_form.dart';
-import 'loginpage_image.dart';
+import 'registerpage_form.dart';
+import 'registerpage_image.dart';
 
-import '../constants/constants.dart' as Constansts;
-
-class LoginPage extends StatelessWidget {
+class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -16,7 +14,7 @@ class LoginPage extends StatelessWidget {
             width: double.infinity,
             decoration: const BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage(Constansts.blueGradientPath),
+                    image: AssetImage("assets/registerpagegradient.png"),
                     fit: BoxFit.cover)),
             child: Center(
                 child: Container(
@@ -26,16 +24,16 @@ class LoginPage extends StatelessWidget {
                     color: Colors.white,
                     child: Row(
                       children: [
-                        LoginPageForm(
-                            screenHeight: screenHeight,
-                            screenWidth: screenWidth),
+                        RegisterPageImage(),
                         Expanded(
                             flex: 1,
                             child: Container(
                                 height: double.infinity,
                                 width: double.infinity,
-                                color: const Color(Constansts.gradientBaseGreen))),
-                        LoginPageImage()
+                                color: Color.fromARGB(255, 42, 157, 143))),
+                        RegisterPageForm(
+                            screenHeight: screenHeight,
+                            screenWidth: screenWidth),
                       ],
                     )))));
   }

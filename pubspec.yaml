@@ -58,8 +58,8 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/bluegradient.png
-    - assets/loginpageimage.png
+    - assets/registerpagegradient.png
+    - assets/registerpageimage.png
     - assets/bluelogo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
