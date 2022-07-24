@@ -9,3 +9,5 @@ const gradientBaseGreen = 0xff2a9d8f;
 const blueLogoPath = "assets/bluelogo.png";
 const blueGradientPath = "assets/bluegradient.png";
 const loginPageImagePath = "assets/loginpageimage.png";
+const blueLogoNoBgPath = "assets/bluelogo-nobg.png";
+const homeIconPath = "assets/homeicon.png";
