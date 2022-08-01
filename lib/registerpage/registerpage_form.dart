@@ -1,16 +1,75 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 import 'registerpage_logo.dart';
 
-class RegisterPageForm extends StatelessWidget {
+import '../constants/constants.dart' as Constants;
+
+import 'package:email_validator/email_validator.dart';
+
+class RegisterPageForm extends StatefulWidget {
   final screenWidth;
   final screenHeight;
-
-  RegisterPageForm({this.screenWidth, this.screenHeight});
+  const RegisterPageForm({Key? key, this.screenHeight, this.screenWidth}) : super(key: key);
 
   @override
+  State<RegisterPageForm> createState() => _MyWidgetState();
+}
+
+class _MyWidgetState extends State<RegisterPageForm> {
+
+  final mailController = TextEditingController();
+  final passwordController = TextEditingController();
+  final secondPasswordController = TextEditingController();
+
+  var _outlineBorderColorMail = Color(0xffb9b9b9);
+  var _outlineBorderColorPassword = Color(0xffb9b9b9);
+  var _outlineBorderColorPasswordSecond = Color(0xffb9b9b9);
+
+  bool _validateStructure(password) {
+      RegExp regExp = new RegExp((Constants.pattern));
+      return regExp.hasMatch(password);
+  }
+
+  register() {
+    if (!_validateStructure(this.passwordController.text)) {
+      setState(() {
+        _outlineBorderColorPassword = Colors.red; 
+      });
+    }
+    else {
+      setState(() {
+        _outlineBorderColorPassword = Color(0xffb9b9b9);
+      });
+    }
+    
+    if (!_validateStructure(this.secondPasswordController.text)) {
+      setState(() {
+        _outlineBorderColorPasswordSecond = Colors.red; 
+      });
+    }
+    else {
+      setState(() {
+        _outlineBorderColorPasswordSecond = Color(0xffb9b9b9);
+      });
+    }
+    
+    if (!EmailValidator.validate(mailController.text)) {
+      setState(() {
+        _outlineBorderColorMail = Colors.red;
+      });
+    }
+    else {
+      setState(() {
+        _outlineBorderColorMail = Color(0xffb9b9b9);
+      });
+    }
+  }
+  @override
   Widget build(BuildContext context) {
-    return Expanded(
+
+  return Expanded(
       flex: 90,
       child: FractionallySizedBox(
         widthFactor: 1,
@@ -19,11 +78,11 @@ class RegisterPageForm extends StatelessWidget {
         child: Stack(
           alignment: Alignment.center,
           children: [
-            RegisterPageLogo(screenHeight: screenHeight, screenWidth: screenWidth),
+            RegisterPageLogo(screenHeight: widget.screenHeight, screenWidth: widget.screenWidth),
             Positioned(
-              top: screenHeight * 0.07,
+              top: widget.screenHeight * 0.07,
               child: DefaultTextStyle(
-                style: TextStyle(color: Color.fromARGB(255, 27, 21, 18), fontSize: screenWidth * 0.0275, fontWeight: FontWeight.bold),
+                style: TextStyle(color: Color.fromARGB(255, 27, 21, 18), fontSize: widget.screenWidth * 0.0275, fontWeight: FontWeight.bold),
                 child: Text(
                   "Register",
                   textAlign: TextAlign.center,
@@ -31,9 +90,9 @@ class RegisterPageForm extends StatelessWidget {
               ) 
             ),
             Positioned(
-              top: screenHeight * 0.15,
+              top: widget.screenHeight * 0.15,
               child: DefaultTextStyle(
-                style: TextStyle(color: Color.fromARGB(255, 27, 21, 18), fontSize: screenWidth * 0.0135, fontWeight: FontWeight.w500),
+                style: TextStyle(color: Color.fromARGB(255, 27, 21, 18), fontSize: widget.screenWidth * 0.0135, fontWeight: FontWeight.w500),
                 child: Text(
                   "Welcome!",
                   textAlign: TextAlign.center,
@@ -41,9 +100,9 @@ class RegisterPageForm extends StatelessWidget {
               )
             ),
             Positioned(
-              top: screenHeight * 0.19,
+              top: widget.screenHeight * 0.19,
               child: DefaultTextStyle(
-                style: TextStyle(color: Color.fromARGB(255, 27, 21, 18), fontSize: screenWidth * 0.0115),
+                style: TextStyle(color: Color.fromARGB(255, 27, 21, 18), fontSize: widget.screenWidth * 0.0115),
                 child: Text(
                   "Please register for a better experience.",
                   textAlign: TextAlign.center,
@@ -51,15 +110,15 @@ class RegisterPageForm extends StatelessWidget {
               )
             ),
             Positioned(
-              top: screenHeight * 0.25,
-              left: screenWidth * 0.052,
+              top: widget.screenHeight * 0.25,
+              left: widget.screenWidth * 0.052,
               child: SizedBox(
-                height: screenHeight * 0.06,
-                width: screenWidth * 0.095,
+                height: widget.screenHeight * 0.06,
+                width: widget.screenWidth * 0.095,
                 child: RaisedButton(
                   child: Text(
                     "Supplier",
-                  style: TextStyle(fontSize: screenWidth * 0.0115),
+                  style: TextStyle(fontSize: widget.screenWidth * 0.0115),
                   ),
                   color: Color.fromARGB(255, 42, 157, 143),
                   onPressed: (){},
@@ -67,15 +126,15 @@ class RegisterPageForm extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: screenHeight * 0.25,
-              left: screenWidth * 0.155,
+              top: widget.screenHeight * 0.25,
+              left: widget.screenWidth * 0.155,
               child: SizedBox(
-                height: screenHeight * 0.06,
-                width: screenWidth * 0.095,
+                height: widget.screenHeight * 0.06,
+                width: widget.screenWidth * 0.095,
                 child: RaisedButton(
                   child: Text(
                     "Customer",
-                  style: TextStyle(fontSize: screenWidth * 0.0115),
+                  style: TextStyle(fontSize: widget.screenWidth * 0.0115),
                   ),
                   color: Color.fromARGB(255, 42, 157, 143),
                   onPressed: (){},
@@ -83,64 +142,95 @@ class RegisterPageForm extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: screenHeight * 0.34,
+              top: widget.screenHeight * 0.34,
               child: SizedBox(
-                height: screenHeight * 0.08,
-                width: screenWidth * 0.2,
+                height: widget.screenHeight * 0.08,
+                width: widget.screenWidth * 0.2,
                 child: TextField(
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: "E-mail"
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: _outlineBorderColorMail
+                      )
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: _outlineBorderColorMail
+                      )
+                    ),
+                    hintText: "E-mail",
                   ),
+                  controller: mailController,
                 )
               )
             ),
             Positioned(
-              top: screenHeight * 0.43,
+              top: widget.screenHeight * 0.43,
               child: SizedBox(
-                height: screenHeight * 0.08,
-                width: screenWidth * 0.2,
+                height: widget.screenHeight * 0.08,
+                width: widget.screenWidth * 0.2,
                 child: TextField(
                   decoration: InputDecoration(
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: _outlineBorderColorPassword
+                      )
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: _outlineBorderColorPassword
+                      )
+                    ),
                     border: OutlineInputBorder(),
                     hintText: "Password",
                   ),
+                  controller: passwordController,
                 )
               )
             ),
             Positioned(
-              top: screenHeight * 0.52,
+              top: widget.screenHeight * 0.52,
               child: SizedBox(
-                height: screenHeight * 0.08,
-                width: screenWidth * 0.2,
+                height: widget.screenHeight * 0.08,
+                width: widget.screenWidth * 0.2,
                 child: TextField(
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(),
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                          color: _outlineBorderColorPasswordSecond
+                        )
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: _outlineBorderColorPasswordSecond
+                        )
+                      ),
                     hintText: "Confirm Password"
                   ),
+                  controller: secondPasswordController,
                 )
               )
             ),
             Positioned(
-              top: screenHeight * 0.61,
+              top: widget.screenHeight * 0.61,
               child: SizedBox(
-                height: screenHeight * 0.06,
-                width: screenWidth * 0.095,
+                height: widget.screenHeight * 0.06,
+                width: widget.screenWidth * 0.095,
                 child: RaisedButton(
                   child: Text(
                     "Sign up",
-                  style: TextStyle(fontSize: screenWidth * 0.0115),
+                  style: TextStyle(fontSize: widget.screenWidth * 0.0115),
                   ),
                   color: Color.fromARGB(255, 42, 157, 143),
-                  onPressed: (){},
+                  onPressed: register,
                 ),
               ),
             ),
             Positioned(
-              bottom: screenHeight * 0.1,
+              bottom: widget.screenHeight * 0.1,
               child: Container(
-                width: screenWidth * 0.15,
-                height: screenHeight * 0.04,
+                width: widget.screenWidth * 0.15,
+                height: widget.screenHeight * 0.04,
                 child: TextButton(
                   style: TextButton.styleFrom(
                     textStyle: TextStyle(

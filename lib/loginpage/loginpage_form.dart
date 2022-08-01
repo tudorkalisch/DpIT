@@ -37,21 +37,29 @@ class _MyWidgetState extends State<LoginPageForm> {
   }
 
   bool _validateStructure(String userPassword) {
-      String pattern =
-          r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
-      RegExp regExp = new RegExp((pattern));
+      RegExp regExp = new RegExp((Constants.pattern));
       return regExp.hasMatch(userPassword);
     }
 
-    logIn() {
+  logIn() {
       if (!_validateStructure(passwordController.text)) {
         setState(() {
           _outlineColorPassword = Colors.red;
         });
       }
+      else {
+        setState(() {
+          _outlineColorPassword = Color(0xffb9b9b9);
+        });
+      }
       if(!EmailValidator.validate(mailController.text)) {
         setState(() {
           _outlineColorMail = Colors.red;
+        });
+      }
+      else {
+        setState(() {
+          _outlineColorMail = Color(0xffb9b9b9);
         });
       }
   }
