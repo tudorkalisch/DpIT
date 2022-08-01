@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'registerpage/registerpage.dart';
 
+import 'landingpage/landingpage.dart';
+
 void main() {
   runApp(MyApp());
 }
