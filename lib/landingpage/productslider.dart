@@ -1,5 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart'; 
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+
+import '../constants/constants.dart' as Constants;
 
 class ProductSlider extends StatefulWidget {
   final productsList;
@@ -23,21 +26,94 @@ class _MyWidgetState extends State<ProductSlider> {
       itemCount: productsCount,
       itemBuilder: (context, index, realIndex) {
         final int first = index;
-        final int second = index < productsCount - 1 ? first + 1 : productsCount;
+        final int second = first + 1;
         return Row(
-          children: [for(var i=4*first; i <= 4*second - 1 && i <= widget.productsList.length - 1; i+=1) i].map((idx) {
-            return idx != -1 ? Expanded(
+          children: [for(var i=4*first; i <= 4*second - 1; i+=1) i].map((idx) {
+            return idx < widget.productsList.length ? Expanded(
               flex: 1,
               child: Container(
                 margin: EdgeInsets.symmetric(horizontal: 10),
-                color: Colors.red,
-                child: Center(
-                  child: Text(widget.productsList[idx])
+                color: Colors.white,
+                child: Column(
+                  children: [
+                    Expanded(
+                      flex: 16,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                              Constants.blueGradientPath
+                            ),
+                            fit: BoxFit.cover
+                          )
+                        ),
+                      )
+                    ),
+                    Expanded(
+                      flex: 9,
+                      child: Container(
+                        child: Stack(
+                          children: [
+                            Positioned(
+                              top: 15,
+                              left: 15,
+                              child: Text(
+                                widget.productsList[idx],
+                                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
+                              )
+                            ),
+                            Positioned(
+                              top: 40,
+                              left: 15,
+                              child: Text(
+                                "5.99 RON",
+                                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                              )
+                            ),
+                            Positioned(
+                              top: 75,
+                              left: 15,
+                              child: Text(
+                                "Distribuitor: Dedeman",
+                                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                              )
+                            ),
+                            Positioned(
+                              top: 100,
+                              left: 15,
+                              child: Text(
+                                "Categorie: Acoperiș",
+                                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                              )
+                            ),
+                            Positioned(
+                              bottom: 15,
+                              left: 15,
+                              child: Text(
+                                "3 review-uri",
+                                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                              )
+                            ),
+                            Positioned(
+                              bottom: 15,
+                              right: 15,
+                              child: Container(
+                                width: 30,
+                              ),
+                            )
+                          ]
+                        )
+                      )
+                    )
+                  ]
                 )
               ),
             )
             :
-            Container();
+            Expanded(
+              flex: 1,
+              child: Container(),
+            );
           }).toList(),
         );
       },

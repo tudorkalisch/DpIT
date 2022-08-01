@@ -9,6 +9,10 @@ import './recommendedcategory.dart';
 
 import './categorybar.dart';
 
+import './contactcard.dart';
+
+import './adbar.dart';
+
 class LandingPage extends StatefulWidget {
   @override
   State<LandingPage> createState() => _MyWidgetState();
@@ -104,10 +108,14 @@ class _MyWidgetState extends State<LandingPage> {
         width: double.infinity,
         height: double.infinity,
         color: Color(0xfff2f2f7),
-        child: Column(
+        child: ListView(
           children: [
             CategoryBar(),
-            ReccomendedCategory(category: "Tencuieli")
+            AdBar(),
+            ReccomendedCategory(category: "Tencuieli"),
+            ReccomendedCategory(category: "Tencuieli"),
+            ReccomendedCategory(category: "Tencuieli"),
+            ContactCard()
           ],
         )
       ),

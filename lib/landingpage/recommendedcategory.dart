@@ -21,10 +21,10 @@ class ReccomendedCategory extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(top: 40, left: 60, right: 60),
+          padding: EdgeInsets.only(top: 40, left: 60, right: 60, bottom: 35),
           child: Container(
             width: double.infinity,
-            height: 300,
+            height: 470,
             child: ProductSlider(productsList: ["Lemn", "Tencuieli", "Caramida", "Var", "Prafoase", "Suruburi"])
           )
         )

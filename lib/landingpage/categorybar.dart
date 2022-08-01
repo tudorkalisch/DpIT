@@ -7,7 +7,7 @@ import './categorylist.dart';
 class CategoryBar extends StatelessWidget {
   const CategoryBar({Key? key}) : super(key: key);
 
-  final listOfCategories = const ["Zidărie", "Termoizolații", "Termopane", "Ciment", "Prăfoase", "Acoperiș", "Termopan", "Plexiglas", "Lemn", "Oxid"];
+  final listOfCategories = const ["Zidărie", "Termoizolații", "Termopane", "Ciment", "Prăfoase", "Acoperiș", "Termopan", "Plexiglas", "Lemn"];
 
   @override
   Widget build(BuildContext context) {
