@@ -8,6 +8,8 @@ import 'package:email_validator/email_validator.dart';
 
 import 'package:flutter/cupertino.dart';
 
+import '../registerpage/registerpage.dart';
+
 class LoginPageForm extends StatefulWidget {
   final screenWidth;
   final screenHeight;
@@ -215,7 +217,9 @@ class _MyWidgetState extends State<LoginPageForm> {
                             primary: Colors.black,
                             textStyle: TextStyle(fontSize: 18)
                           ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => RegisterPage()));
+                        },
                         child: const Text("Create account"))))
           ])),
     );

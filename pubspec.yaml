@@ -61,6 +61,10 @@ flutter:
     - assets/registerpagegradient.png
     - assets/registerpageimage.png
     - assets/bluelogo.png
+    - assets/loginpageimage.png
+    - assets/bluelogo-nobg.png
+    - assets/bluegradient.png
+    - assets/bluelogo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

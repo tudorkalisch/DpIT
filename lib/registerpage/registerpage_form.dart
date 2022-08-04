@@ -222,7 +222,7 @@ class _MyWidgetState extends State<RegisterPageForm> {
                     "Sign up",
                   style: TextStyle(fontSize: widget.screenWidth * 0.0115),
                   ),
-                  color: Color.fromARGB(255, 42, 157, 143),
+                  color: Color(Constants.blueButtonColor),
                   onPressed: register,
                 ),
               ),
@@ -230,15 +230,17 @@ class _MyWidgetState extends State<RegisterPageForm> {
             Positioned(
               bottom: widget.screenHeight * 0.1,
               child: Container(
-                width: widget.screenWidth * 0.15,
+                width: widget.screenWidth * 0.12,
                 height: widget.screenHeight * 0.04,
                 child: TextButton(
                   style: TextButton.styleFrom(
                     textStyle: TextStyle(
-                      color: Color.fromARGB(255, 42, 157, 143),
+                      color: Color(Constants.blueButtonColor),
                     )
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
                   child: const Text("Already have an account?")
                 ),
               )
