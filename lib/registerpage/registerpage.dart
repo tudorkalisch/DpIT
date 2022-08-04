@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'registerpage_form.dart';
 import 'registerpage_image.dart';
 
+import '../constants/constants.dart' as Constants;
+
 class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,7 @@ class RegisterPage extends StatelessWidget {
             width: double.infinity,
             decoration: const BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage("assets/registerpagegradient.png"),
+                    image: AssetImage(Constants.registerPageGradientPath),
                     fit: BoxFit.cover)),
             child: Center(
                 child: Container(

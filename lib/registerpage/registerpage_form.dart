@@ -18,17 +18,18 @@ class RegisterPageForm extends StatefulWidget {
 }
 
 class _MyWidgetState extends State<RegisterPageForm> {
+  static const _baseOutlineColor = Color(0xffb9b9b9);
 
   final mailController = TextEditingController();
   final passwordController = TextEditingController();
-  final secondPasswordController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
 
-  var _outlineBorderColorMail = Color(0xffb9b9b9);
-  var _outlineBorderColorPassword = Color(0xffb9b9b9);
-  var _outlineBorderColorPasswordSecond = Color(0xffb9b9b9);
+  var _outlineBorderColorMail = _baseOutlineColor;
+  var _outlineBorderColorPassword = _baseOutlineColor;
+  var _outlineBorderColorConfirmPassword = _baseOutlineColor;
 
   bool _validateStructure(password) {
-      RegExp regExp = new RegExp((Constants.pattern));
+      RegExp regExp = new RegExp((Constants.passwordPattern));
       return regExp.hasMatch(password);
   }
 
@@ -40,18 +41,18 @@ class _MyWidgetState extends State<RegisterPageForm> {
     }
     else {
       setState(() {
-        _outlineBorderColorPassword = Color(0xffb9b9b9);
+        _outlineBorderColorPassword = _baseOutlineColor;
       });
     }
     
-    if (!_validateStructure(this.secondPasswordController.text)) {
+    if (!_validateStructure(this.confirmPasswordController.text)) {
       setState(() {
-        _outlineBorderColorPasswordSecond = Colors.red; 
+        _outlineBorderColorConfirmPassword = Colors.red; 
       });
     }
     else {
       setState(() {
-        _outlineBorderColorPasswordSecond = Color(0xffb9b9b9);
+        _outlineBorderColorConfirmPassword = _baseOutlineColor;
       });
     }
     
@@ -62,7 +63,7 @@ class _MyWidgetState extends State<RegisterPageForm> {
     }
     else {
       setState(() {
-        _outlineBorderColorMail = Color(0xffb9b9b9);
+        _outlineBorderColorMail = _baseOutlineColor;
       });
     }
   }
@@ -82,7 +83,7 @@ class _MyWidgetState extends State<RegisterPageForm> {
             Positioned(
               top: widget.screenHeight * 0.07,
               child: DefaultTextStyle(
-                style: TextStyle(color: Color.fromARGB(255, 27, 21, 18), fontSize: widget.screenWidth * 0.0275, fontWeight: FontWeight.bold),
+                style: TextStyle(color: Color(Constants.blueTextColor), fontSize: widget.screenWidth * 0.0275, fontWeight: FontWeight.bold),
                 child: Text(
                   "Register",
                   textAlign: TextAlign.center,
@@ -92,7 +93,7 @@ class _MyWidgetState extends State<RegisterPageForm> {
             Positioned(
               top: widget.screenHeight * 0.15,
               child: DefaultTextStyle(
-                style: TextStyle(color: Color.fromARGB(255, 27, 21, 18), fontSize: widget.screenWidth * 0.0135, fontWeight: FontWeight.w500),
+                style: TextStyle(color: Color(Constants.blueTextColor), fontSize: widget.screenWidth * 0.0135, fontWeight: FontWeight.w500),
                 child: Text(
                   "Welcome!",
                   textAlign: TextAlign.center,
@@ -102,7 +103,7 @@ class _MyWidgetState extends State<RegisterPageForm> {
             Positioned(
               top: widget.screenHeight * 0.19,
               child: DefaultTextStyle(
-                style: TextStyle(color: Color.fromARGB(255, 27, 21, 18), fontSize: widget.screenWidth * 0.0115),
+                style: TextStyle(color: Color(Constants.blueTextColor), fontSize: widget.screenWidth * 0.0115),
                 child: Text(
                   "Please register for a better experience.",
                   textAlign: TextAlign.center,
@@ -120,7 +121,7 @@ class _MyWidgetState extends State<RegisterPageForm> {
                     "Supplier",
                   style: TextStyle(fontSize: widget.screenWidth * 0.0115),
                   ),
-                  color: Color.fromARGB(255, 42, 157, 143),
+                  color: Color(Constants.blueButtonColor),
                   onPressed: (){},
                 ),
               ),
@@ -136,7 +137,7 @@ class _MyWidgetState extends State<RegisterPageForm> {
                     "Customer",
                   style: TextStyle(fontSize: widget.screenWidth * 0.0115),
                   ),
-                  color: Color.fromARGB(255, 42, 157, 143),
+                  color: Color(Constants.blueButtonColor),
                   onPressed: (){},
                 ),
               ),
@@ -197,17 +198,17 @@ class _MyWidgetState extends State<RegisterPageForm> {
                   decoration: InputDecoration(
                       focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                          color: _outlineBorderColorPasswordSecond
+                          color: _outlineBorderColorConfirmPassword
                         )
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                          color: _outlineBorderColorPasswordSecond
+                          color: _outlineBorderColorConfirmPassword
                         )
                       ),
                     hintText: "Confirm Password"
                   ),
-                  controller: secondPasswordController,
+                  controller: confirmPasswordController,
                 )
               )
             ),

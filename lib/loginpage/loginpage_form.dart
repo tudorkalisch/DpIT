@@ -19,9 +19,10 @@ class LoginPageForm extends StatefulWidget {
 }
 
 class _MyWidgetState extends State<LoginPageForm> {
+  static const _baseOutlineColor = Color(0xffb9b9b9);
 
-  var _outlineColorMail = Color(0xffb9b9b9);
-  var _outlineColorPassword = Color(0xffb9b9b9);
+  var _outlineColorMail = _baseOutlineColor;
+  var _outlineColorPassword = _baseOutlineColor;
 
   bool _hiddenPassword = false;
 
@@ -37,7 +38,7 @@ class _MyWidgetState extends State<LoginPageForm> {
   }
 
   bool _validateStructure(String userPassword) {
-      RegExp regExp = new RegExp((Constants.pattern));
+      RegExp regExp = new RegExp((Constants.passwordPattern));
       return regExp.hasMatch(userPassword);
     }
 
@@ -49,7 +50,7 @@ class _MyWidgetState extends State<LoginPageForm> {
       }
       else {
         setState(() {
-          _outlineColorPassword = Color(0xffb9b9b9);
+          _outlineColorPassword = _baseOutlineColor;
         });
       }
       if(!EmailValidator.validate(mailController.text)) {
@@ -59,7 +60,7 @@ class _MyWidgetState extends State<LoginPageForm> {
       }
       else {
         setState(() {
-          _outlineColorMail = Color(0xffb9b9b9);
+          _outlineColorMail = _baseOutlineColor;
         });
       }
   }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constants/constants.dart' as Constants;
+
 class RegisterPageLogo extends StatelessWidget {
   final screenWidth;
   final screenHeight;
@@ -12,7 +14,7 @@ class RegisterPageLogo extends StatelessWidget {
       right: 0,
       top: screenHeight * 0.016,
       child: Image.asset(
-        "assets/bluelogo.png",
+        Constants.blueLogoPath,
         scale: 1 / screenWidth * 22500
       )
     );
