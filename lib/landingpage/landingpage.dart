@@ -111,7 +111,6 @@ class _MyWidgetState extends State<LandingPage> {
         child: ListView(
           children: [
             CategoryBar(),
-            AdBar(),
             ReccomendedCategory(category: "Tencuieli"),
             ReccomendedCategory(category: "Tencuieli"),
             ReccomendedCategory(category: "Tencuieli"),
