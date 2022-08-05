@@ -213,7 +213,7 @@ class _MyWidgetState extends State<RegisterPageForm> {
               )
             ),
             Positioned(
-              top: widget.screenHeight * 0.61,
+              top: widget.screenHeight * 0.625,
               child: SizedBox(
                 height: widget.screenHeight * 0.06,
                 width: widget.screenWidth * 0.095,
