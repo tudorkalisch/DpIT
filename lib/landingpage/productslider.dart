@@ -16,6 +16,8 @@ class ProductSlider extends StatefulWidget {
 class _MyWidgetState extends State<ProductSlider> {
   final buttonCarouselController = CarouselController();
 
+  static const buttonColor = 0xffe0e0e0;
+
   @override
   Widget build(BuildContext context) {
     int productsCount = (widget.productsList.length / 4).round();
@@ -24,11 +26,26 @@ class _MyWidgetState extends State<ProductSlider> {
           padding: EdgeInsets.only(right: 15),
           child: Container(
               width: 35,
-              child: RaisedButton(
+              height: 35,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(100)),
+                color: Color(buttonColor)
+              ),
+              child: TextButton(
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(100))
+                ))
+              ),
                 onPressed: () => buttonCarouselController.nextPage(
                     duration: Duration(milliseconds: 300),
                     curve: Curves.linear),
-                child: Text('←'),
+                child: Text(
+                  '←',
+                  style: TextStyle(color: Colors.black),
+                  textAlign: TextAlign.center,
+                ),
               ))),
       Expanded(
         child: CarouselSlider.builder(
@@ -130,10 +147,27 @@ class _MyWidgetState extends State<ProductSlider> {
           padding: EdgeInsets.only(left: 15),
           child: Container(
             width: 35,
-            child: RaisedButton(
+            height: 35,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(100)),
+              color: Color(buttonColor)
+            ),
+            child: TextButton(
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(100))
+                ))
+              ),
               onPressed: () => buttonCarouselController.nextPage(
                   duration: Duration(milliseconds: 300), curve: Curves.linear),
-              child: Text('→'),
+              child: Text(
+              '→',
+              style: TextStyle(
+                color: Colors.black
+              ),
+              textAlign: TextAlign.center,
+              )
             ),
           ))
     ]);
