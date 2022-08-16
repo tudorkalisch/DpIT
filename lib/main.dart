@@ -1,3 +1,4 @@
+import 'package:buildnow/supplierprofile/supplierprofilepage.dart';
 import 'package:flutter/material.dart';
 
 import 'loginpage/loginpage.dart';
@@ -20,7 +21,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: LoginPage()
+        home: SupplierProfilePage()
     );
   }
 }
