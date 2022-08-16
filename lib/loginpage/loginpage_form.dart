@@ -8,6 +8,8 @@ import 'package:email_validator/email_validator.dart';
 
 import 'package:flutter/cupertino.dart';
 
+import '../registerpage/registerpage.dart';
+
 class LoginPageForm extends StatefulWidget {
   final screenWidth;
   final screenHeight;
@@ -19,9 +21,10 @@ class LoginPageForm extends StatefulWidget {
 }
 
 class _MyWidgetState extends State<LoginPageForm> {
+  static const _baseOutlineColor = Color(0xffb9b9b9);
 
-  var _outlineColorMail = Color(0xffb9b9b9);
-  var _outlineColorPassword = Color(0xffb9b9b9);
+  var _outlineColorMail = _baseOutlineColor;
+  var _outlineColorPassword = _baseOutlineColor;
 
   bool _hiddenPassword = false;
 
@@ -37,21 +40,29 @@ class _MyWidgetState extends State<LoginPageForm> {
   }
 
   bool _validateStructure(String userPassword) {
-      String pattern =
-          r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
-      RegExp regExp = new RegExp((pattern));
+      RegExp regExp = new RegExp((Constants.passwordPattern));
       return regExp.hasMatch(userPassword);
     }
 
-    logIn() {
+  logIn() {
       if (!_validateStructure(passwordController.text)) {
         setState(() {
           _outlineColorPassword = Colors.red;
         });
       }
+      else {
+        setState(() {
+          _outlineColorPassword = _baseOutlineColor;
+        });
+      }
       if(!EmailValidator.validate(mailController.text)) {
         setState(() {
           _outlineColorMail = Colors.red;
+        });
+      }
+      else {
+        setState(() {
+          _outlineColorMail = _baseOutlineColor;
         });
       }
   }
@@ -206,7 +217,9 @@ class _MyWidgetState extends State<LoginPageForm> {
                             primary: Colors.black,
                             textStyle: TextStyle(fontSize: 18)
                           ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => RegisterPage()));
+                        },
                         child: const Text("Create account"))))
           ])),
     );
