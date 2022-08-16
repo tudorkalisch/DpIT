@@ -1,4 +1,6 @@
 import 'package:buildnow/loginpage/loginpage.dart';
+import 'package:buildnow/register_supplier/suppl_registerpage_suppl.dart';
+import 'package:buildnow/registerpage/registerpage_form.dart';
 import 'package:flutter/material.dart';
 
 import 'registerpage/registerpage.dart';
@@ -22,7 +24,7 @@ class _MyAppState extends State<MyApp> {
 
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: LoginPage()
+        home: SupplRegisterPage()
     );
   }
 }
