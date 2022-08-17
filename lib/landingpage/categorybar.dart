@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 
 import './category.dart';
@@ -5,12 +7,16 @@ import './category.dart';
 import './categorylist.dart';
 
 class CategoryBar extends StatelessWidget {
-  const CategoryBar({Key? key}) : super(key: key);
+  const CategoryBar({Key? key, screenWidth}) : super(key: key);
 
   final listOfCategories = const ["Zidărie", "Termoizolații", "Termopane", "Ciment", "Prăfoase", "Acoperiș", "Termopan", "Plexiglas", "Lemn"];
 
   @override
   Widget build(BuildContext context) {
+    final barWidth = MediaQuery.of(context).size.width - 180;
+
+    final nrOfCategories = barWidth / 165;
+
     return Container(
       width: double.infinity,
       height: 65,
@@ -19,7 +25,7 @@ class CategoryBar extends StatelessWidget {
         child: Row(
           children: [
             CategoryList(),
-            for (var category in listOfCategories) Category(categoryName: category),
+            for (var i = 0; i < listOfCategories.length && i <= nrOfCategories; i++) Category(categoryName: listOfCategories[i]),
           ],
         )
       )
