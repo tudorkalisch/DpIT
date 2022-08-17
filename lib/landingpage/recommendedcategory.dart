@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import './productslider.dart';
 
-class ReccomendedCategory extends StatelessWidget {
+class RecommendedCategory extends StatelessWidget {
   final category;
   final products;
-  const ReccomendedCategory({Key? key, this.category, this.products}) : super(key: key);
+  const RecommendedCategory({Key? key, this.category, this.products}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class ReccomendedCategory extends StatelessWidget {
           child: Container(
             width: double.infinity,
             height: 470,
-            child: ProductSlider(productsList: ["Lemn", "Tencuieli", "Caramida", "Var", "Prafoase", "Suruburi"])
+            child: ProductSlider(productsList: products)
           )
         )
       ]

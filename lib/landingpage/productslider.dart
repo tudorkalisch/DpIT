@@ -83,7 +83,7 @@ class _MyWidgetState extends State<ProductSlider> {
                                         top: 15,
                                         left: 15,
                                         child: Text(
-                                          widget.productsList[idx],
+                                          widget.productsList[idx].name,
                                           style: TextStyle(
                                               fontSize: 22,
                                               fontWeight: FontWeight.w600),
@@ -92,7 +92,7 @@ class _MyWidgetState extends State<ProductSlider> {
                                         top: 40,
                                         left: 15,
                                         child: Text(
-                                          "5.99 RON",
+                                          widget.productsList[idx].price + " RON",
                                           style: TextStyle(
                                               fontSize: 18,
                                               fontWeight: FontWeight.w500),
@@ -101,7 +101,7 @@ class _MyWidgetState extends State<ProductSlider> {
                                         top: 75,
                                         left: 15,
                                         child: Text(
-                                          "Distribuitor: Dedeman",
+                                          "Distribuitor: " + widget.productsList[idx].supplierName,
                                           style: TextStyle(
                                               fontSize: 20,
                                               fontWeight: FontWeight.w600),
@@ -110,7 +110,7 @@ class _MyWidgetState extends State<ProductSlider> {
                                         top: 100,
                                         left: 15,
                                         child: Text(
-                                          "Categorie: Acoperiș",
+                                          "Categorie: " + widget.productsList[idx].subCategory,
                                           style: TextStyle(
                                               fontSize: 18,
                                               fontWeight: FontWeight.w500),
@@ -119,7 +119,7 @@ class _MyWidgetState extends State<ProductSlider> {
                                         bottom: 15,
                                         left: 15,
                                         child: Text(
-                                          "3 review-uri",
+                                          widget.productsList[idx].nrOfReviews + " review-uri",
                                           style: TextStyle(
                                               fontSize: 18,
                                               fontWeight: FontWeight.w500),

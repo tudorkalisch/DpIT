@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constants/constants.dart' as Constants;
+
 class Category extends StatelessWidget {
   final categoryName;
 
@@ -12,7 +14,7 @@ class Category extends StatelessWidget {
         Container(
           height: double.infinity,
           width: 2,
-          child: Divider(height: 2, thickness: 28, color: Color(0xffd6d6d6)),
+          child: Divider(height: 2, thickness: 28, color: Color(Constants.greyUsedInDivider)),
         ),
         Container(
           height: double.infinity,

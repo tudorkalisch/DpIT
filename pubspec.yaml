@@ -65,7 +65,7 @@ flutter:
     - assets/bluegradient.png
     - assets/loginpageimage.png
     - assets/bluelogo.png
-    - assets/bluelogo-nobg.png
+    - assets/bluelogonobackground.png
     - assets/homeicon.png
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,3 +1,4 @@
+import 'package:buildnow/landingpage/categorylist.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -15,12 +16,20 @@ import './adbar.dart';
 
 import '../appbar/appbar.dart';
 
+import '../classes/product.dart';
+import '../classes/recommendedcategoryclass.dart';
+
 class LandingPage extends StatefulWidget {
   @override
   State<LandingPage> createState() => _MyWidgetState();
 }
 
 class _MyWidgetState extends State<LandingPage> {
+  List<RecommendedCategoryClass> RecommendedCategoryList = [RecommendedCategoryClass(
+    name: "Tencuieli",
+    products: [Product(name: "Tencuiala", price: "25", supplierName: "Dedeman", subCategory: "Tencuieli ok", nrOfReviews: "5")]
+  )];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,13 +37,11 @@ class _MyWidgetState extends State<LandingPage> {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        color: Color(0xfff2f2f7),
+        color: Color(Constants.backgroundColor),
         child: ListView(
           children: [
             CategoryBar(),
-            ReccomendedCategory(category: "Tencuieli"),
-            ReccomendedCategory(category: "Tencuieli"),
-            ReccomendedCategory(category: "Tencuieli"),
+            for (var RecommendedCategoryInfo in RecommendedCategoryList) RecommendedCategory(category: RecommendedCategoryInfo.name, products: RecommendedCategoryInfo.products),
             ContactCard()
           ],
         )

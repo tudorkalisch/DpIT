@@ -26,7 +26,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
               child: Row(
         children: [
           Image.asset(
-            Constants.blueLogoNoBgPath,
+            Constants.blueLogoNoBackgroundPath,
             scale: 6,
           ),
           Padding(
