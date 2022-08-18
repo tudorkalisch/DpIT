@@ -5,6 +5,8 @@ import 'registerpage/registerpage.dart';
 
 import 'landingpage/landingpage.dart';
 
+import 'supplierlandingpage/supplierlandingpage.dart';
+
 void main() {
   runApp(MyApp());
 }
