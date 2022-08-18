@@ -11,9 +11,15 @@ const greyButtonColor = 0xffe0e0e0;
 
 //PATHS
 
+const orangeLogoPath = "assets/bluelogo.png";
+const registerPageGradientPath = "assets/registerpagegradient.png";
+const registerPageImagePath = "assets/registerpageimage.png";
 const blueLogoPath = "assets/bluelogo.png";
 const blueGradientPath = "assets/bluegradient.png";
 const loginPageImagePath = "assets/loginpageimage.png";
-const passwordPattern = r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
 const blueLogoNoBackgroundPath = "assets/bluelogonobackground.png";
 const homeIconPath = "assets/homeicon.png";
+
+//PATTERNS
+
+const passwordPattern = r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';

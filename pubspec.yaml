@@ -62,8 +62,12 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/bluegradient.png
+    - assets/registerpagegradient.png
+    - assets/registerpageimage.png
+    - assets/bluelogo.png
     - assets/loginpageimage.png
+    - assets/bluelogo-nobg.png
+    - assets/bluegradient.png
     - assets/bluelogo.png
     - assets/bluelogonobackground.png
     - assets/homeicon.png
