@@ -45,7 +45,6 @@ class _SupplierLanding extends State<SupplierLanding> {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                      //border: Border.all(width: 1.0),
                       borderRadius: BorderRadius.all(Radius.circular(10.0)),
                       color: const Color(Constants.topContainersBlue).withOpacity(0.35)),
                   margin: EdgeInsets.only(top: screenHeight * 0.04),
@@ -228,7 +227,6 @@ class _SupplierLanding extends State<SupplierLanding> {
                                         style: TextStyle(
                                             color:
                                                 const Color.fromARGB(255, 10, 10, 10),
-                                            //fontStyle: FontStyle.italic,
                                             fontSize:
                                                 screenHeight * 0.15 * 0.15),
                                         dropdownValueforIncome),

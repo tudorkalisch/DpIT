@@ -1,5 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:buildnow/constants/constants.dart' as Constants;
 
 class _BarChart extends StatelessWidget {
   _BarChart({Key? key}) : super(key: key);
@@ -44,7 +45,7 @@ class _BarChart extends StatelessWidget {
 
   Widget getTitles(double value, TitleMeta meta) {
     const style = TextStyle(
-      color: Color(0xff7589a2),
+      color: Color(Constants.barChartTitleColor),
       fontWeight: FontWeight.bold,
       fontSize: 14,
     );
@@ -106,7 +107,7 @@ class _BarChart extends StatelessWidget {
         show: false,
       );
 
-  final _barsColor = Color.fromARGB(255, 235, 130, 11);
+  final _barsColor = const Color(Constants.barChartBarColor);
 
   List<BarChartGroupData> get barGroups => [
         BarChartGroupData(

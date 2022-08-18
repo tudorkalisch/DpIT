@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:buildnow/constants/constants.dart' as Constants;
 
 
 class PieData {
   static List<Data> data = [
-    Data(name: 'Crestere', percent: 65, color: const Color(0xff5ab6ac)),
+    Data(name: 'Crestere', percent: 65, color: const Color(Constants.pieChartFillColor)),
     Data(name: '', percent: 35, color:  Colors.white),
   ];
 }
