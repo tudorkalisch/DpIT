@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import '../constants/constants.dart' as Constants;
 
 import '../constants/constants.dart' as Constants;
 
@@ -16,8 +17,6 @@ class ProductSlider extends StatefulWidget {
 class _MyWidgetState extends State<ProductSlider> {
   final buttonCarouselController = CarouselController();
 
-  static const buttonColor = 0xffe0e0e0;
-
   @override
   Widget build(BuildContext context) {
     int productsCount = (widget.productsList.length / 4).round();
@@ -29,7 +28,7 @@ class _MyWidgetState extends State<ProductSlider> {
               height: 35,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(100)),
-                color: Color(buttonColor)
+                color: Color(Constants.greyButtonColor)
               ),
               child: TextButton(
               style: ButtonStyle(
@@ -150,7 +149,7 @@ class _MyWidgetState extends State<ProductSlider> {
             height: 35,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(100)),
-              color: Color(buttonColor)
+              color: Color(Constants.greyButtonColor)
             ),
             child: TextButton(
               style: ButtonStyle(
