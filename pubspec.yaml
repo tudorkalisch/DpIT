@@ -34,6 +34,10 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  carousel_slider: ^4.1.1
+  flutter_rating_bar: ^4.0.1
+  iconamoon: ^0.0.3
+  icons_plus: ^2.0.1
 
   carousel_slider: ^4.1.1
   flutter_rating_bar: ^4.0.1
@@ -74,6 +78,10 @@ flutter:
     - assets/bluelogonobackground.png
     - assets/homeicon.png
     - assets/Bricks.png
+    - assets/caramida.png
+    - assets/bluelogonobackground.png
+    - assets/homeicon.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

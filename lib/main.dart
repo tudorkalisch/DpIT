@@ -1,4 +1,7 @@
 import 'package:buildnow/loginpage/loginpage.dart';
+import 'package:buildnow/register_supplier/supplier_registerpage.dart';
+import 'package:buildnow/registerpage/registerpage_form.dart';
+import 'package:buildnow/productpage/productpage.dart';
 import 'package:flutter/material.dart';
 
 import 'registerpage/registerpage.dart';
@@ -25,7 +28,7 @@ class _MyAppState extends State<MyApp> {
 
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: LoginPage()
+        home: LandingPage()
     );
   }
 }
