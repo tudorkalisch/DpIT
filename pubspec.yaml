@@ -35,6 +35,13 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
 
+  carousel_slider: ^4.1.1
+  flutter_rating_bar: ^4.0.1
+  iconamoon: ^0.0.3
+  icons_plus: ^2.0.1
+  fl_chart: ^0.55.0
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -45,9 +52,6 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
-  fl_chart: ^0.55.0
-  iconamoon: ^0.0.3
-  icons_plus: ^2.0.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -65,9 +69,10 @@ flutter:
     - assets/registerpageimage.png
     - assets/bluelogo.png
     - assets/loginpageimage.png
-    - assets/bluelogo-nobg.png
     - assets/bluegradient.png
     - assets/bluelogo.png
+    - assets/bluelogonobackground.png
+    - assets/homeicon.png
     - assets/Bricks.png
 
   # An image asset can refer to one or more resolution-specific "variants", see

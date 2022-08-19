@@ -5,7 +5,8 @@ import 'registerpage/registerpage.dart';
 
 import 'landingpage/landingpage.dart';
 
-import 'supplierlandingpage/supplierlandingpage.dart';
+import 'package:buildnow/supplierlandingpage/supplierlandingpage.dart';
+
 
 void main() {
   runApp(MyApp());
