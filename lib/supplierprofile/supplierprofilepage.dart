@@ -1,5 +1,8 @@
+import 'package:buildnow/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'AppBar.dart';
+
+import '../constants/constants.dart';
 
 class SupplierProfilePage extends StatefulWidget {
   @override
@@ -11,8 +14,7 @@ class _SupplierProfilePage extends State<SupplierProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: buildAppBar(context),
-        backgroundColor: Color(0xE7052C7),
-        // Scroll view - nu merge
+        backgroundColor: backgroundColor,
         body: ListView(
           children: <Widget>[
             Padding(
@@ -27,7 +29,7 @@ class _SupplierProfilePage extends State<SupplierProfilePage> {
                         blurRadius: 2.0,
                         spreadRadius: 0.0,
                         offset:
-                            Offset(2.0, 2.0), // shadow direction: bottom right
+                            Offset(2.0, 2.0), 
                       )
                     ],
                   ),
@@ -80,7 +82,7 @@ class _SupplierProfilePage extends State<SupplierProfilePage> {
                         blurRadius: 2.0,
                         spreadRadius: 0.0,
                         offset:
-                            Offset(2.0, 2.0), // shadow direction: bottom right
+                            Offset(2.0, 2.0), 
                       )
                     ],
                   ),
@@ -207,7 +209,7 @@ class _SupplierProfilePage extends State<SupplierProfilePage> {
                           blurRadius: 2.0,
                           spreadRadius: 0.0,
                           offset: Offset(
-                              2.0, 2.0), // shadow direction: bottom right
+                              2.0, 2.0), 
                         )
                       ],
                     ),
@@ -367,7 +369,7 @@ class _SupplierProfilePage extends State<SupplierProfilePage> {
                       blurRadius: 2.0,
                       spreadRadius: 0.0,
                       offset:
-                          Offset(2.0, 2.0), // shadow direction: bottom right
+                          Offset(2.0, 2.0), 
                     )
                   ],
                 ),
@@ -424,7 +426,7 @@ class _SupplierProfilePage extends State<SupplierProfilePage> {
             Container(
               decoration: BoxDecoration(
                   image: DecorationImage(
-                image: AssetImage('assets/bluegradient.png'),
+                image: AssetImage(blueGradientPath),
                 fit: BoxFit.fill,
               )),
               child: Column(
