@@ -1,6 +1,6 @@
 import 'package:buildnow/constants/constants.dart';
 import 'package:flutter/material.dart';
-import 'AppBar.dart';
+import '../appbar/appbar.dart';
 
 import '../constants/constants.dart';
 
@@ -13,8 +13,8 @@ class _SupplierProfilePage extends State<SupplierProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: buildAppBar(context),
-        backgroundColor: backgroundColor,
+        appBar: DefaultAppBar(appBar: AppBar()),
+        backgroundColor: Color(backgroundColor),
         body: ListView(
           children: <Widget>[
             Padding(
