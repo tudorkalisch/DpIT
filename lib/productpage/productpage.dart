@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'AppBar.dart';
+import '../appbar/appbar.dart';
 import '../constants/constants.dart';
 
 class ProductPage extends StatefulWidget {
@@ -18,7 +18,7 @@ class _ProductPageState extends State<ProductPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(context),
+      appBar: DefaultAppBar(appBar: AppBar()),
       backgroundColor: background_color,
       body: ListView(
         children: [
@@ -117,7 +117,7 @@ class _ProductPageState extends State<ProductPage> {
                                                   color: Colors.black,
                                                   fontSize: 16),
                                             ),
-                                            for(var i = 0; i < 5; i++)
+                                            for (var i = 0; i < 5; i++)
                                               Icon(
                                                 Icons.star,
                                                 color: Colors.yellow,
