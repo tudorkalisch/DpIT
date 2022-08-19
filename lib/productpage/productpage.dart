@@ -19,7 +19,7 @@ class _ProductPageState extends State<ProductPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: DefaultAppBar(appBar: AppBar()),
-      backgroundColor: background_color,
+      backgroundColor: Color(backgroundColor),
       body: ListView(
         children: [
           Padding(

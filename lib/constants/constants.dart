@@ -21,11 +21,7 @@ const blueGradientPath = "assets/bluegradient.png";
 const loginPageImagePath = "assets/loginpageimage.png";
 const blueLogoNoBackgroundPath = "assets/bluelogonobackground.png";
 const homeIconPath = "assets/homeicon.png";
-
 const brickImage = "assets/caramida.png";
-
-//BACKGROUND COLOR
-const background_color = Color(0xE7052C7);
 
 //PATTERNS
 
