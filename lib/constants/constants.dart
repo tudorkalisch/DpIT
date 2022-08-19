@@ -19,6 +19,8 @@ const registerPageImagePath = "assets/registerpageimage.png";
 const blueLogoPath = "assets/bluelogo.png";
 const blueGradientPath = "assets/bluegradient.png";
 const loginPageImagePath = "assets/loginpageimage.png";
+
+// COLORS
 const blueLogoNoBackgroundPath = "assets/bluelogonobackground.png";
 const homeIconPath = "assets/homeicon.png";
 const brickImage = "assets/caramida.png";
