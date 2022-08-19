@@ -25,6 +25,9 @@ const blueLogoNoBackgroundPath = "assets/bluelogonobackground.png";
 const homeIconPath = "assets/homeicon.png";
 const brickImage = "assets/caramida.png";
 
+//COLORS
+const buttonColor = Color.fromARGB(255, 42, 157, 143);
+
 //PATTERNS
 
 const passwordPattern = r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
