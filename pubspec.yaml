@@ -38,6 +38,8 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   iconamoon: ^0.0.3
   icons_plus: ^2.0.1
+  fl_chart: ^0.55.0
+
 
 dev_dependencies:
   flutter_test:
@@ -66,12 +68,14 @@ flutter:
     - assets/registerpageimage.png
     - assets/bluelogo.png
     - assets/loginpageimage.png
-    - assets/bluelogo-nobg.png
     - assets/bluegradient.png
     - assets/bluelogo.png
-    - assets/caramida.png
-    - assets/bluelogonobackground.png
     - assets/homeicon.png
+    - assets/bricks.png
+    - assets/caramida.png
+    - assets/whitelogonobackground.png
+    - assets/homeicon.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
