@@ -1,3 +1,4 @@
+import 'package:buildnow/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 AppBar buildAppBar(BuildContext context) {
@@ -9,7 +10,7 @@ AppBar buildAppBar(BuildContext context) {
     flexibleSpace: Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/bluegradient.png'), 
+              image: AssetImage(blueGradientPath), 
               fit: BoxFit.fill,
           )
       ),
@@ -17,7 +18,7 @@ AppBar buildAppBar(BuildContext context) {
     leading: Container(
       child: Row(
         children: [
-          Image.asset('assets/bluelogo.png'),
+          Image.asset(blueLogoNoBackgroundPath),
           Container(
             margin: EdgeInsets.fromLTRB(70, 0, 0, 0),
             padding: EdgeInsets.all(5),
