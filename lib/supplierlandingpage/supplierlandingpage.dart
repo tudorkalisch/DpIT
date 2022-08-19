@@ -5,8 +5,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:buildnow/supplierlandingpage/BarChart/barchart_improved.dart';
 import 'package:buildnow/constants/constants.dart' as Constants;
 import 'productlist_element.dart';
-
-import 'appbar.dart';
+import 'package:buildnow/appbar/appbar.dart';
 
 class SupplierLanding extends StatefulWidget {
   SupplierLanding({Key? key}) : super(key: key);

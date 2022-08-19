@@ -25,9 +25,13 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
         title: Container(
               child: Row(
         children: [
-          Image.asset(
-            Constants.blueLogoNoBackgroundPath,
-            scale: 6,
+          Padding(
+            padding: const EdgeInsets.only(top: 4),
+            child: Image.asset(
+              Constants.whiteLogoNoBackgroundPath,
+              fit: BoxFit.contain,
+              scale: 17,
+            ),
           ),
           Padding(
               padding: EdgeInsets.only(left: 120),
