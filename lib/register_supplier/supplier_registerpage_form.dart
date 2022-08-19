@@ -1,12 +1,13 @@
+import 'package:buildnow/constants/constants.dart';
 import 'package:flutter/material.dart';
 
-import 'suppl_registerpage_logo.dart';
+import 'supplier_registerpage_logo.dart';
 
-class SupplRegisterPageForm extends StatelessWidget {
+class SupplierRegisterPageForm extends StatelessWidget {
   final screenWidth;
   final screenHeight;
 
-  SupplRegisterPageForm({this.screenWidth, this.screenHeight});
+  SupplierRegisterPageForm({this.screenWidth, this.screenHeight});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class SupplRegisterPageForm extends StatelessWidget {
                     margin: EdgeInsets.only(right: 30),
                     child: DefaultTextStyle(
                       style: TextStyle(
-                        color: Color.fromARGB(255, 27, 21, 18), 
+                        color: Colors.black, 
                         fontSize: screenWidth * 0.0275, 
                         fontWeight: FontWeight.bold
                       ),
@@ -37,7 +38,7 @@ class SupplRegisterPageForm extends StatelessWidget {
                       )
                     )
                   ),
-                  SupplRegisterPageLogo(screenHeight: screenHeight, screenWidth: screenWidth),
+                  SupplierRegisterPageLogo(screenHeight: screenHeight, screenWidth: screenWidth),
                 ],
               ),
             ),
@@ -45,7 +46,7 @@ class SupplRegisterPageForm extends StatelessWidget {
               margin: EdgeInsets.fromLTRB(0, 5, 0, 5),
               child: DefaultTextStyle(
                 style: TextStyle(
-                  color: Color.fromARGB(255, 27, 21, 18), 
+                  color: Colors.black, 
                   fontSize: screenWidth * 0.0135, 
                   fontWeight: FontWeight.w500
                 ),
@@ -59,7 +60,7 @@ class SupplRegisterPageForm extends StatelessWidget {
               margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
               child: DefaultTextStyle(
                 style: TextStyle(
-                  color: Color.fromARGB(255, 27, 21, 18), 
+                  color: Colors.black, 
                   fontSize: screenWidth * 0.0115
                 ),
                 child: Text(
@@ -132,7 +133,7 @@ class SupplRegisterPageForm extends StatelessWidget {
                       color: Colors.white
                     ),
                   ),
-                  color: Color.fromARGB(255, 42, 157, 143),
+                  color: buttonColor,
                   onPressed: (){},
                 ),
               ),

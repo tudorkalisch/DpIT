@@ -1,9 +1,10 @@
+import 'package:buildnow/constants/constants.dart';
 import 'package:flutter/material.dart';
 
-import 'suppl_registerpage_form.dart';
-import 'suppl_registerpage_image.dart';
+import 'supplier_registerpage_form.dart';
+import 'supplier_registerpage_image.dart';
 
-class SupplRegisterPage extends StatelessWidget {
+class SupplierRegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -14,7 +15,7 @@ class SupplRegisterPage extends StatelessWidget {
             width: double.infinity,
             decoration: const BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage("assets/registerpagegradient.png"),
+                    image: AssetImage(registerPageGradientPath),
                     fit: BoxFit.cover)),
             child: Center(
                 child: Container(
@@ -24,14 +25,14 @@ class SupplRegisterPage extends StatelessWidget {
                     color: Colors.white,
                     child: Row(
                       children: [
-                        SupplRegisterPageImage(),
+                        SupplierRegisterPageImage(),
                         Expanded(
                             flex: 1,
                             child: Container(
                                 height: double.infinity,
                                 width: double.infinity,
-                                color: Color.fromARGB(255, 42, 157, 143))),
-                        SupplRegisterPageForm(
+                                color: buttonColor)),
+                        SupplierRegisterPageForm(
                             screenHeight: screenHeight,
                             screenWidth: screenWidth),
                       ],
