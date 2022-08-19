@@ -29,7 +29,7 @@ const blueGradientPath = "assets/bluegradient.png";
 const loginPageImagePath = "assets/loginpageimage.png";
 const whiteLogoNoBackgroundPath = "assets/whitelogonobackground.png";
 const homeIconPath = "assets/homeicon.png";
-const bricksImagePath = "assets/Bricks.png";
+const bricksImagePath = "assets/bricks.png";
 
 
 const brickImage = "assets/caramida.png";
