@@ -28,7 +28,7 @@ class _MyWidgetState extends State<ProductSlider> {
               height: 35,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(100)),
-                color: Color(Constants.greyButtonColor)
+                color: Color(Constants.greyButtonColor).withOpacity(0.55)
               ),
               child: TextButton(
               style: ButtonStyle(
@@ -40,11 +40,13 @@ class _MyWidgetState extends State<ProductSlider> {
                 onPressed: () => buttonCarouselController.nextPage(
                     duration: Duration(milliseconds: 300),
                     curve: Curves.linear),
-                child: Text(
-                  '←',
-                  style: TextStyle(color: Colors.black),
-                  textAlign: TextAlign.center,
-                ),
+                child: Center(
+                  child: Icon(
+                      Icons.arrow_back,
+                      color: Colors.black,
+                      size: 15
+                  ),
+                )
               ))),
       Expanded(
         child: CarouselSlider.builder(
@@ -149,7 +151,7 @@ class _MyWidgetState extends State<ProductSlider> {
             height: 35,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(100)),
-              color: Color(Constants.greyButtonColor)
+              color: Color(Constants.greyButtonColor).withOpacity(0.55)
             ),
             child: TextButton(
               style: ButtonStyle(
@@ -160,13 +162,13 @@ class _MyWidgetState extends State<ProductSlider> {
               ),
               onPressed: () => buttonCarouselController.nextPage(
                   duration: Duration(milliseconds: 300), curve: Curves.linear),
-              child: Text(
-              '→',
-              style: TextStyle(
-                color: Colors.black
-              ),
-              textAlign: TextAlign.center,
-              )
+              child: Center(
+                  child: Icon(
+                      Icons.arrow_forward,
+                      color: Colors.black,
+                      size: 15
+                  ),
+                )
             ),
           ))
     ]);
