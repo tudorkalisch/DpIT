@@ -1,7 +1,7 @@
-import 'package:buildnow/supplierprofile/supplierprofilepage.dart';
+import 'package:buildnow/loginpage/loginpage.dart';
 import 'package:flutter/material.dart';
 
-import 'loginpage/loginpage.dart';
+import 'registerpage/registerpage.dart';
 
 import 'landingpage/landingpage.dart';
 
@@ -19,9 +19,10 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   @override
+
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: LoginPage()
+        home: LandingPage()
     );
   }
 }
