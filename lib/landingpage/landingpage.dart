@@ -12,8 +12,6 @@ import './categorybar.dart';
 
 import './contactcard.dart';
 
-import './adbar.dart';
-
 import '../appbar/appbar.dart';
 
 import '../classes/product.dart';
