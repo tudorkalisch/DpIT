@@ -40,3 +40,8 @@ const buttonColor = Color.fromARGB(255, 42, 157, 143);
 //PATTERNS
 
 const passwordPattern = r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
+
+const tiglaImagePath = 'assets/tigla.png';
+const avatarImagePath = 'assets/Avatar18.png';
+const reviewStarFilled = 'assets/Review-star.png';
+const reviewStarEmpty = 'assets/ReviewStarEmpty.png';
