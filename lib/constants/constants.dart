@@ -43,5 +43,5 @@ const passwordPattern = r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~])
 
 const tiglaImagePath = 'assets/tigla.png';
 const avatarImagePath = 'assets/Avatar18.png';
-const ReviewStarFilled = 'assets/Review-star.png';
-const ReviewStarEmpty = 'assets/ReviewStarEmpty.png';
+const reviewStarFilled = 'assets/Review-star.png';
+const reviewStarEmpty = 'assets/ReviewStarEmpty.png';

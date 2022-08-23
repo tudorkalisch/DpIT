@@ -29,7 +29,7 @@ double ScreenWidth = 0;
               margin: EdgeInsets.only(top: 20, left: 40),
               child: CircleAvatar(
                 radius: 116,
-                backgroundColor: Color.fromARGB(255, 227, 226, 226),
+                backgroundColor: Color(greyUsedInDivider),
                 child: CircleAvatar(
                   backgroundColor: Colors.white,
                   backgroundImage: AssetImage(avatarImagePath),
@@ -178,7 +178,7 @@ double ScreenWidth = 0;
                   decoration: BoxDecoration(
                     color: Colors.white,
                     border:
-                        Border.all(color: Color.fromARGB(255, 227, 226, 226)),
+                        Border.all(color: Color(greyUsedInDivider)),
                     borderRadius: BorderRadius.all(Radius.circular(15)),
                   ),
                   height: ScreenHeight / 3,
@@ -347,31 +347,31 @@ double ScreenWidth = 0;
                               height: 24,
                               width: 24,
                               child: Image(
-                                image: AssetImage(ReviewStarFilled),
+                                image: AssetImage(reviewStarFilled),
                               )),
                           SizedBox(
                               height: 24,
                               width: 24,
                               child: Image(
-                                image: AssetImage(ReviewStarFilled),
+                                image: AssetImage(reviewStarFilled),
                               )),
                           SizedBox(
                               height: 24,
                               width: 24,
                               child: Image(
-                                image: AssetImage(ReviewStarFilled),
+                                image: AssetImage(reviewStarFilled),
                               )),
                           SizedBox(
                               height: 24,
                               width: 24,
                               child: Image(
-                                image: AssetImage(ReviewStarFilled),
+                                image: AssetImage(reviewStarFilled),
                               )),
                           SizedBox(
                               height: 24,
                               width: 24,
                               child: Image(
-                                image: AssetImage(ReviewStarEmpty),
+                                image: AssetImage(reviewStarEmpty),
                               )),
                         ],
                       )),
