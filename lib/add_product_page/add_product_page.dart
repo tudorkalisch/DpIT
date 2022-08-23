@@ -32,13 +32,10 @@ class _AddProductPageState extends State<AddProductPage> {
                       style: ElevatedButton.styleFrom(
                         primary: Colors.white
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
-                        child: Icon(
-                          Icons.add_a_photo_rounded,
-                          size: 250,
-                          color: Colors.black45,
-                        ),
+                      child: Icon(
+                        Icons.add_a_photo_rounded,
+                        size: 222,
+                        color: Colors.black45,
                       )
                     )
                   ),
@@ -57,6 +54,50 @@ class _AddProductPageState extends State<AddProductPage> {
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(5),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black26,
+                                      blurRadius: 1.0,
+                                      spreadRadius: 0.0,
+                                      offset:
+                                          Offset(0.5, 0.5), 
+                                    )
+                                  ],
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 10),
+                                  child: TextField(
+                                    style: TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.bold
+                                    ),
+                                    decoration: InputDecoration(
+                                      border: InputBorder.none,
+                                      hintText: "Introduceți titlul",
+                                      hintStyle: TextStyle(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              )
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 10),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(5),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black26,
+                                      blurRadius: 1.0,
+                                      spreadRadius: 0.0,
+                                      offset:
+                                          Offset(0.5, 0.5), 
+                                    )
+                                  ],
                                 ),
                                 child: Padding(
                                   padding: const EdgeInsets.only(left: 10),
@@ -75,6 +116,15 @@ class _AddProductPageState extends State<AddProductPage> {
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(5),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black26,
+                                      blurRadius: 1.0,
+                                      spreadRadius: 0.0,
+                                      offset:
+                                          Offset(0.5, 0.5), 
+                                    )
+                                  ],
                                 ),
                                 child: Padding(
                                   padding: const EdgeInsets.only(left: 10),
@@ -87,65 +137,37 @@ class _AddProductPageState extends State<AddProductPage> {
                                 ),
                               )
                             ),
-                            Padding(
-                                padding: const EdgeInsets.only(bottom: 10),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(5),
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(5),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black26,
+                                    blurRadius: 1.0,
+                                    spreadRadius: 0.0,
+                                    offset:
+                                        Offset(0.5, 0.5), 
+                                  )
+                                ],
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 10),
+                                child: TextField(
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    // fontWeight: FontWeight.bold
                                   ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(left: 10),
-                                    child: TextField(
-                                      style: TextStyle(
-                                          fontSize: 28,
-                                          fontWeight: FontWeight.bold),
-                                      decoration: InputDecoration(
-                                        border: InputBorder.none,
-                                        hintText: "Introduceți titlul",
-                                        hintStyle: TextStyle(
-                                            fontSize: 28,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    ),
-                                  ),
-                                )),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.fromLTRB(0, 10, 0, 20),
-                                  child: Text(
-                                    "Introduceți numărul de unități",
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold),
+                                  decoration: InputDecoration(
+                                    hintText: "Introduceți numărul de unități",
+                                    border: InputBorder.none,
+                                    hintStyle: TextStyle(
+                                      fontSize: 14,
+                                      // fontWeight: FontWeight.bold
+                                    )
                                   ),
                                 ),
-                                Container(
-                                  width: 95,
-                                  decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(5)),
-                                  child: Padding(
-                                    padding: const EdgeInsets.fromLTRB(
-                                        20, 10, 20, 10),
-                                    child: TextField(
-                                      style: TextStyle(
-                                          fontSize: 28,
-                                          fontWeight: FontWeight.bold),
-                                      decoration: InputDecoration(
-                                          hintText: "_ _ _",
-                                          border: InputBorder.none,
-                                          hintStyle: TextStyle(
-                                              fontSize: 28,
-                                              fontWeight: FontWeight.bold)),
-                                    ),
-                                  ),
-                                ),
-                              ],
+                              ),
                             )
                           ],
                         ),
@@ -168,14 +190,24 @@ class _AddProductPageState extends State<AddProductPage> {
                     child: Text(
                       "Descriere",
                       style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                   ),
                   Container(
                     height: 250,
                     decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(5)),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(5),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black26,
+                          blurRadius: 1.0,
+                          spreadRadius: 0.0,
+                          offset:
+                              Offset(0.5, 0.5), 
+                        )
+                      ],
+                    ),
                     child: Padding(
                       padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                       child: TextField(

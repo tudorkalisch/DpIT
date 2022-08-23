@@ -29,7 +29,7 @@ class ContactCard extends StatelessWidget {
               left: 45,
               child: Text(
                 "Contact:",
-                style: TextStyle(fontSize: 38, color: Colors.white, fontWeight: FontWeight.w500),
+                style: TextStyle(fontSize: 30, color: Colors.white, fontWeight: FontWeight.w500),
               )
             ),
             Positioned(
@@ -37,16 +37,16 @@ class ContactCard extends StatelessWidget {
               left: 48,
               child: Icon(
                 CupertinoIcons.envelope,
-                size: 34,
+                size: 24,
                 color: Colors.white,
               )
             ),
             Positioned(
-              top: 120, 
-              left: 96,
+              top: 120.5, 
+              left: 90,
               child: Text(
                 "buildnowdpit@protonmail.com",
-                style: TextStyle(fontSize: 28, color: Colors.white, fontWeight: FontWeight.w400),
+                style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.w400),
               )
             )
           ],
