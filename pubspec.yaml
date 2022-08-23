@@ -64,18 +64,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/registerpagegradient.png
-    - assets/registerpageimage.png
-    - assets/bluelogo.png
-    - assets/loginpageimage.png
-    - assets/bluegradient.png
-    - assets/bluelogo.png
-    - assets/homeicon.png
-    - assets/bricks.png
-    - assets/caramida.png
-    - assets/whitelogonobackground.png
-    - assets/homeicon.png
-
+    - assets/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

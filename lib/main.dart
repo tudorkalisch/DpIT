@@ -1,4 +1,5 @@
 import 'package:buildnow/loginpage/loginpage.dart';
+import 'package:buildnow/profilepagebuyer/profilepagebuyer.dart';
 import 'package:buildnow/register_supplier/supplier_registerpage.dart';
 import 'package:buildnow/registerpage/registerpage_form.dart';
 import 'package:buildnow/productpage/productpage.dart';
