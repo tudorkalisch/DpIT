@@ -32,10 +32,13 @@ class _AddProductPageState extends State<AddProductPage> {
                       style: ElevatedButton.styleFrom(
                         primary: Colors.white
                       ),
-                      child: Icon(
-                        Icons.add_a_photo_rounded,
-                        size: 235,
-                        color: Colors.black45,
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
+                        child: Icon(
+                          Icons.add_a_photo_rounded,
+                          size: 250,
+                          color: Colors.black45,
+                        ),
                       )
                     )
                   ),
@@ -49,22 +52,41 @@ class _AddProductPageState extends State<AddProductPage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                                padding: const EdgeInsets.only(bottom: 10),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(5),
+                              padding: const EdgeInsets.only(bottom: 10),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 10),
+                                  child: TextField(
+                                    decoration: InputDecoration(
+                                        border: InputBorder.none,
+                                        hintText: "Introduceți categoria",
+                                        hintStyle: TextStyle(fontSize: 14)),
                                   ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(left: 10),
-                                    child: TextField(
-                                      decoration: InputDecoration(
-                                          border: InputBorder.none,
-                                          hintText: "Enter the category",
-                                          hintStyle: TextStyle(fontSize: 14)),
-                                    ),
+                                ),
+                              )
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 10),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 10),
+                                  child: TextField(
+                                    decoration: InputDecoration(
+                                        border: InputBorder.none,
+                                        hintText: "Introduceți subcategoria",
+                                        hintStyle: TextStyle(fontSize: 14)),
                                   ),
-                                )),
+                                ),
+                              )
+                            ),
                             Padding(
                                 padding: const EdgeInsets.only(bottom: 10),
                                 child: Container(
@@ -80,7 +102,7 @@ class _AddProductPageState extends State<AddProductPage> {
                                           fontWeight: FontWeight.bold),
                                       decoration: InputDecoration(
                                         border: InputBorder.none,
-                                        hintText: "Enter the title",
+                                        hintText: "Introduceți titlul",
                                         hintStyle: TextStyle(
                                             fontSize: 28,
                                             fontWeight: FontWeight.bold),
@@ -95,7 +117,7 @@ class _AddProductPageState extends State<AddProductPage> {
                                   padding:
                                       const EdgeInsets.fromLTRB(0, 10, 0, 20),
                                   child: Text(
-                                    "Enter the number of available units",
+                                    "Introduceți numărul de unități",
                                     style: TextStyle(
                                         fontSize: 16,
                                         color: Colors.black,
@@ -160,7 +182,7 @@ class _AddProductPageState extends State<AddProductPage> {
                         textAlign: TextAlign.justify,
                         decoration: InputDecoration(
                             border: InputBorder.none,
-                            hintText: "Add a description to your product",
+                            hintText: "Adăugați o descriere a produsului",
                             hintStyle: TextStyle(fontSize: 14)),
                       ),
                     ),
@@ -188,14 +210,14 @@ class _AddProductPageState extends State<AddProductPage> {
                       Expanded(
                         flex: 1,
                         child: Center(
-                          child: Text("Color"),
+                          child: Text("Culoare"),
                         ),
                       ),
                       Expanded(
                         flex: 4,
                         child: TextField(
                           decoration: InputDecoration(
-                              hintText: "Enter the color",
+                              hintText: "Introduceți culoarea",
                               hintStyle: TextStyle(fontSize: 14),
                               border: InputBorder.none),
                           style: TextStyle(fontSize: 14),
@@ -211,14 +233,14 @@ class _AddProductPageState extends State<AddProductPage> {
                       Expanded(
                         flex: 1,
                         child: Center(
-                          child: Text("Size"),
+                          child: Text("Mărime"),
                         ),
                       ),
                       Expanded(
                         flex: 4,
                         child: TextField(
                           decoration: InputDecoration(
-                              hintText: "Enter the size",
+                              hintText: "Introduceți mărimea",
                               hintStyle: TextStyle(fontSize: 14),
                               border: InputBorder.none),
                           style: TextStyle(fontSize: 14),
@@ -234,14 +256,14 @@ class _AddProductPageState extends State<AddProductPage> {
                       Expanded(
                         flex: 1,
                         child: Center(
-                          child: Text("Details"),
+                          child: Text("Finisaj"),
                         ),
                       ),
                       Expanded(
                         flex: 4,
                         child: TextField(
                           decoration: InputDecoration(
-                              hintText: "Enter the details",
+                              hintText: "Introduceți tipul de finisaj",
                               hintStyle: TextStyle(fontSize: 14),
                               border: InputBorder.none),
                           style: TextStyle(fontSize: 14),
@@ -264,7 +286,7 @@ class _AddProductPageState extends State<AddProductPage> {
                         flex: 4,
                         child: TextField(
                           decoration: InputDecoration(
-                              hintText: "Enter the brand",
+                              hintText: "Introduceți brand-ul",
                               hintStyle: TextStyle(fontSize: 14),
                               border: InputBorder.none),
                           style: TextStyle(fontSize: 14),
@@ -280,14 +302,14 @@ class _AddProductPageState extends State<AddProductPage> {
                       Expanded(
                         flex: 1,
                         child: Center(
-                          child: Text(" Pieces/m²"),
+                          child: Text(" Bucăți/m²"),
                         ),
                       ),
                       Expanded(
                         flex: 4,
                         child: TextField(
                           decoration: InputDecoration(
-                              hintText: "Enter the pieces",
+                              hintText: "Introduceți numărul de bucăți",
                               hintStyle: TextStyle(fontSize: 14),
                               border: InputBorder.none),
                           style: TextStyle(fontSize: 14),
