@@ -85,7 +85,7 @@ class _MyWidgetState extends State<RegisterPageForm> {
               child: DefaultTextStyle(
                 style: TextStyle(color: Color(Constants.blueTextColor), fontSize: widget.screenWidth * 0.0275, fontWeight: FontWeight.bold),
                 child: Text(
-                  "Register",
+                  "Înregistrați-vă",
                   textAlign: TextAlign.center,
                 )
               ) 
@@ -95,7 +95,7 @@ class _MyWidgetState extends State<RegisterPageForm> {
               child: DefaultTextStyle(
                 style: TextStyle(color: Color(Constants.blueTextColor), fontSize: widget.screenWidth * 0.0135, fontWeight: FontWeight.w500),
                 child: Text(
-                  "Welcome!",
+                  "Bine ați venit!",
                   textAlign: TextAlign.center,
                 ),
               )
@@ -105,7 +105,7 @@ class _MyWidgetState extends State<RegisterPageForm> {
               child: DefaultTextStyle(
                 style: TextStyle(color: Color(Constants.blueTextColor), fontSize: widget.screenWidth * 0.0115),
                 child: Text(
-                  "Please register for a better experience.",
+                  "Înregistrați-vă pentru o experiență mai bună!",
                   textAlign: TextAlign.center,
                 ),
               )
@@ -118,7 +118,7 @@ class _MyWidgetState extends State<RegisterPageForm> {
                 width: widget.screenWidth * 0.095,
                 child: RaisedButton(
                   child: Text(
-                    "Supplier",
+                    "Distribuitor",
                   style: TextStyle(fontSize: widget.screenWidth * 0.0115),
                   ),
                   color: Color(Constants.blueButtonColor),
@@ -134,7 +134,7 @@ class _MyWidgetState extends State<RegisterPageForm> {
                 width: widget.screenWidth * 0.095,
                 child: RaisedButton(
                   child: Text(
-                    "Customer",
+                    "Client",
                   style: TextStyle(fontSize: widget.screenWidth * 0.0115),
                   ),
                   color: Color(Constants.blueButtonColor),
@@ -183,7 +183,7 @@ class _MyWidgetState extends State<RegisterPageForm> {
                       )
                     ),
                     border: OutlineInputBorder(),
-                    hintText: "Password",
+                    hintText: "Parolă",
                   ),
                   controller: passwordController,
                 )
@@ -206,7 +206,7 @@ class _MyWidgetState extends State<RegisterPageForm> {
                           color: _outlineBorderColorConfirmPassword
                         )
                       ),
-                    hintText: "Confirm Password"
+                    hintText: "Confirmă parola"
                   ),
                   controller: confirmPasswordController,
                 )
@@ -241,7 +241,7 @@ class _MyWidgetState extends State<RegisterPageForm> {
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
-                  child: const Text("Already have an account?")
+                  child: const Text("Aveți deja un cont?")
                 ),
               )
             ),

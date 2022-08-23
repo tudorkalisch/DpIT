@@ -99,7 +99,7 @@ class _MyWidgetState extends State<LoginPageForm> {
                       fontSize: Constants.subtitleFontSize,
                       fontWeight: FontWeight.w500),
                   child: Text(
-                    "Welcome!",
+                    "Bine ați venit!",
                     textAlign: TextAlign.center,
                   ),
                 )),
@@ -110,7 +110,7 @@ class _MyWidgetState extends State<LoginPageForm> {
                       color: Color(Constants.logoBlue),
                       fontSize: Constants.secondSubtitleFontSize),
                   child: Text(
-                    "Please log in to your account",
+                    "Logați-vă în cont",
                     textAlign: TextAlign.center,
                   ),
                 )),
@@ -137,7 +137,7 @@ class _MyWidgetState extends State<LoginPageForm> {
               top: widget.screenHeight * 0.41,
               child: Visibility(
                 child: Text(
-                  "The e-mail must be a valid mail!",
+                  "E-mail-ul trebuie să fie valid!",
                   style: TextStyle(color: Colors.red),
                 ),
                 visible: _outlineColorMail == Colors.red,
@@ -154,7 +154,7 @@ class _MyWidgetState extends State<LoginPageForm> {
                               borderSide: BorderSide(color: _outlineColorPassword)),
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: _outlineColorPassword)),
-                          hintText: "Password",
+                          hintText: "Parolă",
                           suffixIcon: IconButton(
                             onPressed: hidePassword,
                             icon: _hiddenPassword ? 
@@ -172,7 +172,7 @@ class _MyWidgetState extends State<LoginPageForm> {
               top: widget.screenHeight * 0.52,
               child: Visibility(
                 child: Text(
-                  "This password is not strong enough!",
+                  "Parola nu este destul de puternică!",
                   style: TextStyle(color: Colors.red),
                 ),
                 visible: _outlineColorPassword == Colors.red,
@@ -186,7 +186,7 @@ class _MyWidgetState extends State<LoginPageForm> {
                   child: TextButton(
                       style: TextButton.styleFrom(primary: Colors.blue),
                       onPressed: () {},
-                      child: const Text("Forgot password?")),
+                      child: const Text("Ați uitat parola?")),
                 )),
             Positioned(
                 bottom: widget.screenHeight * 0.19,
@@ -220,7 +220,7 @@ class _MyWidgetState extends State<LoginPageForm> {
                         onPressed: () {
                           Navigator.of(context).push(MaterialPageRoute(builder: (context) => RegisterPage()));
                         },
-                        child: const Text("Create account"))))
+                        child: const Text("Creați-vă un cont"))))
           ])),
     );
   }
