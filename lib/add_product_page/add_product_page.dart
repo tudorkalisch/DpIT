@@ -1,7 +1,11 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 import '../appbar/appbar.dart';
 import '../constants/constants.dart';
 import '../landingpage/contactcard.dart';
+
+import 'package:image_picker_web/image_picker_web.dart';
 
 class AddProductPage extends StatefulWidget {
   const AddProductPage({Key? key}) : super(key: key);
@@ -11,6 +15,10 @@ class AddProductPage extends StatefulWidget {
 }
 
 class _AddProductPageState extends State<AddProductPage> {
+  bool imageAvailable = false;
+  late Uint8List imageFile;
+  var buttonText = "Alege imaginea";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,16 +35,47 @@ class _AddProductPageState extends State<AddProductPage> {
                 children: [
                   Expanded(
                     flex: 1,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.white
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black26,
+                            blurRadius: 1.0,
+                            spreadRadius: 0.0,
+                            offset:
+                                Offset(0.5, 0.5), 
+                          )
+                        ],
                       ),
-                      child: Icon(
-                        Icons.add_a_photo_rounded,
-                        size: 222,
-                        color: Colors.black45,
-                      )
+                      child: Column(
+                        children: [
+                          Container(
+                            height: 232,
+                            child: imageAvailable? Image.memory(imageFile, fit: BoxFit.fill,) : const Icon(
+                              Icons.add_a_photo_rounded,
+                              color: Colors.black45,
+                              size: 230,
+                            )
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                            child: TextButton(
+                              onPressed: () async {
+                                final image = await ImagePickerWeb.getImageAsBytes();
+
+                                setState(() {
+                                  imageFile = image!;
+                                  imageAvailable = true;
+                                  buttonText = "Alege altă imagine";
+                                });
+                              }, 
+                              child: Text(buttonText)
+                            ),
+                          ),
+                        ],
+                      ),
                     )
                   ),
                   Expanded(
@@ -102,6 +141,7 @@ class _AddProductPageState extends State<AddProductPage> {
                                 child: Padding(
                                   padding: const EdgeInsets.only(left: 10),
                                   child: TextField(
+                                    style: TextStyle(fontSize: 14),
                                     decoration: InputDecoration(
                                       border: InputBorder.none,
                                       hintText: "Introduceți categoria",
@@ -130,9 +170,38 @@ class _AddProductPageState extends State<AddProductPage> {
                                 child: Padding(
                                   padding: const EdgeInsets.only(left: 10),
                                   child: TextField(
+                                    style: TextStyle(fontSize: 14),
                                     decoration: InputDecoration(
                                         border: InputBorder.none,
                                         hintText: "Introduceți subcategoria",
+                                        hintStyle: TextStyle(fontSize: 14)),
+                                  ),
+                                ),
+                              )
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 10),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(5),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black26,
+                                      blurRadius: 1.0,
+                                      spreadRadius: 0.0,
+                                      offset:
+                                          Offset(0.5, 0.5), 
+                                    )
+                                  ],
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 10),
+                                  child: TextField(
+                                    style: TextStyle(fontSize: 14),
+                                    decoration: InputDecoration(
+                                        border: InputBorder.none,
+                                        hintText: "Introduceți prețul unității",
                                         hintStyle: TextStyle(fontSize: 14)),
                                   ),
                                 ),
@@ -155,10 +224,7 @@ class _AddProductPageState extends State<AddProductPage> {
                               child: Padding(
                                 padding: const EdgeInsets.only(left: 10),
                                 child: TextField(
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    // fontWeight: FontWeight.bold
-                                  ),
+                                  style: TextStyle(fontSize: 14),
                                   decoration: InputDecoration(
                                     hintText: "Introduceți numărul de unități",
                                     border: InputBorder.none,
