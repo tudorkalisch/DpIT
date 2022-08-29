@@ -66,9 +66,11 @@ class _AddProductPageState extends State<AddProductPage> {
                                 final image = await ImagePickerWeb.getImageAsBytes();
 
                                 setState(() {
-                                  imageFile = image!;
-                                  imageAvailable = true;
-                                  buttonText = "Alege altă imagine";
+                                  if(image != null) {
+                                    imageFile = image;
+                                    imageAvailable = true;
+                                    buttonText = "Alege altă imagine";
+                                  }
                                 });
                               }, 
                               child: Text(buttonText)
