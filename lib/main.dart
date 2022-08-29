@@ -29,7 +29,7 @@ class _MyAppState extends State<MyApp> {
 
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: AddProductPage(),
+        home: LandingPage(),
         debugShowCheckedModeBanner: false,
     );
   }
