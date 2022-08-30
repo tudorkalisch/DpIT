@@ -33,7 +33,7 @@ class SupplierRegisterPageForm extends StatelessWidget {
                         fontWeight: FontWeight.bold
                       ),
                       child: Text(
-                        "Register",
+                        "Înregistrați-vă",
                         textAlign: TextAlign.center,
                       )
                     )
@@ -51,7 +51,7 @@ class SupplierRegisterPageForm extends StatelessWidget {
                   fontWeight: FontWeight.w500
                 ),
                 child: Text(
-                  "Become a supplier!",
+                  "Deveniți un distribuitor!",
                   textAlign: TextAlign.center,
                 ),
               )
@@ -64,7 +64,7 @@ class SupplierRegisterPageForm extends StatelessWidget {
                   fontSize: screenWidth * 0.0115
                 ),
                 child: Text(
-                  "Please register as a supplier for a better experience.",
+                  "Înregistrați-vă ca distribuitor pentru o experiență mai bună!",
                   textAlign: TextAlign.center,
                 ),
               )
@@ -77,7 +77,7 @@ class SupplierRegisterPageForm extends StatelessWidget {
                     child: TextField(
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
-                        hintText: "Name of the Company"
+                        hintText: "Numele companiei"
                       ),
                     )
                   ),
@@ -86,7 +86,7 @@ class SupplierRegisterPageForm extends StatelessWidget {
                     child: TextField(
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
-                        hintText: "Unic code"
+                        hintText: "Codul CUI"
                       ),
                     )
                   ),
@@ -95,7 +95,7 @@ class SupplierRegisterPageForm extends StatelessWidget {
                     child: TextField(
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
-                        hintText: "Country"
+                        hintText: "Țara"
                       ),
                     )
                   ),
@@ -104,7 +104,7 @@ class SupplierRegisterPageForm extends StatelessWidget {
                     child: TextField(
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
-                        hintText: "City"
+                        hintText: "Oraș"
                       ),
                     )
                   ),
@@ -113,7 +113,7 @@ class SupplierRegisterPageForm extends StatelessWidget {
                     child: TextField(
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
-                        hintText: "Official phone number"
+                        hintText: "Telefon"
                       ),
                     )
                   ),
