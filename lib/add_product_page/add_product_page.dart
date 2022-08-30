@@ -300,7 +300,7 @@ class _AddProductPageState extends State<AddProductPage> {
                 Padding(
                   padding: const EdgeInsets.only(bottom: 20),
                   child: Text(
-                    "Specificatii produs",
+                    "Specificații produs",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -387,7 +387,7 @@ class _AddProductPageState extends State<AddProductPage> {
                         flex: 4,
                         child: TextField(
                           decoration: InputDecoration(
-                              hintText: "Introduceți brand-ul",
+                              hintText: "Introduceți brandul",
                               hintStyle: TextStyle(fontSize: 14),
                               border: InputBorder.none),
                           style: TextStyle(fontSize: 14),

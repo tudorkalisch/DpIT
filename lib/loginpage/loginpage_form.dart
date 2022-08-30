@@ -110,7 +110,7 @@ class _MyWidgetState extends State<LoginPageForm> {
                       color: Color(Constants.logoBlue),
                       fontSize: Constants.secondSubtitleFontSize),
                   child: Text(
-                    "Logați-vă în cont",
+                    "Intrați în cont",
                     textAlign: TextAlign.center,
                   ),
                 )),
