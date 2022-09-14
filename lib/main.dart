@@ -5,13 +5,17 @@ import 'package:buildnow/register_supplier/supplier_registerpage.dart';
 import 'package:buildnow/registerpage/registerpage_form.dart';
 import 'package:buildnow/productpage/productpage.dart';
 import 'package:flutter/material.dart';
+import 'package:buildnow/favoritepage/favoritepage.dart';
 
 import 'registerpage/registerpage.dart';
 import 'add_product_page/add_product_page.dart';
 import 'landingpage/landingpage.dart';
 
-import 'package:buildnow/supplierlandingpage/supplierlandingpage.dart';
+import 'shopsupplier/shopsupplier.dart';
 
+import 'favoritepage/favoritepage.dart';
+
+import 'package:buildnow/supplierlandingpage/supplierlandingpage.dart';
 
 void main() {
   runApp(MyApp());
@@ -27,11 +31,10 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   @override
-
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: LandingPage(),
-        debugShowCheckedModeBanner: false,
+      home: SupplierShop(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

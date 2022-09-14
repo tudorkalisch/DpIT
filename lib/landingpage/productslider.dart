@@ -26,27 +26,21 @@ class _MyWidgetState extends State<ProductSlider> {
               width: 35,
               height: 35,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(100)),
-                color: Color(Constants.greyButtonColor).withOpacity(0.55)
-              ),
+                  borderRadius: BorderRadius.all(Radius.circular(100)),
+                  color: Color(Constants.greyButtonColor).withOpacity(0.55)),
               child: TextButton(
-              style: ButtonStyle(
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(100))
-                ))
-              ),
-                onPressed: () => buttonCarouselController.nextPage(
-                    duration: Duration(milliseconds: 300),
-                    curve: Curves.linear),
-                child: Center(
-                  child: Icon(
-                      Icons.arrow_back,
-                      color: Colors.black,
-                      size: 15
-                  ),
-                )
-              ))),
+                  style: ButtonStyle(
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(100))))),
+                  onPressed: () => buttonCarouselController.nextPage(
+                      duration: Duration(milliseconds: 300),
+                      curve: Curves.linear),
+                  child: Center(
+                    child:
+                        Icon(Icons.arrow_back, color: Colors.black, size: 15),
+                  )))),
       Expanded(
         child: CarouselSlider.builder(
           carouselController: buttonCarouselController,
@@ -60,7 +54,14 @@ class _MyWidgetState extends State<ProductSlider> {
               children: [for (var i = 4 * first; i <= 4 * second - 1; i += 1) i]
                   .map((idx) {
                 return idx < widget.productsList.length
-                    ? ProductCard(productName: widget.productsList[idx].name, productPrice: widget.productsList[idx].price, supplierName: widget.productsList[idx].supplierName, productSubCategory: widget.productsList[idx].subCategory, productNrOfReviews: widget.productsList[idx].nrOfReviews)
+                    ? ProductCard(
+                        productName: widget.productsList[idx].name,
+                        productPrice: widget.productsList[idx].price,
+                        supplierName: widget.productsList[idx].supplierName,
+                        productSubCategory:
+                            widget.productsList[idx].subCategory,
+                        productNrOfReviews:
+                            widget.productsList[idx].nrOfReviews)
                     : Expanded(
                         flex: 1,
                         child: Container(),
@@ -76,26 +77,21 @@ class _MyWidgetState extends State<ProductSlider> {
             width: 35,
             height: 35,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(100)),
-              color: Color(Constants.greyButtonColor).withOpacity(0.55)
-            ),
+                borderRadius: BorderRadius.all(Radius.circular(100)),
+                color: Color(Constants.greyButtonColor).withOpacity(0.55)),
             child: TextButton(
-              style: ButtonStyle(
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(100))
-                ))
-              ),
-              onPressed: () => buttonCarouselController.nextPage(
-                  duration: Duration(milliseconds: 300), curve: Curves.linear),
-              child: Center(
-                  child: Icon(
-                      Icons.arrow_forward,
-                      color: Colors.black,
-                      size: 15
-                  ),
-                )
-            ),
+                style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(100))))),
+                onPressed: () => buttonCarouselController.nextPage(
+                    duration: Duration(milliseconds: 300),
+                    curve: Curves.linear),
+                child: Center(
+                  child:
+                      Icon(Icons.arrow_forward, color: Colors.black, size: 15),
+                )),
           ))
     ]);
   }

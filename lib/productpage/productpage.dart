@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../appbar/appbar.dart';
-import '../constants/constants.dart';
+import '../constants/constants.dart' as Constants;
 
 class ProductPage extends StatefulWidget {
   const ProductPage({Key? key}) : super(key: key);
@@ -19,7 +19,7 @@ class _ProductPageState extends State<ProductPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: DefaultAppBar(appBar: AppBar()),
-      backgroundColor: Color(backgroundColor),
+      backgroundColor: Color(Constants.backgroundColor),
       body: ListView(
         children: [
           Padding(
@@ -31,7 +31,7 @@ class _ProductPageState extends State<ProductPage> {
                   Expanded(
                     flex: 1,
                     child: Image.asset(
-                      brickImage,
+                      Constants.brickImage,
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -50,7 +50,7 @@ class _ProductPageState extends State<ProductPage> {
                                   category,
                                   style: TextStyle(
                                     fontSize: 12,
-                                    color: Colors.black45,
+                                    color: Color.fromARGB(115, 0, 0, 0),
                                   ),
                                 ),
                               ),
@@ -126,33 +126,18 @@ class _ProductPageState extends State<ProductPage> {
                                         ),
                                       ),
                                       Center(
-                                        child: Container(
-                                          height: 50,
-                                          width: 150,
-                                          child: TextButton(
-                                              onPressed: () {},
-                                              child: Stack(
-                                                alignment: Alignment.center,
-                                                children: [
-                                                  ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            5),
-                                                    child: Image.asset(
-                                                      blueGradientPath,
-                                                      fit: BoxFit.fill,
-                                                      width: 150,
-                                                    ),
-                                                  ),
-                                                  Text(
-                                                    "Cumpara",
-                                                    style: TextStyle(
-                                                        color: Colors.white),
-                                                  )
-                                                ],
-                                              )),
+                                          child: Container(
+                                        height: 45,
+                                        width: 120,
+                                        child: ElevatedButton(
+                                          onPressed: () {},
+                                          child: Text('Cumpara'),
+                                          style: ButtonStyle(
+                                              backgroundColor:
+                                                  MaterialStateProperty.all(
+                                                      Constants.buttonColor)),
                                         ),
-                                      )
+                                      ))
                                     ],
                                   ),
                                   Container(
@@ -427,7 +412,7 @@ class _ProductPageState extends State<ProductPage> {
           Container(
             decoration: BoxDecoration(
                 image: DecorationImage(
-              image: AssetImage(blueGradientPath),
+              image: AssetImage(Constants.blueGradientPath),
               fit: BoxFit.fill,
             )),
             child: Column(

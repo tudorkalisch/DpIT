@@ -3,6 +3,8 @@ import 'package:buildnow/constants/constants.dart' as Constants;
 import 'package:flutter/material.dart';
 
 class productListElement extends StatefulWidget {
+  get productsList => null;
+
   @override
   State<StatefulWidget> createState() => productListElementPageState();
 }
