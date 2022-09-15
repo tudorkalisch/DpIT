@@ -1,3 +1,4 @@
+import 'package:buildnow/landingpage/landingpage.dart';
 import 'package:flutter/material.dart';
 
 import './loginpage_logo.dart';
@@ -45,6 +46,8 @@ class _MyWidgetState extends State<LoginPageForm> {
     }
 
   logIn() {
+      bool cond = false;
+
       if (!_validateStructure(passwordController.text)) {
         setState(() {
           _outlineColorPassword = Colors.red;
@@ -54,6 +57,7 @@ class _MyWidgetState extends State<LoginPageForm> {
         setState(() {
           _outlineColorPassword = _baseOutlineColor;
         });
+        cond = true;
       }
       if(!EmailValidator.validate(mailController.text)) {
         setState(() {
@@ -64,6 +68,10 @@ class _MyWidgetState extends State<LoginPageForm> {
         setState(() {
           _outlineColorMail = _baseOutlineColor;
         });
+        cond &= true;
+      }
+      if (cond) {
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => LandingPage()));
       }
   }
 

@@ -1,3 +1,4 @@
+import 'package:buildnow/loginpage/loginpage.dart';
 import 'package:flutter/material.dart';
 
 import '../constants/constants.dart' as Constants;
@@ -8,6 +9,12 @@ import 'package:iconamoon/iconamoon.dart';
 
 import 'package:icons_plus/icons_plus.dart';
 
+import '../loginpage/loginpage.dart';
+
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import '../profilepagebuyer/profilepagebuyer.dart';
+
 class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
   final AppBar appBar;
 
@@ -15,6 +22,8 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loggedIn = true;
+
     return AppBar(
         flexibleSpace: Container(
           decoration: BoxDecoration(
@@ -84,7 +93,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
           Padding(
             padding: EdgeInsets.only(right: 60, bottom: 8, top: 8),
-            child: Container(
+            child: !loggedIn ? Container(
               width: 120,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(14)),
@@ -95,8 +104,21 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
                   "Log in",
                   style: TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.w500),
                   ),
-                onPressed: () {}
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginPage()));
+                }
               )
+            )
+            :
+            TextButton(
+              child: Icon(
+                size: 32,
+                color: Colors.white,
+                FontAwesomeIcons.circleUser
+              ),
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => ProfilePage()));
+              },
             )
           ),
         ],
