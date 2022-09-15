@@ -1,3 +1,5 @@
+import 'package:buildnow/apirelated/albumclass.dart';
+import 'package:buildnow/apirelated/createalbum.dart';
 import 'package:flutter/material.dart';
 
 import './loginpage_logo.dart';
@@ -30,6 +32,8 @@ class _MyWidgetState extends State<LoginPageForm> {
 
   final mailController = TextEditingController();
   final passwordController = TextEditingController();
+
+  Future<Album>? _futureAlbum;
 
   hidePassword() {
     final passwordText = passwordController.text;
@@ -65,6 +69,14 @@ class _MyWidgetState extends State<LoginPageForm> {
           _outlineColorMail = _baseOutlineColor;
         });
       }
+      if(_validateStructure(passwordController.text) && _validateStructure(mailController.text)) {
+        setState(() {
+          _futureAlbum = createAlbum(mailController.text, passwordController.text);
+          
+        });
+        
+      }
+
   }
 
   @override

@@ -429,7 +429,7 @@ class _SupplierLanding extends State<SupplierLanding> {
                             child: Text(
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
-                                    fontSize: screenHeight * 0.15 * 0.15,
+                                    fontSize: screenHeight * 0.1 * 0.2,
                                     color: Colors.purple),
                                 'Afisati-le pe toate'),
                           ),

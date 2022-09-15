@@ -4,9 +4,12 @@ import 'package:buildnow/constants/constants.dart' as Constants;
 
 class _BarChart extends StatelessWidget {
   _BarChart({Key? key}) : super(key: key);
+  
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     return BarChart(
       BarChartData(
         barTouchData: barTouchData,
@@ -200,8 +203,10 @@ class BarChartImproved extends StatefulWidget {
 class BarChartImprovedState extends State<BarChartImproved> {
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     return AspectRatio(
-      aspectRatio: 2.35,
+      aspectRatio: 2.76 / 1,
       child: Card(
         elevation: 0,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
