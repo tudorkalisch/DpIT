@@ -12,6 +12,8 @@ import 'package:flutter/cupertino.dart';
 
 import '../registerpage/registerpage.dart';
 
+import 'package:http/http.dart' as http;
+
 class LoginPageForm extends StatefulWidget {
   final screenWidth;
   final screenHeight;
@@ -59,17 +61,17 @@ class _MyWidgetState extends State<LoginPageForm> {
           _outlineColorPassword = _baseOutlineColor;
         });
       }
-      if(!EmailValidator.validate(mailController.text)) {
-        setState(() {
-          _outlineColorMail = Colors.red;
-        });
-      }
-      else {
-        setState(() {
-          _outlineColorMail = _baseOutlineColor;
-        });
-      }
-      if(_validateStructure(passwordController.text) && _validateStructure(mailController.text)) {
+      // if(!EmailValidator.validate(mailController.text)) {
+      //   setState(() {
+      //     _outlineColorMail = Colors.red;
+      //   });
+      // }
+      // else {
+      //   setState(() {
+      //     _outlineColorMail = _baseOutlineColor;
+      //   });
+      // }
+      if(_validateStructure(passwordController.text)) {
         setState(() {
           _futureAlbum = createAlbum(mailController.text, passwordController.text);
           
