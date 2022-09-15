@@ -31,7 +31,6 @@ const whiteLogoNoBackgroundPath = "assets/whitelogonobackground.png";
 const homeIconPath = "assets/homeicon.png";
 const bricksImagePath = "assets/bricks.png";
 
-
 const brickImage = "assets/caramida.png";
 
 //COLORS
@@ -39,9 +38,12 @@ const buttonColor = Color.fromARGB(255, 42, 157, 143);
 
 //PATTERNS
 
-const passwordPattern = r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
+const passwordPattern =
+    r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
 
 const tiglaImagePath = 'assets/tigla.png';
 const avatarImagePath = 'assets/Avatar18.png';
 const reviewStarFilled = 'assets/Review-star.png';
 const reviewStarEmpty = 'assets/ReviewStarEmpty.png';
+const buildNowLogo = 'assets/buildnow.png';
+const blueishDivider = 0xff066d72;
