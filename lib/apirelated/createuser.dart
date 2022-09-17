@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-import 'albumclass.dart';
+import 'user.dart';
 import 'package:http/http.dart' as http;
 
-Future<Album> createAlbum(String email, String password,) async {
+Future<User> createUser(String email, String password,) async {
   final response = await http.post(
     Uri.parse('http://localhost:8080/api/auth/signin'),
     headers: <String, String>{
@@ -17,7 +17,7 @@ Future<Album> createAlbum(String email, String password,) async {
 
   if (response.statusCode == 200) {
     
-    return Album.fromJson(jsonDecode(response.body));
+    return User.fromJson(jsonDecode(response.body));
   } else {
     
     throw Exception('Failed to create album.');
