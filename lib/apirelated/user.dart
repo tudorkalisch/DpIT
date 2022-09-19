@@ -1,15 +1,15 @@
 class User {
   
-  late String _userId;
-  late String _username;
-  late String _roleName;
-  late String _email;
+  var _userId;
+  var _username;
+  var _roleName;
+  var _email;
 
-   constructorUser(
-      {required String userId,
-        required String username,
-        required String roleName,
-        required String email}) {
+  User(
+      { required userId,
+        required username,
+        required roleName,
+        required email}) {
     this._userId = userId;
     this._username = username;
     this._roleName = roleName;
@@ -17,20 +17,18 @@ class User {
   }
 
   // Properties
-  String get userId => _userId;
-  set userId(String userId) => _userId = userId;
-  String get username => _username;
-  set username(String username) => _username = username;
-  String get roleName => _roleName;
-  set roleName(String roleName) => _roleName = roleName;
-  String get email => _email;
-  set email(String email) => _email = email;
+  get userId => _userId;
+  get username => _username;
+  get roleName => _roleName;
+  get email => _email;
 
-  User.fromJson(Map<String, dynamic> json) {
-    _userId = json['userId'];
-    _username = json['username'];
-    _roleName = json['roleName'];
-    _email = json['email'];
+  factory User.fromJson(Map<String, dynamic> json) {
+    return User(
+      userId : json['userId'],
+      username : json['username'],
+      roleName : json['roleName'],
+      email : json['email']
+    );
   }
 
 

@@ -1,5 +1,5 @@
-import 'package:buildnow/apirelated/albumclass.dart';
-import 'package:buildnow/apirelated/createalbum.dart';
+import 'package:buildnow/apirelated/createuser.dart';
+import 'package:buildnow/landingpage/landingpage.dart';
 import 'package:flutter/material.dart';
 
 import './loginpage_logo.dart';
@@ -11,6 +11,10 @@ import 'package:email_validator/email_validator.dart';
 import 'package:flutter/cupertino.dart';
 
 import '../registerpage/registerpage.dart';
+
+import 'package:http/http.dart' as http;
+
+import '../apirelated/user.dart';
 
 class LoginPageForm extends StatefulWidget {
   final screenWidth;
@@ -33,7 +37,7 @@ class _MyWidgetState extends State<LoginPageForm> {
   final mailController = TextEditingController();
   final passwordController = TextEditingController();
 
-  Future<Album>? _futureAlbum;
+  Future<User>? _futureUser;
 
   hidePassword() {
     final passwordText = passwordController.text;
@@ -59,22 +63,23 @@ class _MyWidgetState extends State<LoginPageForm> {
           _outlineColorPassword = _baseOutlineColor;
         });
       }
-      if(!EmailValidator.validate(mailController.text)) {
+      // if(!EmailValidator.validate(mailController.text)) {
+      //   setState(() {
+      //     _outlineColorMail = Colors.red;
+      //   });
+      // }
+      // else {
+      //   setState(() {
+      //     _outlineColorMail = _baseOutlineColor;
+      //   });
+      // }
+      if(_validateStructure(passwordController.text)) {
         setState(() {
-          _outlineColorMail = Colors.red;
+          _futureUser = createUser(mailController.text, passwordController.text).then((value) {
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => LandingPage()));
+            return value;
+          });
         });
-      }
-      else {
-        setState(() {
-          _outlineColorMail = _baseOutlineColor;
-        });
-      }
-      if(_validateStructure(passwordController.text) && _validateStructure(mailController.text)) {
-        setState(() {
-          _futureAlbum = createAlbum(mailController.text, passwordController.text);
-          
-        });
-        
       }
 
   }
