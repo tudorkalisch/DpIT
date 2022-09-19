@@ -5,12 +5,8 @@ import 'loginpage_image.dart';
 
 import '../constants/constants.dart' as Constansts;
 
-import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatelessWidget {
-  late SharedPreferences preferences;
-
-  LoginPage({required this.preferences});
 
   @override
   Widget build(BuildContext context) {

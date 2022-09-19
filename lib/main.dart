@@ -40,18 +40,20 @@ class _MyAppState extends State<MyApp> {
     initialization();
   }
 
-  Future initialization() async {
-    preferences = await SharedPreferences.getInstance().then(((value) {
-      loggedIn = value.getString('userInfo') != null;
-      FlutterNativeSplash.remove();
-      return value;
-    }));
+  void initialization() async {
+    SharedPreferences.setMockInitialValues({});
+    preferences = await SharedPreferences.getInstance();
+    loggedIn = preferences.containsKey("userInfo");
+    if ( !loggedIn ) {
+        Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => LandingPage()), (route) => false);
+    }
+    FlutterNativeSplash.remove();
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: LoginPage(preferences: preferences),
+        home: LoginPage(),
         debugShowCheckedModeBanner: false,
     );
   }

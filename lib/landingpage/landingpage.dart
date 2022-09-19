@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:buildnow/constants/constants.dart' as Constants;
 
 import 'package:flutter/cupertino.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import './recommendedcategory.dart';
 
@@ -27,6 +28,8 @@ class _MyWidgetState extends State<LandingPage> {
     name: "Tencuieli",
     products: [Product(name: "Tencuiala", price: "25", supplierName: "Dedeman", subCategory: "Tencuieli ok", nrOfReviews: "5")]
   )];
+
+  late SharedPreferences preferences;
 
   @override
   Widget build(BuildContext context) {
