@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'albumclass.dart';
 import 'package:http/http.dart' as http;
 
-Future<Album> createAlbum(String email, String password, String roleName) async {
+Future<Album> createAlbum(String email, String password) async {
   final response = await http.post(
     Uri.parse('jdbc:postgresql://localhost:5432/postgres/api/auth/signin'),
     headers: <String, String>{
@@ -12,7 +12,7 @@ Future<Album> createAlbum(String email, String password, String roleName) async 
     body: jsonEncode(<String, String>{
       'email': email,
       'password': password,
-      'roleName': roleName,
+      //'roleName': roleName,
     }),
   );
 
