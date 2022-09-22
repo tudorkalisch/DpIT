@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../constants/constants.dart' as Constants;
 
@@ -8,13 +9,18 @@ import 'package:iconamoon/iconamoon.dart';
 
 import 'package:icons_plus/icons_plus.dart';
 
+import '../profilepagebuyer/profilepagebuyer.dart';
+
 class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
   final AppBar appBar;
 
-  const DefaultAppBar({Key? key, required this.appBar}) : super(key: key);
+  String token;
+
+  DefaultAppBar({Key? key, required this.appBar, required this.token}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+
     return AppBar(
         flexibleSpace: Container(
           decoration: BoxDecoration(
@@ -84,7 +90,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
           Padding(
             padding: EdgeInsets.only(right: 60, bottom: 8, top: 8),
-            child: Container(
+            child: token == null ? Container(
               width: 120,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(14)),
@@ -92,12 +98,25 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
               child: TextButton(
                 child: Text(
-                  "Log in",
+                  "Bine ba",
                   style: TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.w500),
                   ),
                 onPressed: () {}
               )
-            )
+
+            ):
+            TextButton(
+                style: ButtonStyle(shape: MaterialStateProperty.all<CircleBorder>(
+                  CircleBorder(
+                    side: BorderSide(color: Colors.white)
+                  ),
+                ),
+                ),
+                child: Icon( Icons.account_circle, color: Colors.white),
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => ProfilePage(token: token)));
+                }
+              )
           ),
         ],
   );

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../appbar/appbar.dart';
 import '../constants/constants.dart';
 
 class ProductPage extends StatefulWidget {
-  const ProductPage({Key? key}) : super(key: key);
+  String token;
+
+  ProductPage({Key? key, required this.token}) : super(key: key);
 
   @override
   State<ProductPage> createState() => _ProductPageState();
@@ -18,7 +21,7 @@ class _ProductPageState extends State<ProductPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: DefaultAppBar(appBar: AppBar()),
+      appBar: DefaultAppBar(appBar: AppBar(), token: widget.token),
       backgroundColor: Color(backgroundColor),
       body: ListView(
         children: [

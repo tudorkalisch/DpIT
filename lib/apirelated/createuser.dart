@@ -20,6 +20,6 @@ Future<User> createUser(String email, String password,) async {
     return User.fromJson(jsonDecode(response.body));
   } else {
     
-    throw Exception('Failed to create album.');
+    throw Exception('Failed to create user.');
   }
 }

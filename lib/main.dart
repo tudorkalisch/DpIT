@@ -15,10 +15,14 @@ import 'package:buildnow/supplierlandingpage/supplierlandingpage.dart';
 
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
-void main() {
+ Future<void> main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
-  runApp(MyApp());
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  bool loggedIn = prefs.containsKey('userToken');
+  String token = prefs.getString('userToken') ?? '';
+  runApp(MaterialApp(home: loggedIn ? LandingPage(token: token) : LoginPage()));
+  FlutterNativeSplash.remove();
 }
 
 class MyApp extends StatefulWidget {
@@ -33,22 +37,6 @@ class _MyAppState extends State<MyApp> {
   late var loggedIn;
 
   late SharedPreferences preferences;
-
-  @override
-  void initState() {
-    super.initState();
-    initialization();
-  }
-
-  void initialization() async {
-    SharedPreferences.setMockInitialValues({});
-    preferences = await SharedPreferences.getInstance();
-    loggedIn = preferences.containsKey("userInfo");
-    if ( !loggedIn ) {
-        Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => LandingPage()), (route) => false);
-    }
-    FlutterNativeSplash.remove();
-  }
 
   @override
   Widget build(BuildContext context) {

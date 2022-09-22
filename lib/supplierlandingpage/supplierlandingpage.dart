@@ -4,11 +4,14 @@ import 'package:buildnow/supplierlandingpage/piechart.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:buildnow/supplierlandingpage/BarChart/barchart_improved.dart';
 import 'package:buildnow/constants/constants.dart' as Constants;
+import 'package:shared_preferences/shared_preferences.dart';
 import 'productlist_element.dart';
 import 'package:buildnow/appbar/appbar.dart';
 
 class SupplierLanding extends StatefulWidget {
-  SupplierLanding({Key? key}) : super(key: key);
+  String token;
+
+  SupplierLanding({Key? key, required this.token}) : super(key: key);
 
   @override
   _SupplierLanding createState() => _SupplierLanding();
@@ -29,7 +32,7 @@ class _SupplierLanding extends State<SupplierLanding> {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: DefaultAppBar(appBar: AppBar()),
+      appBar: DefaultAppBar(appBar: AppBar(), token: widget.token),
       backgroundColor: Colors.white,
       body: Container(
         width: double.infinity,

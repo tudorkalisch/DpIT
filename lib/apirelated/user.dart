@@ -4,16 +4,19 @@ class User {
   var _username;
   var _roleName;
   var _email;
+  var _token;
 
   User(
       { required userId,
         required username,
         required roleName,
-        required email}) {
+        required email,
+        required token}) {
     this._userId = userId;
     this._username = username;
     this._roleName = roleName;
     this._email = email;
+    this._token = token;
   }
 
   // Properties
@@ -22,12 +25,17 @@ class User {
   get roleName => _roleName;
   get email => _email;
 
+  String getToken() {
+    return this._token;
+  }
+
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
       userId : json['userId'],
       username : json['username'],
       roleName : json['roleName'],
-      email : json['email']
+      email : json['email'],
+      token: json['accessToken']
     );
   }
 
@@ -38,6 +46,7 @@ class User {
     data['username'] = this._username;
     data['roleName'] = this._roleName;
     data['email'] = this._email;
+    data['accessToken'] = this._token;
     return data;
   }
 }

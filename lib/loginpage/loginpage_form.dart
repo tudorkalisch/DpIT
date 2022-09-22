@@ -1,6 +1,7 @@
 import 'package:buildnow/apirelated/createuser.dart';
 import 'package:buildnow/landingpage/landingpage.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import './loginpage_logo.dart';
 
@@ -52,7 +53,7 @@ class _MyWidgetState extends State<LoginPageForm> {
       return regExp.hasMatch(userPassword);
     }
 
-  logIn() {
+  logIn() async {
       if (!_validateStructure(passwordController.text)) {
         setState(() {
           _outlineColorPassword = Colors.red;
@@ -75,8 +76,10 @@ class _MyWidgetState extends State<LoginPageForm> {
       // }
       if(_validateStructure(passwordController.text)) {
         setState(() {
-          _futureUser = createUser(mailController.text, passwordController.text).then((value) {
-            Navigator.of(context).push(MaterialPageRoute(builder: (context) => LandingPage()));
+          _futureUser = createUser(mailController.text, passwordController.text).then((value) async {
+            SharedPreferences prefs = await SharedPreferences.getInstance();
+            prefs.setString('userToken', value.getToken());
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => LandingPage(token: value.getToken())));
             return value;
           });
         });

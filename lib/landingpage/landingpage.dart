@@ -21,6 +21,10 @@ import '../classes/recommendedcategoryclass.dart';
 class LandingPage extends StatefulWidget {
   @override
   State<LandingPage> createState() => _MyWidgetState();
+
+  String token;
+
+  LandingPage({required this.token});
 }
 
 class _MyWidgetState extends State<LandingPage> {
@@ -29,12 +33,10 @@ class _MyWidgetState extends State<LandingPage> {
     products: [Product(name: "Tencuiala", price: "25", supplierName: "Dedeman", subCategory: "Tencuieli ok", nrOfReviews: "5")]
   )];
 
-  late SharedPreferences preferences;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: DefaultAppBar(appBar: AppBar()),
+      appBar: DefaultAppBar(appBar: AppBar(), token: widget.token),
       body: Container(
         width: double.infinity,
         height: double.infinity,

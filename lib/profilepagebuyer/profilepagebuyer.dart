@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../appbar/appbar.dart';
 import '../constants/constants.dart';
 import '../landingpage/contactcard.dart';
 import '../profilepagebuyer/variables/variables.dart';
 
 class ProfilePage extends StatefulWidget {
-  const ProfilePage({Key? key}) : super(key: key);
+ String token;
+
+  ProfilePage({Key? key, required this.token}) : super(key: key);
+
   @override
   State<ProfilePage> createState() => Home();
 }
@@ -19,7 +23,7 @@ double ScreenWidth = 0;
     ScreenWidth =  MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Color(backgroundColor),
-      appBar: DefaultAppBar(appBar: AppBar()),
+      appBar: DefaultAppBar(appBar: AppBar(), token: widget.token),
       body: ListView(children: [
         Padding(padding: EdgeInsets.only(top: 70)),
         Row(

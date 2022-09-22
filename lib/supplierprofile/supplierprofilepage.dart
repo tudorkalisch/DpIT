@@ -1,10 +1,15 @@
 import 'package:buildnow/constants/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../appbar/appbar.dart';
 
 import '../constants/constants.dart';
 
 class SupplierProfilePage extends StatefulWidget {
+  String token;
+
+  SupplierProfilePage({required this.token});
+
   @override
   State<SupplierProfilePage> createState() => _SupplierProfilePage();
 }
@@ -13,7 +18,7 @@ class _SupplierProfilePage extends State<SupplierProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: DefaultAppBar(appBar: AppBar()),
+        appBar: DefaultAppBar(appBar: AppBar(), token: widget.token),
         backgroundColor: Color(backgroundColor),
         body: ListView(
           children: <Widget>[

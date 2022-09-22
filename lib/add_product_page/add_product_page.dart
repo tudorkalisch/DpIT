@@ -1,6 +1,7 @@
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../appbar/appbar.dart';
 import '../constants/constants.dart';
 import '../landingpage/contactcard.dart';
@@ -8,7 +9,9 @@ import '../landingpage/contactcard.dart';
 import 'package:image_picker_web/image_picker_web.dart';
 
 class AddProductPage extends StatefulWidget {
-  const AddProductPage({Key? key}) : super(key: key);
+  String token;
+
+  AddProductPage({Key? key, required this.token}) : super(key: key);
 
   @override
   State<AddProductPage> createState() => _AddProductPageState();
@@ -22,7 +25,7 @@ class _AddProductPageState extends State<AddProductPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: DefaultAppBar(appBar: AppBar()),
+      appBar: DefaultAppBar(appBar: AppBar(), token: widget.token),
       backgroundColor: Color(backgroundColor),
       body: ListView(
         children: [
