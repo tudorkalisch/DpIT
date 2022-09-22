@@ -1,5 +1,8 @@
 import 'dart:html';
 
+import 'package:buildnow/apirelated/registeruser.dart';
+import 'package:buildnow/apirelated/user.dart';
+import 'package:buildnow/loginpage/loginpage.dart';
 import 'package:flutter/material.dart';
 
 import 'registerpage_logo.dart';
@@ -23,10 +26,13 @@ class _MyWidgetState extends State<RegisterPageForm> {
   final mailController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
+  String roleName = 'CLIENT';
 
   var _outlineBorderColorMail = _baseOutlineColor;
   var _outlineBorderColorPassword = _baseOutlineColor;
   var _outlineBorderColorConfirmPassword = _baseOutlineColor;
+
+  Future<User>? _userToRegister;
 
   bool _validateStructure(password) {
       RegExp regExp = new RegExp((Constants.passwordPattern));
@@ -34,16 +40,16 @@ class _MyWidgetState extends State<RegisterPageForm> {
   }
 
   register() {
-    if (!_validateStructure(this.passwordController.text)) {
-      setState(() {
-        _outlineBorderColorPassword = Colors.red; 
-      });
-    }
-    else {
-      setState(() {
-        _outlineBorderColorPassword = _baseOutlineColor;
-      });
-    }
+    // if (!_validateStructure(this.passwordController.text)) {
+    //   setState(() {
+    //     _outlineBorderColorPassword = Colors.red; 
+    //   });
+    // }
+    // else {
+    //   setState(() {
+    //     _outlineBorderColorPassword = _baseOutlineColor;
+    //   });
+    // }
     
     if (!_validateStructure(this.confirmPasswordController.text)) {
       setState(() {
@@ -52,20 +58,24 @@ class _MyWidgetState extends State<RegisterPageForm> {
     }
     else {
       setState(() {
-        _outlineBorderColorConfirmPassword = _baseOutlineColor;
+        _userToRegister = registerUser(mailController.text, passwordController.text, roleName).then((value){
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginPage()));
+            return value;
+        });
+        
       });
     }
     
-    if (!EmailValidator.validate(mailController.text)) {
-      setState(() {
-        _outlineBorderColorMail = Colors.red;
-      });
-    }
-    else {
-      setState(() {
-        _outlineBorderColorMail = _baseOutlineColor;
-      });
-    }
+    // if (!EmailValidator.validate(mailController.text)) {
+    //   setState(() {
+    //     _outlineBorderColorMail = Colors.red;
+    //   });
+    // }
+    // else {
+    //   setState(() {
+    //     _outlineBorderColorMail = _baseOutlineColor;
+    //   });
+    // }
   }
   @override
   Widget build(BuildContext context) {
