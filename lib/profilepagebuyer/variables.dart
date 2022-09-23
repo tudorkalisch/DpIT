@@ -1,3 +1,5 @@
+import 'package:buildnow/classes/product.dart';
+
 String lastOrderedProductName = "Caramida";
 double lastOrderedProductPrice = 3.99;
 String lastOrderedProductSupplier = "Dedeman";
@@ -23,27 +25,25 @@ String secondLatestAccesedProductName = "Caramida";
 double secondLatestAccesedProductPrice = 3.99;
 String secondLatestAccesedProductSupplier = "Dedeman";
 
-String secondLatestAccesedProductPriceString = secondLatestAccesedProductPrice.toString();
+String secondLatestAccesedProductPriceString =
+    secondLatestAccesedProductPrice.toString();
 
 String thirdLatestAccesedProductName = "Acoperis";
 double thirdLatestAccesedProductPrice = 55.99;
 String thirdLatestAccesedProductSupplier = "Dedeman";
 
-String thirdLatestAccesedProductPriceString = thirdLatestAccesedProductPrice.toString();
+String thirdLatestAccesedProductPriceString =
+    thirdLatestAccesedProductPrice.toString();
 
 String fourthLatestAccesedProductName = "Termopan";
 double fourthLatestAccesedProductPrice = 30.99;
 String fourthLatestAccesedProductSupplier = "Dedeman";
 
-String fourthLatestAccesedProductPriceString = fourthLatestAccesedProductPrice.toString();
+String fourthLatestAccesedProductPriceString =
+    fourthLatestAccesedProductPrice.toString();
 
 String prenume = "Vasile";
 String nume = "Popa";
 String dataDeNastere = "07/04/2001";
 String email = "dariusandreicoman@gmail.com";
 String nrTelefon = "0730503545";
-
-
-
-
-

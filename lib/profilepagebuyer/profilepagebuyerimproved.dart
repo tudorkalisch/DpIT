@@ -1,11 +1,16 @@
+import 'package:buildnow/profilepagebuyer/card.dart';
 import 'package:buildnow/reviewslist/reviewspage.dart';
 import 'package:flutter/material.dart';
 import '../appbar/appbar.dart';
 import '../constants/constants.dart';
 import '../contactcard/contactcard.dart';
-import '../profilepagebuyer/variables/variables.dart';
+import 'variables.dart';
 import '../orderlist/orderlistpagecreator.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import '../product/product_card.dart';
+import 'history.dart';
+import 'cardforwarranty.dart';
+import 'card.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -14,9 +19,44 @@ class ProfilePage extends StatefulWidget {
 }
 
 class Home extends State<ProfilePage> {
+  HistoryElement lastOrderedProduct = HistoryElement(
+      'Tigla 16x16 chestie, rosu, chestie chestie chestie ', '3.99', 'Dedeman');
+  HistoryElement secondLatestOrderedProduct = HistoryElement(
+      'Ciment sofisticat, rosu, chestie chestie chestie ', '15.99', 'Dedeman');
+  HistoryElement thirdLatestOrderedProduct = HistoryElement(
+      'Termopan 8x8 incredibil, rosu, chestie chestie chestie ',
+      '10.99',
+      'Dedeman');
+  HistoryElement fourthLatestOrderedProduct = HistoryElement(
+      'Casa asemblata, rosu, chestie chestie chestie ',
+      '100.99',
+      'Leroy Merlin');
+
+  CardProfilePage myOrders = CardProfilePage(
+    'Comenzile mele',
+    'Tigla 16x16 chestie, rosu, chestie chestie chestie ',
+    '3.99',
+    'Dedeman',
+  );
+  CardProfilePage myReturns = CardProfilePage(
+    'Retururile mele',
+    'Caramida 16x16 chestie, rosu, poate sa fie si putin ',
+    '17.99',
+    'Leroy Merlin',
+  );
+
+  CardWarranty myWarranties = CardWarranty(
+      'Garantiile mele', 'caramida doar atata', '3', 'Leroy Merlin');
+
   double userRating = 2.7;
   @override
   Widget build(BuildContext context) {
+    List<HistoryElement> elementList = [
+      lastOrderedProduct,
+      secondLatestOrderedProduct,
+      thirdLatestOrderedProduct,
+      fourthLatestOrderedProduct
+    ];
     return Scaffold(
       backgroundColor: Color(backgroundColor),
       appBar: DefaultAppBar(appBar: AppBar()),
@@ -24,339 +64,177 @@ class Home extends State<ProfilePage> {
         SizedBox(
           height: 70,
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+        Column(
           children: [
-            Container(
-              margin: EdgeInsets.only(top: 20, left: 40),
-              child: CircleAvatar(
-                radius: 116,
-                backgroundColor: Color(backgroundColor),
-                child: CircleAvatar(
-                  backgroundColor: Color(backgroundColor),
-                  backgroundImage: AssetImage(avatarImagePath),
-                  radius: 115,
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: 80),
-              child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
-                height: 250,
-                width: 350,
-                child: FlatButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => OrderList()),
-                    );
-                  },
-                  height: double.infinity,
-                  child: Stack(children: [
-                    Positioned(
-                      top: 20,
-                      left: 10,
-                      child: Text('Comenzile mele',
-                          style: TextStyle(fontSize: 18, color: Colors.black)),
-                    ),
-                    Positioned(
-                      top: 30,
-                      right: 50,
-                      child: Container(
-                        height: 170,
-                        width: 170,
-                        child: Image(image: AssetImage(tiglaImagePath)),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(children: [
+                  Container(
+                    margin: EdgeInsets.only(top: 0, left: 0),
+                    child: CircleAvatar(
+                      radius: 116,
+                      backgroundColor: Color(backgroundColor),
+                      child: CircleAvatar(
+                        backgroundColor: Color(backgroundColor),
+                        backgroundImage: AssetImage(avatarImagePath),
+                        radius: 115,
                       ),
                     ),
-                    Positioned(
-                      top: 190,
-                      left: 10,
-                      child: Text(
-                        lastOrderedProductName,
-                        style: TextStyle(
-                          fontSize: 15,
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                        top: 210,
-                        left: 10,
-                        child: Text(
-                          "Distribuitor: " + lastOrderedProductSupplier,
-                          style: TextStyle(fontSize: 15),
-                        )),
-                    Positioned(
-                      top: 200,
-                      right: 10,
-                      child: Container(
-                        child: Text(
-                          lastOrderedProductPriceString + '/Bucata',
-                          style: TextStyle(
-                            fontSize: 16,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ]),
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: 45),
-              child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
-                height: 250,
-                width: 350,
-                child: FlatButton(
-                  height: double.infinity,
-                  onPressed: () {},
-                  child: Stack(children: [
-                    Positioned(
-                      top: 20,
-                      left: 10,
-                      child: Text('Retururile mele',
-                          style: TextStyle(fontSize: 18, color: Colors.black)),
-                    ),
-                    Positioned(
-                      top: 30,
-                      right: 50,
-                      child: Container(
-                        height: 170,
-                        width: 170,
-                        child: Image(image: AssetImage(tiglaImagePath)),
-                      ),
-                    ),
-                    Positioned(
-                      top: 190,
-                      left: 10,
-                      child: Text(
-                        lastOrderedProductName,
-                        style: TextStyle(
-                          fontSize: 15,
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                        top: 210,
-                        left: 10,
-                        child: Text(
-                          "Distribuitor: " + lastOrderedProductSupplier,
-                          style: TextStyle(fontSize: 15),
-                        )),
-                    Positioned(
-                      top: 200,
-                      right: 10,
-                      child: Container(
-                        child: Text(
-                          lastOrderedProductPriceString + '/Bucata',
-                          style: TextStyle(
-                            fontSize: 16,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ]),
-                ),
-              ),
-            ),
-          ],
-        ),
-        Padding(padding: EdgeInsets.only(top: 50)),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: EdgeInsets.only(
-                bottom: 0,
-              ),
-              child: Stack(children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(color: Color(greyUsedInDivider)),
-                    borderRadius: BorderRadius.all(Radius.circular(15)),
                   ),
-                  height: 250,
-                  width: 326,
-                  padding: EdgeInsets.all(20),
-                  child: Text(
-                    'Date personale'
-                    '\n'
-                    '\n',
-                    style: TextStyle(fontSize: 18),
-                  ),
-                ),
-                Positioned(
-                    top: 65,
-                    left: 20,
-                    child: Text(
-                      'Prenume: $prenume'
-                      '\n'
-                      'Nume: $nume'
-                      '\n'
-                      'Email: $email'
-                      '\n'
-                      'Nr Telefon: $nrTelefon'
-                      '\n'
-                      'Data de nastere: $dataDeNastere',
-                      style: TextStyle(height: 1.6, fontSize: 15),
-                    )),
-                Stack(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(top: 200, left: 20),
-                      child: Container(
-                          height: 1,
-                          width: 280,
-                          color: Color(greyUsedInDivider)),
-                    )
-                  ],
-                ),
-                Positioned(
-                  top: 205,
-                  right: 125,
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Text('Mai multe'),
-                  ),
-                )
-              ]),
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: 30, right: 15),
-              child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
-                height: 250,
-                width: 350,
-                child: FlatButton(
-                  onPressed: () {},
-                  height: double.infinity,
-                  child: Stack(children: [
-                    Positioned(
-                      top: 20,
-                      left: 10,
-                      child: Text('Garantia produselor mele',
-                          style: TextStyle(fontSize: 18, color: Colors.black)),
-                    ),
-                    Positioned(
-                      top: 30,
-                      right: 50,
-                      child: Container(
-                        height: 170,
-                        width: 170,
-                        child: Image(image: AssetImage(tiglaImagePath)),
-                      ),
-                    ),
-                    Positioned(
-                      top: 190,
-                      left: 10,
-                      child: Text(
-                        lastOrderedProductName,
-                        style: TextStyle(
-                          fontSize: 15,
+                  Padding(
+                    padding: EdgeInsets.only(top: 50),
+                    child: Stack(children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(color: Color(greyUsedInDivider)),
+                          borderRadius: BorderRadius.all(Radius.circular(15)),
+                        ),
+                        height: 250,
+                        width: 326,
+                        padding: EdgeInsets.all(20),
+                        child: Text(
+                          'Date personale'
+                          '\n'
+                          '\n',
+                          style: TextStyle(fontSize: 18),
                         ),
                       ),
-                    ),
-                    Positioned(
-                        top: 210,
-                        left: 10,
-                        child: Text(
-                          "Distribuitor: " + lastOrderedProductSupplier,
-                          style: TextStyle(fontSize: 15),
-                        )),
-                    Positioned(
-                      top: 200,
-                      right: 10,
-                      child: Container(
-                        child: Text(
-                          lastOrderedProductPriceString + '/Bucata',
-                          style: TextStyle(
-                            fontSize: 16,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ]),
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(right: 8, left: 30),
-              child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
-                height: 250,
-                width: 350,
-                child: FlatButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => ListReviews()),
-                    );
-                  },
-                  child: Stack(children: [
-                    Positioned(
-                      top: 20,
-                      left: 10,
-                      child: Text('Review-urile mele',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.black,
+                      Positioned(
+                          top: 65,
+                          left: 20,
+                          child: Text(
+                            'Prenume: $prenume'
+                            '\n'
+                            'Nume: $nume'
+                            '\n'
+                            'Email: $email'
+                            '\n'
+                            'Nr Telefon: $nrTelefon'
+                            '\n'
+                            'Data de nastere: $dataDeNastere',
+                            style: TextStyle(height: 1.6, fontSize: 15),
                           )),
-                    ),
-                    Positioned(
-                      top: 30,
-                      right: 50,
-                      child: Container(
-                        height: 170,
-                        width: 170,
-                        child: Image(image: AssetImage(tiglaImagePath)),
+                      Stack(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(top: 200, left: 20),
+                            child: Container(
+                                height: 1,
+                                width: 280,
+                                color: Color(greyUsedInDivider)),
+                          )
+                        ],
                       ),
-                    ),
-                    Positioned(
-                      top: 190,
-                      left: 10,
-                      child: Text(
-                        lastOrderedProductName,
-                        style: TextStyle(
-                          fontSize: 15,
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                        top: 210,
-                        left: 10,
-                        child: Text(
-                          "Distribuitor: " + lastOrderedProductSupplier,
-                          style: TextStyle(fontSize: 15),
-                        )),
-                    Positioned(
-                      top: 200,
-                      right: 10,
-                      child: Container(
-                        child: RatingBarIndicator(
-                          rating: userRating,
-                          itemBuilder: (context, index) => Icon(
-                            Icons.star,
-                            color: Colors.amber,
+                      Positioned(
+                        top: 205,
+                        right: 125,
+                        child: Container(
+                          child: TextButton(
+                            onPressed: () {},
+                            child: Text('Mai multe'),
                           ),
-                          itemCount: 5,
-                          itemSize: 24.0,
-                          direction: Axis.horizontal,
+                        ),
+                      )
+                    ]),
+                  ),
+                ]),
+                Padding(
+                  padding: EdgeInsets.only(left: 40),
+                  child: Column(
+                    children: [
+                      myOrders,
+                      Padding(padding: EdgeInsets.only(top: 30)),
+                      myWarranties,
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 40),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      myReturns,
+                      Padding(
+                        padding: EdgeInsets.only(left: 0, top: 30),
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10))),
+                          height: 250,
+                          width: 350,
+                          child: FlatButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ListReviews()),
+                              );
+                            },
+                            child: Stack(children: [
+                              Positioned(
+                                top: 20,
+                                left: 10,
+                                child: Text('Review-urile mele',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      color: Colors.black,
+                                    )),
+                              ),
+                              Positioned(
+                                top: 30,
+                                right: 50,
+                                child: Container(
+                                  height: 180,
+                                  width: 180,
+                                  child:
+                                      Image(image: AssetImage(tiglaImagePath)),
+                                ),
+                              ),
+                              Positioned(
+                                top: 200,
+                                left: 10,
+                                child: Text(
+                                  lastOrderedProductName,
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                  top: 220,
+                                  left: 10,
+                                  child: Text(
+                                    "Distribuitor: " +
+                                        lastOrderedProductSupplier,
+                                    style: TextStyle(fontSize: 15),
+                                  )),
+                              Positioned(
+                                top: 210,
+                                right: 10,
+                                child: Container(
+                                  child: RatingBarIndicator(
+                                    rating: userRating,
+                                    itemBuilder: (context, index) => Icon(
+                                      Icons.star,
+                                      color: Colors.amber,
+                                    ),
+                                    itemCount: 5,
+                                    itemSize: 24.0,
+                                    direction: Axis.horizontal,
+                                  ),
+                                ),
+                              ),
+                            ]),
+                          ),
                         ),
                       ),
-                    ),
-                  ]),
+                    ],
+                  ),
                 ),
-              ),
+              ],
             ),
           ],
         ),
@@ -388,9 +266,9 @@ class Home extends State<ProfilePage> {
                 children: [
                   Stack(children: [
                     Container(
-                      margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                      margin: EdgeInsets.only(right: 0),
                       height: 230,
-                      width: 1100,
+                      width: 1110,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.all(Radius.circular(10))),
@@ -398,171 +276,17 @@ class Home extends State<ProfilePage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
-                          child: FlatButton(
-                            onPressed: () {},
-                            child: Stack(children: [
-                              Container(
-                                child: Container(
-                                  height: 190,
-                                  width: 164,
-                                  margin: EdgeInsets.symmetric(
-                                      vertical: 14, horizontal: 40),
-                                  child:
-                                      Image(image: AssetImage(tiglaImagePath)),
-                                ),
-                              ),
-                              Positioned(
-                                  left: 40,
-                                  top: 10,
-                                  child: Text(
-                                    lastAccesedProductName,
-                                    style: TextStyle(
-                                        fontSize: 20, color: Colors.black),
-                                  )),
-                              Positioned(
-                                  top: 195,
-                                  left: 20,
-                                  child: Text('Distribuitor: ' +
-                                      lastAccesedProductSupplier)),
-                              Positioned(
-                                top: 175,
-                                left: 20,
-                                child: Text(
-                                    lastAccesedProductPriceString + " RON"),
-                              ),
-                            ]),
+                        for (var i = 0; i <= 2; i++) ...[
+                          elementList[i],
+                          VerticalDivider(
+                            width: 10,
+                            thickness: 2,
+                            color: Color(greyUsedInDivider),
+                            indent: 30,
+                            endIndent: 30,
                           ),
-                        ),
-                        VerticalDivider(
-                          width: 20,
-                          thickness: 2,
-                          color: Color(greyUsedInDivider),
-                          indent: 30,
-                          endIndent: 30,
-                        ),
-                        Container(
-                          child: FlatButton(
-                            onPressed: () {},
-                            child: Stack(children: [
-                              Positioned(
-                                  left: 40,
-                                  top: 10,
-                                  child: Text(
-                                    secondLatestAccesedProductName,
-                                    style: TextStyle(
-                                        fontSize: 20, color: Colors.black),
-                                  )),
-                              Container(
-                                child: Container(
-                                  height: 190,
-                                  width: 164,
-                                  margin: EdgeInsets.symmetric(
-                                      vertical: 14, horizontal: 40),
-                                  child:
-                                      Image(image: AssetImage(tiglaImagePath)),
-                                ),
-                              ),
-                              Positioned(
-                                  top: 195,
-                                  left: 20,
-                                  child: Text('Distribuitor: ' +
-                                      secondLatestAccesedProductSupplier)),
-                              Positioned(
-                                top: 175,
-                                left: 20,
-                                child: Text(
-                                    secondLatestAccesedProductPriceString +
-                                        " RON"),
-                              ),
-                            ]),
-                          ),
-                        ),
-                        VerticalDivider(
-                          width: 20,
-                          thickness: 2,
-                          color: Color(greyUsedInDivider),
-                          indent: 30,
-                          endIndent: 30,
-                        ),
-                        Container(
-                          child: FlatButton(
-                            onPressed: () {},
-                            child: Stack(children: [
-                              Container(
-                                height: 190,
-                                width: 164,
-                                margin: EdgeInsets.symmetric(
-                                    vertical: 14, horizontal: 40),
-                                child: Image(image: AssetImage(tiglaImagePath)),
-                              ),
-                              Positioned(
-                                  left: 40,
-                                  top: 10,
-                                  child: Text(
-                                    thirdLatestAccesedProductName,
-                                    style: TextStyle(
-                                        fontSize: 20, color: Colors.black),
-                                  )),
-                              Positioned(
-                                  top: 195,
-                                  left: 20,
-                                  child: Text('Distribuitor: ' +
-                                      thirdLatestAccesedProductSupplier)),
-                              Positioned(
-                                top: 175,
-                                left: 20,
-                                child: Text(
-                                    thirdLatestAccesedProductPriceString +
-                                        " RON"),
-                              ),
-                            ]),
-                          ),
-                        ),
-                        VerticalDivider(
-                          width: 20,
-                          thickness: 2,
-                          color: Color(greyUsedInDivider),
-                          indent: 30,
-                          endIndent: 30,
-                        ),
-                        Container(
-                          child: FlatButton(
-                            onPressed: () {},
-                            child: Stack(children: [
-                              Container(
-                                child: Container(
-                                  height: 190,
-                                  width: 164,
-                                  margin: EdgeInsets.symmetric(
-                                      vertical: 14, horizontal: 40),
-                                  child:
-                                      Image(image: AssetImage(tiglaImagePath)),
-                                ),
-                              ),
-                              Positioned(
-                                  left: 40,
-                                  top: 10,
-                                  child: Text(
-                                    fourthLatestAccesedProductName,
-                                    style: TextStyle(
-                                        fontSize: 20, color: Colors.black),
-                                  )),
-                              Positioned(
-                                  top: 195,
-                                  left: 20,
-                                  child: Text('Distribuitor: ' +
-                                      fourthLatestAccesedProductSupplier)),
-                              Positioned(
-                                top: 175,
-                                left: 20,
-                                child: Text(
-                                    fourthLatestAccesedProductPriceString +
-                                        " RON"),
-                              ),
-                            ]),
-                          ),
-                        ),
+                        ],
+                        elementList[3],
                       ],
                     ),
                   ]),
