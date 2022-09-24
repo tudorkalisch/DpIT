@@ -2,6 +2,7 @@ import 'dart:html';
 
 import 'package:buildnow/apirelated/registeruser.dart';
 import 'package:buildnow/apirelated/user.dart';
+import 'package:buildnow/apirelated/usertoregister.dart';
 import 'package:buildnow/loginpage/loginpage.dart';
 import 'package:flutter/material.dart';
 
@@ -26,13 +27,14 @@ class _MyWidgetState extends State<RegisterPageForm> {
   final mailController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
-  String roleName = 'CLIENT';
+  String roleName = "CLIENT";
+  
 
   var _outlineBorderColorMail = _baseOutlineColor;
   var _outlineBorderColorPassword = _baseOutlineColor;
   var _outlineBorderColorConfirmPassword = _baseOutlineColor;
 
-  Future<User>? _userToRegister;
+  Future<UserToRegister>? _userToRegister;
 
   bool _validateStructure(password) {
       RegExp regExp = new RegExp((Constants.passwordPattern));
@@ -58,7 +60,7 @@ class _MyWidgetState extends State<RegisterPageForm> {
     }
     else {
       setState(() {
-        _userToRegister = registerUser(mailController.text, passwordController.text, roleName).then((value){
+        _userToRegister = registerUser(mailController.text, passwordController.text, roleName, null, null, null, null, null, null).then((value){
           Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginPage()));
             return value;
         });
@@ -132,7 +134,9 @@ class _MyWidgetState extends State<RegisterPageForm> {
                   style: TextStyle(fontSize: widget.screenWidth * 0.0115),
                   ),
                   color: Color(Constants.blueButtonColor),
-                  onPressed: (){},
+                  onPressed: (){
+                    roleName = "SUPPLIER";
+                  },
                 ),
               ),
             ),
@@ -148,7 +152,9 @@ class _MyWidgetState extends State<RegisterPageForm> {
                   style: TextStyle(fontSize: widget.screenWidth * 0.0115),
                   ),
                   color: Color(Constants.blueButtonColor),
-                  onPressed: (){},
+                  onPressed: (){
+                    roleName = "CLIENT";
+                  },
                 ),
               ),
             ),

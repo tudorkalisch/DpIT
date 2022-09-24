@@ -1,9 +1,11 @@
 import 'dart:convert';
 
+import 'package:buildnow/apirelated/usertoregister.dart';
+
 import 'user.dart';
 import 'package:http/http.dart' as http;
 
-Future<User> registerUser(String email, String password, String roleName) async {
+Future<UserToRegister> registerUser(String email, String password, String roleName, String? companyName, String? CUI, String? countryOfResidence, String? city, String? telephoneNumber, DateTime? foundingDate) async {
   final response = await http.post(
     Uri.parse('http://localhost:8080/users/registration'),
     headers: <String, String>{
@@ -18,7 +20,7 @@ Future<User> registerUser(String email, String password, String roleName) async 
 
   if (response.statusCode == 200) {
     
-    return User.fromJson(jsonDecode(response.body));
+    return UserToRegister.fromJson(jsonDecode(response.body));
   } else {
     
     throw Exception('Failed to create album.');
