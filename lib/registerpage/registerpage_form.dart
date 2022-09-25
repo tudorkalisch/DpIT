@@ -4,6 +4,8 @@ import 'package:buildnow/apirelated/registeruser.dart';
 import 'package:buildnow/apirelated/user.dart';
 import 'package:buildnow/apirelated/usertoregister.dart';
 import 'package:buildnow/loginpage/loginpage.dart';
+import 'package:buildnow/register_supplier/supplier_registerpage.dart';
+import 'package:buildnow/register_supplier/supplier_registerpage_form.dart';
 import 'package:flutter/material.dart';
 
 import 'registerpage_logo.dart';
@@ -28,6 +30,7 @@ class _MyWidgetState extends State<RegisterPageForm> {
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
   String roleName = "CLIENT";
+  bool isSupplier = false;
   
 
   var _outlineBorderColorMail = _baseOutlineColor;
@@ -136,6 +139,9 @@ class _MyWidgetState extends State<RegisterPageForm> {
                   color: Color(Constants.blueButtonColor),
                   onPressed: (){
                     roleName = "SUPPLIER";
+                    setState(() {
+                      isSupplier = true;
+                    });
                   },
                 ),
               ),
@@ -239,7 +245,11 @@ class _MyWidgetState extends State<RegisterPageForm> {
                   style: TextStyle(fontSize: widget.screenWidth * 0.0115),
                   ),
                   color: Color(Constants.blueButtonColor),
-                  onPressed: register,
+                  onPressed: () {
+                    if (isSupplier == true) {
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => SupplierRegisterPageForm(email: mailController.text, password: passwordController.text, roleName: roleName)));
+                    }
+                  },
                 ),
               ),
             ),

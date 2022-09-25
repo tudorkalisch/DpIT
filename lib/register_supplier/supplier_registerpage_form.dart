@@ -1,16 +1,34 @@
+import 'package:buildnow/apirelated/registeruser.dart';
+import 'package:buildnow/apirelated/usertoregister.dart';
 import 'package:buildnow/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 import 'supplier_registerpage_logo.dart';
 
+
 class SupplierRegisterPageForm extends StatelessWidget {
+  late String? email, password, roleName;
+  SupplierRegisterPageForm({Key? key,  this.email,  this.password,  this.roleName, this.screenWidth, this.screenHeight}) : super(key: key);
   final screenWidth;
   final screenHeight;
+  final companyNameController = TextEditingController();
+  final CUICodeController = TextEditingController();
+  final countryOfResidenceController = TextEditingController();
+  final cityController = TextEditingController();
+  final telephoneNumberController = TextEditingController();
+  final foundingDateController = TextEditingController();
 
-  SupplierRegisterPageForm({this.screenWidth, this.screenHeight});
+  late Future<UserToRegister>? userToRegister; 
+
+  register() {
+    userToRegister = registerUser(email!, password!, roleName!, companyNameController.text, CUICodeController.text, countryOfResidenceController.text, cityController.text, telephoneNumberController.text, DateTime.parse(foundingDateController.text));
+  } 
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController _email = TextEditingController(text: email);
+    TextEditingController _password = TextEditingController(text: password);
+    TextEditingController _roleName= TextEditingController(text: roleName);
     return Expanded(
       flex: 90,
       child: FractionallySizedBox(
@@ -79,6 +97,7 @@ class SupplierRegisterPageForm extends StatelessWidget {
                         border: OutlineInputBorder(),
                         hintText: "Numele companiei"
                       ),
+                      controller: companyNameController,
                     )
                   ),
                   Padding(
@@ -86,8 +105,10 @@ class SupplierRegisterPageForm extends StatelessWidget {
                     child: TextField(
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
-                        hintText: "Codul CUI"
+                        hintText: "Codul CUI",
+                        
                       ),
+                      controller: CUICodeController,
                     )
                   ),
                   Padding(
@@ -97,6 +118,7 @@ class SupplierRegisterPageForm extends StatelessWidget {
                         border: OutlineInputBorder(),
                         hintText: "Țara"
                       ),
+                      controller: countryOfResidenceController,
                     )
                   ),
                   Padding(
@@ -106,6 +128,7 @@ class SupplierRegisterPageForm extends StatelessWidget {
                         border: OutlineInputBorder(),
                         hintText: "Oraș"
                       ),
+                      controller: cityController,
                     )
                   ),
                   Padding(
@@ -115,6 +138,7 @@ class SupplierRegisterPageForm extends StatelessWidget {
                         border: OutlineInputBorder(),
                         hintText: "Telefon"
                       ),
+                      controller: telephoneNumberController,
                     )
                   ),
                 ],
@@ -134,7 +158,9 @@ class SupplierRegisterPageForm extends StatelessWidget {
                     ),
                   ),
                   color: buttonColor,
-                  onPressed: (){},
+                  onPressed: (){
+                    register();
+                  },
                 ),
               ),
             ),

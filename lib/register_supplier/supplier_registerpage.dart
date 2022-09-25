@@ -1,4 +1,5 @@
 import 'package:buildnow/constants/constants.dart';
+import 'package:buildnow/profilepagebuyer/variables/variables.dart';
 import 'package:flutter/material.dart';
 
 import 'supplier_registerpage_form.dart';
