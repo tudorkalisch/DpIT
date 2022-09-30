@@ -11,6 +11,8 @@ import '../product/product_card.dart';
 import 'history.dart';
 import 'cardforwarranty.dart';
 import 'card.dart';
+import 'cardforwarranty.dart';
+import '../warrantiespage/thirdfile.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -129,11 +131,11 @@ class Home extends State<ProfilePage> {
                       ),
                       Positioned(
                         top: 205,
-                        right: 125,
+                        right: 130,
                         child: Container(
                           child: TextButton(
                             onPressed: () {},
-                            child: Text('Mai multe'),
+                            child: Text('Log out'),
                           ),
                         ),
                       )
@@ -165,7 +167,7 @@ class Home extends State<ProfilePage> {
                                   BorderRadius.all(Radius.circular(10))),
                           height: 250,
                           width: 350,
-                          child: FlatButton(
+                          child: TextButton(
                             onPressed: () {
                               Navigator.push(
                                 context,
@@ -181,6 +183,7 @@ class Home extends State<ProfilePage> {
                                     style: TextStyle(
                                       fontSize: 18,
                                       color: Colors.black,
+                                      fontWeight: FontWeight.w600,
                                     )),
                               ),
                               Positioned(
@@ -194,12 +197,17 @@ class Home extends State<ProfilePage> {
                                 ),
                               ),
                               Positioned(
-                                top: 200,
+                                top: 150,
                                 left: 10,
-                                child: Text(
-                                  lastOrderedProductName,
-                                  style: TextStyle(
-                                    fontSize: 15,
+                                child: Container(
+                                  height: 60,
+                                  child: Align(
+                                    alignment: Alignment.bottomLeft,
+                                    child: Text(
+                                      lastReviewedProductName,
+                                      style: TextStyle(
+                                          fontSize: 14, color: Colors.black),
+                                    ),
                                   ),
                                 ),
                               ),
@@ -209,10 +217,11 @@ class Home extends State<ProfilePage> {
                                   child: Text(
                                     "Distribuitor: " +
                                         lastOrderedProductSupplier,
-                                    style: TextStyle(fontSize: 15),
+                                    style: TextStyle(
+                                        fontSize: 15, color: Colors.black),
                                   )),
                               Positioned(
-                                top: 210,
+                                top: 215,
                                 right: 10,
                                 child: Container(
                                   child: RatingBarIndicator(

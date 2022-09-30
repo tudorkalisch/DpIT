@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:buildnow/classes/product.dart';
 import 'package:flutter/material.dart';
 import '../constants/constants.dart';
 import 'package:flutter/material.dart';
@@ -9,56 +10,105 @@ import '../orderlist/filterorderlist.dart';
 import '../orderlist/orderlistelement.dart';
 
 class OrderList extends StatefulWidget {
-  const OrderList({Key? key}) : super(key: key);
+  List<ProductOrdered> myList = [
+    ProductOrdered(
+      name: 'Tigla 16x16 chestie, rosu, chestie chestie chestie ',
+      price: '5.99',
+      supplierName: 'Leroy Merlin',
+      nr: '31245678',
+      date: '11 - 07 - 2022',
+      total: '51.99',
+      category: 'Acoperis',
+    ),
+    ProductOrdered(
+      name: 'Ciment 16x16 chestie, rosu, chestie chestie chestie ',
+      price: '3.99',
+      supplierName: 'Dedeman',
+      nr: '21345678',
+      date: '17 - 03 - 2021',
+      total: '41.99',
+      category: 'Prafoase',
+    ),
+    ProductOrdered(
+      name: 'Tigla 16x16 chestie, rosu, chestie chestie chestie ',
+      price: '5.99',
+      supplierName: 'Brico Depot',
+      nr: '31245678',
+      date: '09 - 10 - 2022',
+      total: '51.99',
+      category: 'Acoperis',
+    ),
+  ];
+  OrderList({Key? key}) : super(key: key);
   @override
   State<OrderList> createState() => Runner();
 }
 
 class Runner extends State<OrderList> {
-  ProductOrdered product1 = ProductOrdered(
-    name: 'Caramida 16x16 chestie, rosu, chestie chestie chestie ',
-    price: '4.99',
-    supplierName: 'Dedeman Leroy Merlin',
-    nr: '12345678',
-    day: '08',
-    month: '02',
-    year: '2002',
-    total: '31.99',
-    category: 'Solide',
-  );
-  ProductOrdered product2 = ProductOrdered(
-    name: 'Ciment 16x16 chestie, rosu, chestie chestie chestie ',
-    price: '3.99',
-    supplierName: 'Dedeman',
-    nr: '21345678',
-    day: '09',
-    month: '02',
-    year: '2002',
-    total: '41.99',
-    category: 'Prafoase',
-  );
-  ProductOrdered product3 = ProductOrdered(
-    name: 'Tigla 16x16 chestie, rosu, chestie chestie chestie ',
-    price: '5.99',
-    supplierName: 'Leroy Merlin',
-    nr: '31245678',
-    day: '10',
-    month: '02',
-    year: '2002',
-    total: '51.99',
-    category: 'Acoperis',
-  );
-  // void addProduct(list, product, product2) {
-  //   list.add(product);
-  //   list.add(product2);
-  // }
-
   _onSortPrice(list) {
     setState(() {
-      list.sort(
-          (a, b) => double.parse(a.price).compareTo(double.parse(b.price)));
+      widget.myList.sort(
+          (a, b) => double.parse(a.total).compareTo(double.parse(b.total)));
     });
   }
+
+  _onSortPriceReversed(list) {
+    setState(() {
+      widget.myList.sort(
+          (a, b) => double.parse(b.total).compareTo(double.parse(a.total)));
+    });
+  }
+
+  _onSortSupplier(list) {
+    setState(() {
+      widget.myList.sort((a, b) => a.supplierName.compareTo(b.supplierName));
+    });
+  }
+
+  _onSortSupplierReversed(list) {
+    setState(() {
+      widget.myList.sort((a, b) => b.supplierName.compareTo(a.supplierName));
+    });
+  }
+
+  _onSortCategory(list) {
+    setState(() {
+      widget.myList.sort((a, b) => a.category.compareTo(b.category));
+    });
+  }
+
+  _onSortCategoryReversed(list) {
+    setState(() {
+      widget.myList.sort((a, b) => b.category.compareTo(a.category));
+    });
+  }
+
+  _onSortSupplier2(list, value) {
+    setState(() {
+      for (var i = 0; i < 2; i++) {
+        if (widget.myList[i].supplierName != value) {}
+      }
+    });
+  }
+
+  bool reverseTime = false;
+  bool reverseSupplier = false;
+  bool reverseCategory = false;
+  String dropdownvalue = 'Item 1';
+  var items = [
+    'Item 1',
+    'Item 2',
+    'Item 3',
+    'Item 4',
+    'Item 5',
+  ];
+  String valueSupplier = 'Distribuitor';
+  final distribuitor = [
+    'Distribuitor',
+    'Dedeman',
+    'Leroy Merlin',
+    'Brico Depot'
+  ];
 
   // void initState() {
   //   super.initState();
@@ -68,8 +118,7 @@ class Runner extends State<OrderList> {
 
   @override
   Widget build(BuildContext context) {
-    List<ProductOrdered> myList = [product1, product2, product3];
-    // myList.sort((a, b) => a.price.compareTo(b.price));
+    bool isvisible = false;
     return Scaffold(
       backgroundColor: Color(backgroundColor),
       appBar: DefaultAppBar(appBar: AppBar()),
@@ -95,22 +144,54 @@ class Runner extends State<OrderList> {
                 Padding(padding: EdgeInsets.only(left: 100)),
                 TextButton(
                   onPressed: () {
-                    _onSortPrice(myList);
+                    if (reverseTime == false) {
+                      _onSortPrice(widget.myList);
+                      reverseTime = true;
+                    } else {
+                      _onSortPriceReversed(widget.myList);
+                      reverseTime = false;
+                    }
                   },
                   child: Text('pret', style: TextStyle(fontSize: 16)),
                 ),
-                Padding(padding: EdgeInsets.only(left: 0)),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    if (reverseCategory == false) {
+                      _onSortCategory(widget.myList);
+                      reverseCategory = true;
+                    } else {
+                      _onSortCategoryReversed(widget.myList);
+                      reverseCategory = false;
+                    }
+                  },
+                  child: Text('categorie', style: TextStyle(fontSize: 16)),
+                ),
+                TextButton(
+                  onPressed: () {
+                    if (reverseSupplier == false) {
+                      _onSortSupplier(widget.myList);
+                      reverseSupplier = true;
+                    } else {
+                      _onSortSupplierReversed(widget.myList);
+                      reverseSupplier = false;
+                    }
+                  },
                   child: Text('timp', style: TextStyle(fontSize: 16)),
                 ),
-                TextButton(
-                  onPressed: () {},
-                  child: Text('distribuitor', style: TextStyle(fontSize: 16)),
-                ),
-                TextButton(
-                  onPressed: () {},
-                  child: Text('categorie', style: TextStyle(fontSize: 16)),
+                DropdownButton(
+                  value: valueSupplier,
+                  style: TextStyle(color: Colors.blue),
+                  items: distribuitor.map((String items) {
+                    return DropdownMenuItem(
+                      value: items,
+                      child: Text(items),
+                    );
+                  }).toList(),
+                  onChanged: (String? newValue) {
+                    setState(() {
+                      valueSupplier = newValue!;
+                    });
+                  },
                 ),
               ]),
             ),
@@ -121,18 +202,18 @@ class Runner extends State<OrderList> {
         //   child: FilterOrderList(),
         // ),
         Center(
-          child: SizedBox(
-            child: myList[0],
+          child: Visibility(
+            child: widget.myList[0],
           ),
         ),
         Center(
-          child: SizedBox(
-            child: myList[1],
+          child: Visibility(
+            child: widget.myList[1],
           ),
         ),
         Center(
-          child: SizedBox(
-            child: myList[2],
+          child: Visibility(
+            child: widget.myList[2],
           ),
         ),
       ]),

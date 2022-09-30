@@ -9,22 +9,21 @@ class ProductOrdered extends StatelessWidget {
   var supplierName;
   var nr;
   var nrOfReviews;
-  var day;
-  var month;
-  var year;
+  var date;
   var total;
   var category;
+  var dateinteger;
 
-  ProductOrdered(
-      {this.name,
-      this.price,
-      this.supplierName,
-      this.nr,
-      this.day,
-      this.month,
-      this.year,
-      this.total,
-      this.category});
+  ProductOrdered({
+    this.name,
+    this.price,
+    this.supplierName,
+    this.nr,
+    this.date,
+    this.total,
+    this.category,
+    this.dateinteger,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -150,13 +149,7 @@ class ProductOrdered extends StatelessWidget {
                                     Padding(
                                       padding:
                                           EdgeInsets.only(top: 10, left: 20),
-                                      child: Text(
-                                          'Plasata pe: ' +
-                                              this.day +
-                                              '/' +
-                                              this.month +
-                                              '/' +
-                                              this.year,
+                                      child: Text('Plasata pe: ' + this.date,
                                           style: TextStyle(fontSize: 16)),
                                     ),
                                     Padding(

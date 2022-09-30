@@ -9,7 +9,8 @@ String lastReturnedProductName = "Caramida";
 double lastReturnedProductPrice = 3.99;
 String lastReturnedProductSupplier = "Dedeman";
 
-String lastReviewedProductName = "Caramida";
+String lastReviewedProductName =
+    "Acoperis 16x16 chestie, rosu, chestie chestie";
 double lastReviewedProductPrice = 3.99;
 String lastReviewedProductSupplier = "Dedeman";
 

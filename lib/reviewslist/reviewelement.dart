@@ -3,21 +3,21 @@ import 'package:flutter/material.dart';
 import '../constants/constants.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-class ReviewElement extends StatefulWidget {
-  @override
-  ReviewStars createState() => ReviewStars();
-}
+class ReviewStars extends StatelessWidget {
+  double userRating;
+  double productRating;
+  var userReview;
+  var thingOrdered;
+  var supplier;
 
-class ReviewStars extends State<ReviewElement> {
-  String thingOrdered =
+  ReviewStars(this.userRating, this.productRating, this.userReview,
+      this.thingOrdered, this.supplier);
+
+  String thingOrdered2 =
       'Caramida 16x16 chestie, rosu, chestie chestie chestie mai multe chestii deoarece de obicei sunt multe chestii ';
-  int amountStarsUser = 4;
-  int amountStarsOverall = 3;
-  String userReview =
+  String userReview2 =
       'Imi place foarte multa tigla asta deoarece este portocalie si cool, bravo dedeman produse buune, as vrea sa scriu mai mult dar nu stiu ce, este tigla extraordinara, recomand 10/10, 5/5 stele, perfecta.';
-  String supplier = 'Dedeman Leroy Merlin';
-  double userRating = 1.5;
-  double productRating = 3.2;
+  String supplier2 = 'Dedeman Leroy Merlin';
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class ReviewStars extends State<ReviewElement> {
             child: Container(
               child: Align(
                 alignment: Alignment.center,
-                child: Text(thingOrdered,
+                child: Text(this.thingOrdered,
                     style:
                         TextStyle(fontSize: 18, fontWeight: FontWeight.w600)),
               ),
@@ -47,7 +47,7 @@ class ReviewStars extends State<ReviewElement> {
             child: Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                '$supplier',
+                this.supplier,
                 style: TextStyle(fontSize: 16),
               ),
             ),
@@ -72,7 +72,7 @@ class ReviewStars extends State<ReviewElement> {
                                 padding: EdgeInsets.only(top: 7),
                                 child: Container(
                                   child: RatingBarIndicator(
-                                    rating: userRating,
+                                    rating: this.userRating,
                                     itemBuilder: (context, index) => Icon(
                                       Icons.star,
                                       color: Colors.amber,
@@ -98,7 +98,7 @@ class ReviewStars extends State<ReviewElement> {
                             padding: EdgeInsets.only(top: 7),
                             child: Container(
                               child: RatingBarIndicator(
-                                rating: productRating,
+                                rating: this.productRating,
                                 itemBuilder: (context, index) => Icon(
                                   Icons.star,
                                   color: Colors.amber,
@@ -143,7 +143,7 @@ class ReviewStars extends State<ReviewElement> {
               child: Center(
                   child: Container(
                 margin: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-                child: Text(userReview,
+                child: Text(this.userReview,
                     style: TextStyle(
                       fontSize: 16,
                     )),
