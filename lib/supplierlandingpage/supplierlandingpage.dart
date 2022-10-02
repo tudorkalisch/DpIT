@@ -18,7 +18,7 @@ class _SupplierLanding extends State<SupplierLanding> {
   String dropdownValueforIncome = 'Astazi';
   String dropdownValueforSales = 'Ultima ora';
   String dropdownValueforSoldArticle = 'Ultima luna';
-  final int income = 12345;
+  late int income = 12345;
   final int incomeSales = 123;
   final int soldArticles = 12;
   final int visitors = 100;
@@ -286,6 +286,8 @@ class _SupplierLanding extends State<SupplierLanding> {
                                     onChanged: (String? newValue) {
                                       setState(() {
                                         dropdownValueforSales = newValue!;
+                                        PieChartPage();
+                                        income = 50;
                                       });
                                     },
                                     items: <String>[

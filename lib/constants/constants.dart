@@ -12,6 +12,7 @@ const lineChartRed = 0xffd15c5c;
 const topContainersBlue = 0xff5ab6ac;
 const middleContainerOrange = 0xfffddbb1;
 const pieChartFillColor = 0xff5ab6ac;
+const pieChartRedFillingColor = 0xff4444;
 const barChartTitleColor = 0xff7589a2;
 const barChartBarColor = 0xffea810a;
 
