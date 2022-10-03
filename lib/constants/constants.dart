@@ -31,6 +31,10 @@ const loginPageImagePath = "assets/loginpageimage.png";
 const whiteLogoNoBackgroundPath = "assets/whitelogonobackground.png";
 const homeIconPath = "assets/homeicon.png";
 const bricksImagePath = "assets/bricks.png";
+const nailsImagePath = "assets/Nail.png";
+const cementImagePath1 = "assets/Cement_bag.png";
+const paintImagePath1 = "assets/Paint2.png";
+const thermoIsoImagePath = "assets/Thermo_insolation.png";
 
 const brickImage = "assets/caramida.png";
 

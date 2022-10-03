@@ -1,11 +1,11 @@
 import 'dart:math';
 
 import 'package:fl_chart/fl_chart.dart';
-import 'package:buildnow/supplierlandingpage/PieChart_Data/piechart_data.dart';
-import 'package:buildnow/supplierlandingpage/PieChart_Data/piechart_sectiondata.dart';
+import 'package:buildnow/supplierlandingpage/PieChart_Data_ArticlesSold/piechart_data_ArticlesSold.dart';
+import 'package:buildnow/supplierlandingpage/PieChart_Data_ArticlesSold/piechart_sectiondata_ArticlesSold.dart';
 import 'package:flutter/material.dart';
 
-class PieChartPage extends StatefulWidget {
+class PieChartPageArticlesSold extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => PieChartPageState();
 }
@@ -39,7 +39,7 @@ class PieChartPageState extends State {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 15),
-                  child: Center(child: Text(style: TextStyle(fontSize: 20), '65%')),
+                  child: Center(child: Text(style: TextStyle(fontSize: 20), '')),
                 ),
               ]),
             ]),
