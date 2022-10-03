@@ -3,13 +3,17 @@ import 'dart:html';
 import 'package:flutter/material.dart';
 import 'variables.dart';
 import '../constants/constants.dart';
+import '../product/product_card.dart';
 
 class HistoryElement extends StatelessWidget {
   var name;
   var price;
   var supplier;
+  var subCategory;
+  var nrReviews;
 
-  HistoryElement(this.name, this.price, this.supplier);
+  HistoryElement(
+      this.name, this.price, this.supplier, this.subCategory, this.nrReviews);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +24,14 @@ class HistoryElement extends StatelessWidget {
             width: 270,
             height: 230,
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //       builder: (context) => ProductCard(this.name, this.price,
+                //           this.supplier, this.subCategory, this.nrReviews)),
+                // );
+              },
               child: Stack(
                 children: [
                   Padding(

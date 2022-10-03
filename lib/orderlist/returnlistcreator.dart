@@ -12,21 +12,11 @@ import '../orderlist/orderlistelement.dart';
 class OrderList extends StatefulWidget {
   List<ProductOrdered> myList = [
     ProductOrdered(
-      name: 'Tigla ceramica, teracota, 30 x 50 cm',
-      price: '7.00',
-      supplierName: 'MaterialeDeTop',
-      nr: '31245678',
-      date: '2022-10-02',
-      total: '84.00',
-      category: 'Acoperis',
-      imageProduct: tiglaImagePath,
-    ),
-    ProductOrdered(
       name: 'Caramida plina 240 x 115 x 63 mm',
       price: '3.99',
       supplierName: 'MaterialeIeftine',
       nr: '31245678',
-      date: '2022-09-24',
+      date: '2022-09-26',
       total: '399',
       category: 'Zidarie',
       imageProduct: caramidajpg,
@@ -36,21 +26,11 @@ class OrderList extends StatefulWidget {
       price: '28.80',
       supplierName: 'MaterialeDeTop',
       nr: '21345678',
-      date: '2022-09-21',
+      date: '2022-09-24',
       total: '28.80',
       category: 'Prafoase',
       imageProduct: cementBag1,
     ),
-    ProductOrdered(
-      name: 'Cuie constructii 6 x 180 mm, cutie 1 kg',
-      price: '11.00',
-      supplierName: 'ConstructiiUsoare',
-      nr: '22312456',
-      date: '2021-01-03',
-      total: '33.00',
-      category: 'Metalurgice',
-      imageProduct: nailspng,
-    )
   ];
   OrderList({Key? key}) : super(key: key);
   @override

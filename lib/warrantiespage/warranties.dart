@@ -6,8 +6,10 @@ class Warranty extends StatelessWidget {
   var supplier;
   var orderDate;
   var warranty;
+  var image;
 
-  Warranty(this.thingOrdered, this.supplier, this.orderDate, this.warranty);
+  Warranty(this.thingOrdered, this.supplier, this.orderDate, this.warranty,
+      this.image);
 
   @override
   Widget build(BuildContext context) {
@@ -75,9 +77,7 @@ class Warranty extends StatelessWidget {
                               child: Align(
                                 alignment: Alignment.centerLeft,
                                 child: Text(
-                                  'Garantia produsului: ' +
-                                      this.warranty +
-                                      ' ani',
+                                  'Garantia produsului: ' + this.warranty,
                                   style: TextStyle(
                                     fontSize: 16,
                                   ),
@@ -102,7 +102,7 @@ class Warranty extends StatelessWidget {
                       child: SizedBox(
                         width: 200,
                         height: 200,
-                        child: Image(image: AssetImage(tiglaImagePath)),
+                        child: Image(image: AssetImage(this.image)),
                       ),
                     )
                   ],

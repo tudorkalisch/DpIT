@@ -43,8 +43,8 @@ String fourthLatestAccesedProductSupplier = "Dedeman";
 String fourthLatestAccesedProductPriceString =
     fourthLatestAccesedProductPrice.toString();
 
-String prenume = "Vasile";
+String prenume = "Mircea";
 String nume = "Popa";
-String dataDeNastere = "07/04/2001";
-String email = "dariusandreicoman@gmail.com";
-String nrTelefon = "0730503545";
+String dataDeNastere = "05/10/2022";
+String email = "p******cea@gmail.com";
+String nrTelefon = "07******45";

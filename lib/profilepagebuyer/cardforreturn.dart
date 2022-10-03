@@ -4,14 +4,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../orderlist/orderlistpagecreator.dart';
 
-class CardProfilePage extends StatelessWidget {
+class CardProfilePageReturns extends StatelessWidget {
   var name;
   var order;
   var price;
   var supplier;
   var image;
 
-  CardProfilePage(this.name, this.order, this.price, this.supplier, this.image);
+  CardProfilePageReturns(
+      this.name, this.order, this.price, this.supplier, this.image);
 
   @override
   Widget build(BuildContext context) {
@@ -43,8 +44,8 @@ class CardProfilePage extends StatelessWidget {
               padding: EdgeInsets.only(bottom: 30, left: 70),
               child: Center(
                 child: SizedBox(
-                  height: 180,
-                  width: 180,
+                  height: 140,
+                  width: 140,
                   child: Image(image: AssetImage(this.image)),
                 ),
               ),

@@ -13,6 +13,7 @@ class ProductOrdered extends StatelessWidget {
   var total;
   var category;
   var dateinteger;
+  var imageProduct;
 
   ProductOrdered({
     this.name,
@@ -23,7 +24,17 @@ class ProductOrdered extends StatelessWidget {
     this.total,
     this.category,
     this.dateinteger,
+    this.imageProduct,
   });
+
+  getSupplierName() {
+    return this.supplierName;
+  }
+
+  getDateTime() {
+    DateTime date = DateTime.parse(this.date);
+    return date;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +72,7 @@ class ProductOrdered extends StatelessWidget {
                           child: Container(
                             height: 200,
                             width: 200,
-                            child: Image(image: AssetImage(tiglaImagePath)),
+                            child: Image(image: AssetImage(this.imageProduct)),
                           ),
                         ),
                       ],

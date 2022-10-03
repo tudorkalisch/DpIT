@@ -4,14 +4,16 @@ import '../constants/constants.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class ReviewStars extends StatelessWidget {
-  double userRating;
-  double productRating;
+  var userRating;
+  var productRating;
   var userReview;
   var thingOrdered;
   var supplier;
+  var date;
+  var image;
 
   ReviewStars(this.userRating, this.productRating, this.userReview,
-      this.thingOrdered, this.supplier);
+      this.thingOrdered, this.supplier, this.date, this.image);
 
   String thingOrdered2 =
       'Caramida 16x16 chestie, rosu, chestie chestie chestie mai multe chestii deoarece de obicei sunt multe chestii ';
@@ -47,7 +49,7 @@ class ReviewStars extends StatelessWidget {
             child: Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                this.supplier,
+                this.date + '\n' + this.supplier,
                 style: TextStyle(fontSize: 16),
               ),
             ),
@@ -118,7 +120,7 @@ class ReviewStars extends StatelessWidget {
                 child: Container(
                     width: 225,
                     height: 225,
-                    child: Image(image: AssetImage(tiglaImagePath))),
+                    child: Image(image: AssetImage(this.image))),
               ),
             ],
           ),

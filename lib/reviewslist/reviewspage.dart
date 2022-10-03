@@ -11,17 +11,21 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 class ListReviews extends StatefulWidget {
   List<ReviewStars> myList = [
     ReviewStars(
-        3.2,
-        4.1,
-        'Imi place foarte multa tigla asta deoarece este portocalie si cool, bravo dedeman produse buune, as vrea sa scriu mai mult dar nu stiu ce, este tigla extraordinara, recomand 10/10, 5/5 stele, perfecta.',
-        'Caramida 16x16 chestie, rosu, chestie chestie chestie mai multe chestii deoarece de obicei sunt multe chestii ',
-        'Dedeman'),
+        2,
+        3,
+        'Din pacate, pozele nu reflecta realitatea. Caramizile nu sunt de prea mare calitate, ma asteptam la mai mult. Nu recomand.',
+        'Caramida plina 240 x 115 x 63 mm',
+        'MaterialeIeftine',
+        '2022-10-01',
+        caramidajpg),
     ReviewStars(
+        4,
         4.4,
-        2.7,
-        'Nu imi place foarte multa tigla asta deoarece este portocalie si cool, bravo dedeman produse buune, as vrea sa scriu mai mult dar nu stiu ce, este tigla extraordinara, recomand 10/10, 5/5 stele, perfecta.',
-        'Tigla 16x16 chestie, rosu, chestie chestie chestie mai multe chestii deoarece de obicei sunt multe chestii ',
-        'Brico Depot'),
+        'Tigla de calitate, arata foarte bine, rezistenta, nu foarte scumpa. Recomand.',
+        'Tigla ceramica, teracota, 30 x 50 cm',
+        'MaterialeDeTop',
+        '2022-09-29',
+        tiglaImagePath),
   ];
   ListReviews({Key? key}) : super(key: key);
   @override
@@ -29,32 +33,82 @@ class ListReviews extends StatefulWidget {
 }
 
 class ReviewsPage extends State<ListReviews> {
-  _onSortStarsUser(list) {
-    setState(() {
-      widget.myList.sort((a, b) => b.userRating.compareTo(a.userRating));
-    });
+  bool condition = true;
+
+  String valueTime = 'Vechime (zile)';
+  final vechime = ['Vechime (zile)', '7', '30', '180', '365'];
+
+  String dateNow = ('2022-10-01');
+
+  _verifyTime(date1, date2, value) {
+    if (valueTime != 'Vechime (zile)') {
+      DateTime date2compare = DateTime.parse(date2);
+      date2compare = date2compare.subtract(Duration(days: int.parse(value)));
+      DateTime date1compare = DateTime.parse(date1);
+      if (date1compare.isAfter(date2compare)) {
+        condition = true;
+      } else {
+        condition = false;
+      }
+    } else {
+      condition = true;
+    }
+    return condition;
   }
 
-  _onSortStarsUserReversed(list) {
-    setState(() {
-      widget.myList.sort((a, b) => a.userRating.compareTo(b.userRating));
-    });
+  _verifyStarsGiven(name1, name2) {
+    if (name2 != 'Stele acordate') {
+      if (double.parse(name2) <= name1 && name1 < (double.parse(name2)) + 1) {
+        condition = true;
+      } else {
+        condition = false;
+      }
+      ;
+    } else if (name2 == 'Stele acordate') {
+      condition = true;
+    }
+    return condition;
   }
 
-  _onSortStarsProduct(list) {
-    setState(() {
-      widget.myList.sort((a, b) => b.productRating.compareTo(a.productRating));
-    });
+  _verifyStarsProduct(name1, name2) {
+    if (name2 != 'Stelele produsului') {
+      if (double.parse(name2) < name1 && name1 < (double.parse(name2)) + 1) {
+        condition = true;
+      } else {
+        condition = false;
+      }
+      ;
+    } else if (name2 == 'Stelele produsului') {
+      condition = true;
+    }
+    return condition;
   }
 
-  _onSortStarsProductReversed(list) {
-    setState(() {
-      widget.myList.sort((a, b) => a.productRating.compareTo(b.productRating));
-    });
+  _verifySupplier(name1, name2) {
+    if (name1 == name2) {
+      condition = true;
+    } else if (name2 == 'Distribuitor') {
+      condition = true;
+    } else {
+      condition = false;
+    }
+    return condition;
   }
 
   bool isReversedUserRating = false;
   bool isReversedProductRating = false;
+
+  String valueStarsGiven = 'Stele acordate';
+  String valueStarsProduct = 'Stelele produsului';
+  final starsUser = ['Stele acordate', '1', '2', '3', '4', '5'];
+  final starsProduct = ['Stelele produsului', '1', '2', '3', '4', '5'];
+  String valueSupplier = 'Distribuitor';
+  final distribuitor = [
+    'Distribuitor',
+    'Dedeman',
+    'Leroy Merlin',
+    'Brico Depot'
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -82,50 +136,96 @@ class ReviewsPage extends State<ListReviews> {
                         fontWeight: FontWeight.w600),
                   ),
                   Padding(padding: EdgeInsets.only(left: 100)),
-                  TextButton(
-                    onPressed: () {
-                      if (isReversedUserRating == false) {
-                        _onSortStarsUser(widget.myList);
-                        isReversedUserRating = true;
-                      } else {
-                        _onSortStarsUserReversed(widget.myList);
-                        isReversedUserRating = false;
-                      }
+                  DropdownButton(
+                    value: valueStarsGiven,
+                    style: TextStyle(color: Colors.blue),
+                    items: starsUser.map((String items) {
+                      return DropdownMenuItem(
+                        value: items,
+                        child: Text(items),
+                      );
+                    }).toList(),
+                    onChanged: (String? newValue1) {
+                      setState(() {
+                        valueStarsGiven = newValue1!;
+                      });
                     },
-                    child:
-                        Text('stele acordate', style: TextStyle(fontSize: 16)),
                   ),
                   Padding(padding: EdgeInsets.only(left: 10, right: 20)),
-                  TextButton(
-                    onPressed: () {
-                      if (isReversedProductRating == false) {
-                        _onSortStarsProduct(widget.myList);
-                        isReversedProductRating = true;
-                      } else {
-                        _onSortStarsProductReversed(widget.myList);
-                        isReversedProductRating = false;
-                      }
+                  DropdownButton(
+                    value: valueStarsProduct,
+                    style: TextStyle(color: Colors.blue),
+                    items: starsProduct.map((String items) {
+                      return DropdownMenuItem(
+                        value: items,
+                        child: Text(items),
+                      );
+                    }).toList(),
+                    onChanged: (String? newValue2) {
+                      setState(() {
+                        valueStarsProduct = newValue2!;
+                      });
                     },
-                    child: Text('stelele produsului',
-                        style: TextStyle(fontSize: 16)),
                   ),
                   Padding(padding: EdgeInsets.only(left: 10, right: 20)),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text('timp', style: TextStyle(fontSize: 16)),
+                  DropdownButton(
+                    value: valueTime,
+                    style: TextStyle(color: Colors.blue),
+                    items: vechime.map((String items) {
+                      return DropdownMenuItem(
+                        value: items,
+                        child: Text(items),
+                      );
+                    }).toList(),
+                    onChanged: (String? newValue2) {
+                      setState(() {
+                        valueTime = newValue2!;
+                      });
+                    },
                   ),
                   Padding(padding: EdgeInsets.only(left: 10, right: 20)),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text('distribuitor', style: TextStyle(fontSize: 16)),
+                  DropdownButton(
+                    value: valueSupplier,
+                    style: TextStyle(color: Colors.blue),
+                    items: distribuitor.map((String items) {
+                      return DropdownMenuItem(
+                        value: items,
+                        child: Text(items),
+                      );
+                    }).toList(),
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        valueSupplier = newValue!;
+                      });
+                    },
                   ),
                 ]),
               ),
             ),
           ),
         ),
-        widget.myList[0],
-        widget.myList[1],
+        Center(
+          child: Visibility(
+            visible: _verifyStarsGiven(
+                    widget.myList[0].userRating, valueStarsGiven) &&
+                _verifyStarsProduct(
+                    widget.myList[0].productRating, valueStarsProduct) &&
+                _verifySupplier(widget.myList[0].supplier, valueSupplier) &&
+                _verifyTime(widget.myList[0].date, dateNow, valueTime),
+            child: widget.myList[0],
+          ),
+        ),
+        Center(
+          child: Visibility(
+            visible: _verifyStarsGiven(
+                    widget.myList[1].userRating, valueStarsGiven) &&
+                _verifyStarsProduct(
+                    widget.myList[1].productRating, valueStarsProduct) &&
+                _verifySupplier(widget.myList[1].supplier, valueSupplier) &&
+                _verifyTime(widget.myList[1].date, dateNow, valueTime),
+            child: widget.myList[1],
+          ),
+        ),
       ]),
     );
   }

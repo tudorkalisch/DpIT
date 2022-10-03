@@ -13,6 +13,8 @@ import 'cardforwarranty.dart';
 import 'card.dart';
 import 'cardforwarranty.dart';
 import '../warrantiespage/thirdfile.dart';
+import '../product/product_card.dart';
+import 'cardforreturn.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -22,35 +24,49 @@ class ProfilePage extends StatefulWidget {
 
 class Home extends State<ProfilePage> {
   HistoryElement lastOrderedProduct = HistoryElement(
-      'Tigla 16x16 chestie, rosu, chestie chestie chestie ', '3.99', 'Dedeman');
+      'Tigla 16x16 chestie, rosu, chestie chestie chestie ',
+      '3.99',
+      'Dedeman',
+      'Acoperis',
+      '3');
   HistoryElement secondLatestOrderedProduct = HistoryElement(
-      'Ciment sofisticat, rosu, chestie chestie chestie ', '15.99', 'Dedeman');
+      'Ciment sofisticat, rosu, chestie chestie chestie ',
+      '15.99',
+      'Dedeman',
+      'Acoperis',
+      '3');
   HistoryElement thirdLatestOrderedProduct = HistoryElement(
       'Termopan 8x8 incredibil, rosu, chestie chestie chestie ',
       '10.99',
-      'Dedeman');
+      'Dedeman',
+      'Acoperis',
+      '3');
   HistoryElement fourthLatestOrderedProduct = HistoryElement(
       'Casa asemblata, rosu, chestie chestie chestie ',
       '100.99',
-      'Leroy Merlin');
+      'Leroy Merlin',
+      'Acoperis',
+      '3');
 
   CardProfilePage myOrders = CardProfilePage(
     'Comenzile mele',
-    'Tigla 16x16 chestie, rosu, chestie chestie chestie ',
-    '3.99',
-    'Dedeman',
+    'Tigla ceramica, teracota, 30 x 50 cm',
+    '7.00',
+    'MaterialeDeTop',
+    tiglaImagePath,
   );
-  CardProfilePage myReturns = CardProfilePage(
+  CardProfilePageReturns myReturns = CardProfilePageReturns(
     'Retururile mele',
-    'Caramida 16x16 chestie, rosu, poate sa fie si putin ',
-    '17.99',
-    'Leroy Merlin',
+    'Caramida plina 240 x 115 x 63 mm',
+    '3.99',
+    'MaterialeIeftine',
+    caramidajpg,
   );
 
-  CardWarranty myWarranties = CardWarranty(
-      'Garantiile mele', 'caramida doar atata', '3', 'Leroy Merlin');
+  CardWarranty myWarranties = CardWarranty('Garantiile mele',
+      'Tigla ceramica, teracota, 30 x 50 cm', '3', 'MaterialeDeTop');
 
-  double userRating = 2.7;
+  double userRating = 4;
   @override
   Widget build(BuildContext context) {
     List<HistoryElement> elementList = [
@@ -79,7 +95,7 @@ class Home extends State<ProfilePage> {
                       backgroundColor: Color(backgroundColor),
                       child: CircleAvatar(
                         backgroundColor: Color(backgroundColor),
-                        backgroundImage: AssetImage(avatarImagePath),
+                        backgroundImage: AssetImage(profilePicture),
                         radius: 115,
                       ),
                     ),
@@ -115,7 +131,7 @@ class Home extends State<ProfilePage> {
                             '\n'
                             'Nr Telefon: $nrTelefon'
                             '\n'
-                            'Data de nastere: $dataDeNastere',
+                            'Cont creat pe: $dataDeNastere',
                             style: TextStyle(height: 1.6, fontSize: 15),
                           )),
                       Stack(
@@ -204,7 +220,7 @@ class Home extends State<ProfilePage> {
                                   child: Align(
                                     alignment: Alignment.bottomLeft,
                                     child: Text(
-                                      lastReviewedProductName,
+                                      'Tigla ceramica, teracota, 30 x 50 cm',
                                       style: TextStyle(
                                           fontSize: 14, color: Colors.black),
                                     ),
@@ -215,8 +231,7 @@ class Home extends State<ProfilePage> {
                                   top: 220,
                                   left: 10,
                                   child: Text(
-                                    "Distribuitor: " +
-                                        lastOrderedProductSupplier,
+                                    'MaterialeDeTop',
                                     style: TextStyle(
                                         fontSize: 15, color: Colors.black),
                                   )),
