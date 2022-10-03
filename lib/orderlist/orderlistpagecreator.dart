@@ -16,7 +16,7 @@ class OrderList extends StatefulWidget {
       price: '7.00',
       supplierName: 'MaterialeDeTop',
       nr: '31245678',
-      date: '2022-10-02',
+      date: '2022-10-01',
       total: '84.00',
       category: 'Acoperis',
       imageProduct: tiglaImagePath,
@@ -313,7 +313,6 @@ class Runner extends State<OrderList> {
           ),
         ),
         Padding(padding: EdgeInsets.only(top: 40)),
-        ContactCard(),
       ]),
     );
   }

@@ -9,7 +9,7 @@ import '../contactcard/contactcard.dart';
 import '../orderlist/filterorderlist.dart';
 import '../orderlist/orderlistelement.dart';
 
-class OrderList extends StatefulWidget {
+class OrderListReturns extends StatefulWidget {
   List<ProductOrdered> myList = [
     ProductOrdered(
       name: 'Caramida plina 240 x 115 x 63 mm',
@@ -32,12 +32,12 @@ class OrderList extends StatefulWidget {
       imageProduct: cementBag1,
     ),
   ];
-  OrderList({Key? key}) : super(key: key);
+  OrderListReturns({Key? key}) : super(key: key);
   @override
-  State<OrderList> createState() => Runner();
+  State<OrderListReturns> createState() => Runner2();
 }
 
-class Runner extends State<OrderList> {
+class Runner2 extends State<OrderListReturns> {
   bool condition = false;
 
   String valueTime = 'Vechime (zile)';
@@ -272,28 +272,7 @@ class Runner extends State<OrderList> {
             child: widget.myList[1],
           ),
         ),
-        Center(
-          child: Visibility(
-            visible:
-                _verifyCategory(widget.myList[2].category, valueCategory) &&
-                    _verifyName(widget.myList[2].supplierName, valueSupplier) &&
-                    _verifyTime(widget.myList[2].date, dateNow, valueTime) &&
-                    _verifyPrice(widget.myList[2].total, valuePrice),
-            child: widget.myList[2],
-          ),
-        ),
-        Center(
-          child: Visibility(
-            visible:
-                _verifyCategory(widget.myList[3].category, valueCategory) &&
-                    _verifyName(widget.myList[3].supplierName, valueSupplier) &&
-                    _verifyTime(widget.myList[3].date, dateNow, valueTime) &&
-                    _verifyPrice(widget.myList[3].total, valuePrice),
-            child: widget.myList[3],
-          ),
-        ),
         Padding(padding: EdgeInsets.only(top: 40)),
-        ContactCard(),
       ]),
     );
   }

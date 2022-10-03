@@ -11,21 +11,21 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 class ListReviews extends StatefulWidget {
   List<ReviewStars> myList = [
     ReviewStars(
-        2,
-        3,
-        'Din pacate, pozele nu reflecta realitatea. Caramizile nu sunt de prea mare calitate, ma asteptam la mai mult. Nu recomand.',
-        'Caramida plina 240 x 115 x 63 mm',
-        'MaterialeIeftine',
-        '2022-10-01',
-        caramidajpg),
-    ReviewStars(
         4,
         4.4,
         'Tigla de calitate, arata foarte bine, rezistenta, nu foarte scumpa. Recomand.',
         'Tigla ceramica, teracota, 30 x 50 cm',
         'MaterialeDeTop',
-        '2022-09-29',
+        '2022-10-01',
         tiglaImagePath),
+    ReviewStars(
+        2,
+        3,
+        'Din pacate, pozele nu reflecta realitatea. Caramizile nu sunt de prea mare calitate, ma asteptam la mai mult. Nu recomand.',
+        'Caramida plina 240 x 115 x 63 mm',
+        'MaterialeIeftine',
+        '2022-09-29',
+        caramidajpg),
   ];
   ListReviews({Key? key}) : super(key: key);
   @override

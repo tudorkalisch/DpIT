@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
 import '../orderlist/orderlistpagecreator.dart';
+import '../orderlist/returnlistcreator.dart';
 
 class CardProfilePageReturns extends StatelessWidget {
   var name;
@@ -26,7 +27,7 @@ class CardProfilePageReturns extends StatelessWidget {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => OrderList()),
+            MaterialPageRoute(builder: (context) => OrderListReturns()),
           );
         },
         child: Stack(
