@@ -11,9 +11,10 @@ class HistoryElement extends StatelessWidget {
   var supplier;
   var subCategory;
   var nrReviews;
+  var image;
 
-  HistoryElement(
-      this.name, this.price, this.supplier, this.subCategory, this.nrReviews);
+  HistoryElement(this.name, this.price, this.supplier, this.subCategory,
+      this.nrReviews, this.image);
 
   @override
   Widget build(BuildContext context) {
@@ -42,14 +43,14 @@ class HistoryElement extends StatelessWidget {
                       )),
                   Center(
                     child: SizedBox(
-                        height: 190,
+                        height: 170,
                         width: 164,
-                        child: Image(image: AssetImage(tiglaImagePath))),
+                        child: Image(image: AssetImage(this.image))),
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 180, left: 10),
                     child: Text(
-                      this.price + ' /RON',
+                      this.price + ' /bucata',
                       style: TextStyle(color: Colors.black),
                     ),
                   ),

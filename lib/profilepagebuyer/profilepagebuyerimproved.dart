@@ -24,29 +24,34 @@ class ProfilePage extends StatefulWidget {
 
 class Home extends State<ProfilePage> {
   HistoryElement lastOrderedProduct = HistoryElement(
-      'Tigla 16x16 chestie, rosu, chestie chestie chestie ',
-      '3.99',
-      'Dedeman',
-      'Acoperis',
-      '3');
+      'Caramida 220 x 110 x 60 mm',
+      '4.99',
+      'ConstructiiUsoare',
+      'Zidarie',
+      '3',
+      caramidajpg3);
   HistoryElement secondLatestOrderedProduct = HistoryElement(
-      'Ciment sofisticat, rosu, chestie chestie chestie ',
-      '15.99',
-      'Dedeman',
-      'Acoperis',
-      '3');
+      'Ciment 500, 20 kg',
+      '23.00',
+      'MaterialeIeftine',
+      'Prafoase',
+      '3',
+      cementBag1);
   HistoryElement thirdLatestOrderedProduct = HistoryElement(
-      'Termopan 8x8 incredibil, rosu, chestie chestie chestie ',
+      'Vopsea alba 1 litru',
       '10.99',
-      'Dedeman',
-      'Acoperis',
-      '3');
+      'MaterialeIeftine',
+      'Zidarie',
+      '3',
+      paintimage);
   HistoryElement fourthLatestOrderedProduct = HistoryElement(
-      'Casa asemblata, rosu, chestie chestie chestie ',
-      '100.99',
-      'Leroy Merlin',
-      'Acoperis',
-      '3');
+    'Cuie constructii 6x190 mm, cutie 1.5kg',
+    '13.00',
+    'ConstructiiUsoare',
+    'Metalurgice',
+    '3',
+    nailspng,
+  );
 
   CardProfilePage myOrders = CardProfilePage(
     'Comenzile mele',

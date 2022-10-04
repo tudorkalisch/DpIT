@@ -86,6 +86,10 @@ flutter:
     - assets/Nail.png
     - assets/profilePicture.jpg
     - assets/caramidajpg2.jpg
+    - assets/caramidajpg2nobackground.png
+    - assets/caramida3.jpg
+    - assets/Paint2.png
+    - assets/caramida2.jpg
     
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
