@@ -1,3 +1,4 @@
+import 'package:buildnow/searchpage/searchpage.dart';
 import 'package:flutter/material.dart';
 
 import '../constants/constants.dart' as Constants;
@@ -11,10 +12,29 @@ import 'package:icons_plus/icons_plus.dart';
 class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
   final AppBar appBar;
 
-  const DefaultAppBar({Key? key, required this.appBar}) : super(key: key);
+  DefaultAppBar({Key? key, required this.appBar}) : super(key: key);
+
+  final List<String> seacrhList = ['Caramida', 'Cuie', 'Ciment', 'Termoizolator'];
+
+  
+
 
   @override
   Widget build(BuildContext context) {
+
+    search(var productToSearch){
+      var i;
+
+      for( i in seacrhList){
+        if(i == productToSearch){
+           Navigator.of(context).push(MaterialPageRoute(builder: (context) => SearchPage(productList: [productToSearch],)));
+           break;
+        }
+      }
+
+
+  }
+    TextEditingController productSearched = TextEditingController();
     return AppBar(
         flexibleSpace: Container(
           decoration: BoxDecoration(
@@ -43,13 +63,20 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
                     color: Colors.white),
                 child: Padding(
                   padding: EdgeInsets.only(left: 14),
-                  child: TextField(
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    icon: Icon(CupertinoIcons.search),
-                  ),
-                  style: TextStyle(fontSize: 15),
-                )),
+                  child: Row(
+                    children: [
+                      IconButton(
+                      onPressed:  () {
+                        search(productSearched);
+                      }, 
+                      icon: Icon(CupertinoIcons.search),
+                      ),
+                      TextField(
+                        controller: productSearched,
+                        style: TextStyle(fontSize: 15),
+                ),
+                    ],
+                  )),
               )),
           ],
           ),
