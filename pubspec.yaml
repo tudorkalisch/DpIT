@@ -81,6 +81,10 @@ flutter:
     - assets/Review-star.png
     - assets/Avatar18.png
     - assets/buildnow.png
+    - assets/Nail.png
+    - assets/Cement_bag.png
+    - assets/Paint2.png
+    - assets/Thermo_insolation.png
     
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

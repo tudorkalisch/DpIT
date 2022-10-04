@@ -1,5 +1,5 @@
 import 'package:fl_chart/fl_chart.dart';
-import 'package:buildnow/supplierlandingpage/PieChart_Data/piechart_data.dart';
+import 'package:buildnow/supplierlandingpage/PieChart_Data_ArticlesSold/piechart_data_ArticlesSold.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 

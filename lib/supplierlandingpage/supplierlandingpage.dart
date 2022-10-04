@@ -1,9 +1,12 @@
+import 'package:buildnow/supplierlandingpage/PieChart_Data_ArticlesSold/piechartArticlesSold.dart';
+import 'package:buildnow/supplierlandingpage/PieChart_Data_Income/piechartIncome.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:buildnow/supplierlandingpage/piechart.dart';
+import 'package:buildnow/supplierlandingpage/PieChart_Data_Sales/piechartSales.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:buildnow/supplierlandingpage/BarChart/barchart_improved.dart';
 import 'package:buildnow/constants/constants.dart' as Constants;
+import 'PieChart_Data_Sales/piechartSales.dart';
 import 'productlist_element.dart';
 import 'package:buildnow/appbar/appbar.dart';
 
@@ -18,7 +21,7 @@ class _SupplierLanding extends State<SupplierLanding> {
   String dropdownValueforIncome = 'Astazi';
   String dropdownValueforSales = 'Ultima ora';
   String dropdownValueforSoldArticle = 'Ultima luna';
-  final int income = 12345;
+  late int income = 12345;
   final int incomeSales = 123;
   final int soldArticles = 12;
   final int visitors = 100;
@@ -254,7 +257,7 @@ class _SupplierLanding extends State<SupplierLanding> {
                               ],
                             ),
 
-                            PieChartPage()
+                            PieChartPageIncome()
 
                             ///PieChart - need data
                           ],
@@ -286,6 +289,8 @@ class _SupplierLanding extends State<SupplierLanding> {
                                     onChanged: (String? newValue) {
                                       setState(() {
                                         dropdownValueforSales = newValue!;
+                                        PieChartPageSales();
+                                        income = 50;
                                       });
                                     },
                                     items: <String>[
@@ -308,7 +313,7 @@ class _SupplierLanding extends State<SupplierLanding> {
                                 )
                               ],
                             ),
-                            PieChartPage()
+                            PieChartPageSales()
 
                             ///PieChart -- need data
                           ],
@@ -361,7 +366,7 @@ class _SupplierLanding extends State<SupplierLanding> {
                                     soldArticles.toString())
                               ],
                             ),
-                            PieChartPage()
+                            PieChartPageArticlesSold()
                           ],
                         ),
                       )
@@ -445,11 +450,12 @@ class _SupplierLanding extends State<SupplierLanding> {
                           scrollDirection: Axis.vertical,
                           shrinkWrap: true,
                           children: [
-                            productListElement(),
-                            productListElement(),
-                            productListElement(),
-                            productListElement(),
-                            productListElement()
+                            productListElement('Termoizolatori', 123, 623.21, Constants.thermoIsoImagePath),
+                            productListElement('Saci de ciment', 213, 421.56, Constants.cementImagePath1,),
+                            productListElement('Caramizi', 211, 152.66, Constants.bricksImagePath),
+                            productListElement('Cuie', 57, 135.57, Constants.nailsImagePath),
+                            productListElement('Vopsea', 63, 112.98, Constants.paintImagePath1),
+                            
 
                           ]
                             

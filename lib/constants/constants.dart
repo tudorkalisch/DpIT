@@ -12,6 +12,7 @@ const lineChartRed = 0xffd15c5c;
 const topContainersBlue = 0xff5ab6ac;
 const middleContainerOrange = 0xfffddbb1;
 const pieChartFillColor = 0xff5ab6ac;
+const pieChartRedFillingColor = 0xff4444;
 const barChartTitleColor = 0xff7589a2;
 const barChartBarColor = 0xffea810a;
 
@@ -30,6 +31,10 @@ const loginPageImagePath = "assets/loginpageimage.png";
 const whiteLogoNoBackgroundPath = "assets/whitelogonobackground.png";
 const homeIconPath = "assets/homeicon.png";
 const bricksImagePath = "assets/bricks.png";
+const nailsImagePath = "assets/Nail.png";
+const cementImagePath1 = "assets/Cement_bag.png";
+const paintImagePath1 = "assets/Paint2.png";
+const thermoIsoImagePath = "assets/Thermo_insolation.png";
 
 const brickImage = "assets/caramida.png";
 
