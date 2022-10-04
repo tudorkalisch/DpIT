@@ -45,26 +45,26 @@ class _MyWidgetState extends State<LoginPageForm> {
     }
 
   logIn() {
-      if (!_validateStructure(passwordController.text)) {
-        setState(() {
-          _outlineColorPassword = Colors.red;
-        });
-      }
-      else {
-        setState(() {
-          _outlineColorPassword = _baseOutlineColor;
-        });
-      }
-      if(!EmailValidator.validate(mailController.text)) {
-        setState(() {
-          _outlineColorMail = Colors.red;
-        });
-      }
-      else {
-        setState(() {
-          _outlineColorMail = _baseOutlineColor;
-        });
-      }
+      // if (!_validateStructure(passwordController.text)) {
+      //   setState(() {
+      //     _outlineColorPassword = Colors.red;
+      //   });
+      // }
+      // else {
+      //   setState(() {
+      //     _outlineColorPassword = _baseOutlineColor;
+      //   });
+      // }
+      // if(!EmailValidator.validate(mailController.text)) {
+      //   setState(() {
+      //     _outlineColorMail = Colors.red;
+      //   });
+      // }
+      // else {
+      //   setState(() {
+      //     _outlineColorMail = _baseOutlineColor;
+      //   });
+      // }
   }
 
   @override
@@ -127,7 +127,7 @@ class _MyWidgetState extends State<LoginPageForm> {
                             ),
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: _outlineColorMail)),
-                        hintText: "E-mail",
+                        hintText: "Username",
                       ),
                       enableSuggestions: false,
                       autocorrect: false,
@@ -220,7 +220,7 @@ class _MyWidgetState extends State<LoginPageForm> {
                         onPressed: () {
                           Navigator.of(context).push(MaterialPageRoute(builder: (context) => RegisterPage()));
                         },
-                        child: const Text("Creați-vă un cont"))))
+                        child: const Text("Register"))))
           ])),
     );
   }

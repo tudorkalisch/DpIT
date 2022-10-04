@@ -9,30 +9,61 @@ import 'package:iconamoon/iconamoon.dart';
 
 import 'package:icons_plus/icons_plus.dart';
 
+import '../classes/product.dart';
+
 class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
   final AppBar appBar;
 
-  DefaultAppBar({Key? key, required this.appBar}) : super(key: key);
-
-  final List<String> seacrhList = ['Caramida', 'Cuie', 'Ciment', 'Termoizolator'];
-
+  late TextEditingController productController;
   
+  List<Product> productList = [
+        Product(
+      name: "Caramida bca",
+      price: "3.99",
+      supplierName: "La Nutu acasa SRL",
+      subCategory: "Zidarie",
+      nrOfReviews: "7"
+    ),
+        Product(
+      name: "Caramida rosie",
+      price: "3.99",
+      supplierName: "Materiale SRL",
+      subCategory: "Zidarie",
+      nrOfReviews: "7"
+    ),
+        Product(
+      name: "Caramida de interior",
+      price: "4.49",
+      supplierName: "Vanzari Tudor SRL",
+      subCategory: "Zidarie",
+      nrOfReviews: "122"
+    ),
+        Product(
+      name: "Caramida de exterior",
+      price: "8.99",
+      supplierName: "International commercial society SRL",
+      subCategory: "Zidarie",
+      nrOfReviews: "15"
+    ),
+        Product(
+      name: "Caramida cu bazalt",
+      price: "12.00",
+      supplierName: "La Nutu acasa SRL",
+      subCategory: "Zidarie",
+      nrOfReviews: "19"
+    ),
+    
+  ];
 
+  DefaultAppBar({Key? key, required this.appBar}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
 
     search(var productToSearch){
-      var i;
+      var product;
 
-      for( i in seacrhList){
-        if(i == productToSearch){
-           Navigator.of(context).push(MaterialPageRoute(builder: (context) => SearchPage(productList: [productToSearch],)));
-           break;
-        }
-      }
-
-
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => SearchPage(productList: productList,)));
   }
     TextEditingController productSearched = TextEditingController();
     return AppBar(
@@ -63,22 +94,17 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
                     color: Colors.white),
                 child: Padding(
                   padding: EdgeInsets.only(left: 14),
-                  child: Row(
-                    children: [
-                      IconButton(
-                      onPressed:  () {
-                        search(productSearched);
-                      }, 
-                      icon: Icon(CupertinoIcons.search),
-                      ),
-                      TextField(
-                        controller: productSearched,
-                        style: TextStyle(fontSize: 15),
-                ),
-                    ],
-                  )),
+                  child: TextField(
+                    decoration: InputDecoration(
+                    border: InputBorder.none,
+                    icon: Icon(CupertinoIcons.search),
+                    ),
+                    onSubmitted: (value) {
+                      search(value);
+                    },
+                  ),
               )),
-          ],
+              )],
           ),
         ),
         actions: [
