@@ -2,15 +2,14 @@ import 'package:buildnow/constants/constants.dart' as Constants;
 
 import 'package:flutter/material.dart';
 
-class productListElement extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() => productListElementPageState();
-}
 
-class productListElementPageState extends State {
-  String product = 'Caramizi'; //will be taken from database
-  int views = 427; //will be taken from database
-  int profit = 2539; //will be taken from database
+
+class productListElement extends StatelessWidget {
+  late String product; //will be taken from database
+  late int views; //will be taken from database
+  late double profit; //will be taken from database
+  late String image_path;
+  productListElement(this.product, this.views, this.profit, this.image_path);
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -22,7 +21,7 @@ class productListElementPageState extends State {
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Image.asset(Constants.bricksImagePath,
+                  Image.asset(image_path,
                       height: screenHeight * 0.15 * 0.45,
                       width: screenWidth * 0.15 * 0.45,
                       alignment: Alignment.centerLeft),
