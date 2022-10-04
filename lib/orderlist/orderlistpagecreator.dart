@@ -60,11 +60,6 @@ class OrderList extends StatefulWidget {
 class Runner extends State<OrderList> {
   bool condition = false;
 
-  String valueTime = 'Vechime (zile)';
-  final vechime = ['Vechime (zile)', '7', '30', '180', '365'];
-
-  String dateNow = ('2022-10-05');
-
   _verifyTime(date1, date2, value) {
     if (valueTime != 'Vechime (zile)') {
       DateTime date2compare = DateTime.parse(date2);
@@ -139,8 +134,12 @@ class Runner extends State<OrderList> {
     return condition;
   }
 
+  String valueTime = 'Vechime (zile)';
+  final vechime = ['Vechime (zile)', '7', '30', '180', '365'];
+
+  String dateNow = ('2022-10-05');
   String valueCategory = 'Categorii';
-  var categorii = [
+  final categorii = [
     'Categorii',
     'Prafoase',
     'Acoperis',
