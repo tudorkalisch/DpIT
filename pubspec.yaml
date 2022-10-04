@@ -90,6 +90,10 @@ flutter:
     - assets/caramidajpg2nobackground.png
     - assets/caramida3.jpg
     - assets/caramida2.jpg
+    - assets/caramida4.jpg
+    - assets/caramida5.jpg
+    - assets/caramida6.jpg
+    - assets/caramida7.png
     
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
