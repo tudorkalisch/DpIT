@@ -1,3 +1,4 @@
+import 'package:buildnow/favoritepage/card.dart';
 import 'package:buildnow/landingpage/categorylist.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ import '../classes/product.dart';
 import '../constants/constants.dart';
 import '../landingpage/contactcard.dart';
 
-import './FavoriteProduct.dart';
+import './favoriteproduct.dart';
 
 class FavoritePage extends StatefulWidget {
   @override
@@ -22,8 +23,8 @@ class FavoritePage extends StatefulWidget {
 }
 
 class _MyWidgetState extends State<FavoritePage> {
-  List<FavoriteProduct> FavoriteList = [
-    FavoriteProduct(
+  List<Product> FavoriteList = [
+    /*FavoriteProduct(
         name: "Produse favorite",
         products: [
           Product(
@@ -33,7 +34,37 @@ class _MyWidgetState extends State<FavoritePage> {
               subCategory: "Kebe",
               nrOfReviews: "7")
         ],
-        favorite: true)
+        favorite: true)*/
+    Product(
+        name: "Caramizi",
+        price: "10",
+        supplierName: "Leroy Merlin",
+        subCategory: "Kebe",
+        nrOfReviews: "5"),
+    Product(
+        name: "Caramizi",
+        price: "10",
+        supplierName: "Leroy Merlin",
+        subCategory: "Kebe",
+        nrOfReviews: "5"),
+    Product(
+        name: "Caramizi",
+        price: "10",
+        supplierName: "Leroy Merlin",
+        subCategory: "Kebe",
+        nrOfReviews: "5"),
+    Product(
+        name: "Caramizi",
+        price: "10",
+        supplierName: "Leroy Merlin",
+        subCategory: "Kebe",
+        nrOfReviews: "5"),
+    Product(
+        name: "Caramizi",
+        price: "10",
+        supplierName: "Leroy Merlin",
+        subCategory: "Kebe",
+        nrOfReviews: "5"),
   ];
 
   @override
@@ -42,13 +73,17 @@ class _MyWidgetState extends State<FavoritePage> {
         appBar: DefaultAppBar(appBar: AppBar()),
         backgroundColor: Color(backgroundColor),
         body: ListView(
+          padding: EdgeInsets.all(5),
           children: [
-            for (var FavoriteInfo in FavoriteList)
-              FavoriteProducts(
-                  name: FavoriteInfo.name,
-                  products: FavoriteInfo.products,
-                  favorite: FavoriteInfo.favorite),
-            ContactCard()
+            Padding(
+              padding: const EdgeInsets.fromLTRB(10, 20, 0, 20),
+              child: Text(
+                "Produse Favorite",
+                style: TextStyle(fontSize: 24),
+              ),
+            ),
+            Expanded(child: ProductCardF(productsList: FavoriteList)),
+            const ContactCard()
           ],
         ));
   }

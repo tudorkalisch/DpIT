@@ -1,4 +1,6 @@
+import 'package:buildnow/favoritepage/card.dart';
 import 'package:buildnow/landingpage/categorylist.dart';
+import 'package:buildnow/shopsupplier/cardshop.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -6,7 +8,7 @@ import 'package:buildnow/constants/constants.dart' as Constants;
 
 import 'package:flutter/cupertino.dart';
 
-import '../classes/shop.dart';
+import '../classes/favorite.dart';
 
 import '../appbar/appbar.dart';
 
@@ -16,24 +18,43 @@ import '../landingpage/contactcard.dart';
 
 import './shopproduct.dart';
 
-class SupplierShop extends StatefulWidget {
+class ShopSupplier extends StatefulWidget {
   @override
-  State<SupplierShop> createState() => _MyWidgetState();
+  State<ShopSupplier> createState() => _MyWidgetState();
 }
 
-class _MyWidgetState extends State<SupplierShop> {
-  List<ShopProduct> ShopList = [
-    ShopProduct(
-        name: "Shop",
-        products: [
-          Product(
-              name: "Caramizi",
-              price: "30",
-              supplierName: "Leroy Merlin",
-              subCategory: "Kebe",
-              nrOfReviews: "7")
-        ],
-        supplier: ("Leroy Merlin"))
+class _MyWidgetState extends State<ShopSupplier> {
+  List<Product> FavoriteList = [
+    Product(
+        name: "Caramizi",
+        price: "10",
+        supplierName: "Leroy Merlin",
+        subCategory: "Kebe",
+        nrOfReviews: "5"),
+    Product(
+        name: "Caramizi",
+        price: "10",
+        supplierName: "Leroy Merlin",
+        subCategory: "Kebe",
+        nrOfReviews: "5"),
+    Product(
+        name: "Caramizi",
+        price: "10",
+        supplierName: "Leroy Merlin",
+        subCategory: "Kebe",
+        nrOfReviews: "5"),
+    Product(
+        name: "Caramizi",
+        price: "10",
+        supplierName: "Leroy Merlin",
+        subCategory: "Kebe",
+        nrOfReviews: "5"),
+    Product(
+        name: "Caramizi",
+        price: "10",
+        supplierName: "Leroy Merlin",
+        subCategory: "Kebe",
+        nrOfReviews: "5"),
   ];
 
   @override
@@ -42,13 +63,17 @@ class _MyWidgetState extends State<SupplierShop> {
         appBar: DefaultAppBar(appBar: AppBar()),
         backgroundColor: Color(backgroundColor),
         body: ListView(
+          padding: EdgeInsets.all(5),
           children: [
-            for (var ShopInfo in ShopList)
-              ShopProducts(
-                  name: ShopInfo.name,
-                  products: ShopInfo.products,
-                  supplier: ShopInfo.supplier),
-            ContactCard()
+            Padding(
+              padding: const EdgeInsets.fromLTRB(10, 20, 0, 20),
+              child: Text(
+                "Magazin",
+                style: TextStyle(fontSize: 24),
+              ),
+            ),
+            Expanded(child: ProductCardS(productsList: FavoriteList)),
+            const ContactCard()
           ],
         ));
   }

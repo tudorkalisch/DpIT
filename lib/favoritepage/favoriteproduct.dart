@@ -5,8 +5,7 @@ import './card.dart';
 class FavoriteProducts extends StatelessWidget {
   final name;
   final products;
-  final favorite;
-  const FavoriteProducts({Key? key, this.name, this.products, this.favorite})
+  const FavoriteProducts({Key? key, this.name, this.products})
       : super(key: key);
 
   @override
@@ -26,12 +25,11 @@ class FavoriteProducts extends StatelessWidget {
             ),
           ),
           Padding(
-              padding:
-                  EdgeInsets.only(top: 40, left: 60, right: 60, bottom: 35),
+              padding: EdgeInsets.only(top: 20, left: 40, right: 40, bottom: 0),
               child: Container(
                   width: double.infinity,
                   height: 470,
-                  child: ProductSlider(productsList: products)))
+                  child: ProductCardF(productsList: products)))
         ]);
   }
 }

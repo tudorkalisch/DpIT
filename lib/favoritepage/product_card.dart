@@ -31,7 +31,7 @@ class ProductCard extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage(Constants.blueGradientPath),
+                          image: AssetImage(Constants.tiglaImagePath),
                           fit: BoxFit.cover)),
                 )),
             Expanded(
@@ -55,7 +55,7 @@ class ProductCard extends StatelessWidget {
                             fontSize: 18, fontWeight: FontWeight.w500),
                       )),
                   Positioned(
-                      top: 75,
+                      top: 65,
                       left: 15,
                       child: Text(
                         "Distribuitor: " + supplierName,
@@ -63,7 +63,7 @@ class ProductCard extends StatelessWidget {
                             fontSize: 20, fontWeight: FontWeight.w600),
                       )),
                   Positioned(
-                      top: 100,
+                      top: 90,
                       left: 15,
                       child: Text(
                         "Categorie: " + productSubCategory,
@@ -71,12 +71,12 @@ class ProductCard extends StatelessWidget {
                             fontSize: 18, fontWeight: FontWeight.w500),
                       )),
                   Positioned(
-                      bottom: 15,
-                      left: 15,
-                      child: Text(
-                        productNrOfReviews + " review-uri",
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.w500),
+                      left: 310,
+                      top: 95,
+                      child: Icon(
+                        Icons.favorite,
+                        color: Colors.pink,
+                        size: 24,
                       )),
                   Positioned(
                     bottom: 15,

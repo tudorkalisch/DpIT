@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 
-import './cardshop.dart';
+import 'cardshop.dart';
 
 class ShopProducts extends StatelessWidget {
   final name;
   final products;
-  final supplier;
-  const ShopProducts({Key? key, this.name, this.products, this.supplier})
-      : super(key: key);
+  const ShopProducts({Key? key, this.name, this.products}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,12 +24,11 @@ class ShopProducts extends StatelessWidget {
             ),
           ),
           Padding(
-              padding:
-                  EdgeInsets.only(top: 40, left: 60, right: 60, bottom: 35),
+              padding: EdgeInsets.only(top: 20, left: 40, right: 40, bottom: 0),
               child: Container(
                   width: double.infinity,
                   height: 470,
-                  child: ProductSlider(productsList: products)))
+                  child: ProductCardS(productsList: products)))
         ]);
   }
 }
